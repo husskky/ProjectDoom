@@ -1,0 +1,463 @@
+{
+  "skills": {
+    "1031": [
+      {
+        "kind": "rage",
+        "name": "Guardian Deity",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Yorikiri",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Oshidashi",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Yokozuna",
+        "description": ""
+      },
+      {
+        "kind": "awakening",
+        "name": "Storm Possession",
+        "description": ""
+      }
+    ],
+    "1032": [
+      {
+        "kind": "rage",
+        "name": "Power Crash",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Double Quarterback",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Special Defense",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Absolute Defense",
+        "description": ""
+      },
+      {
+        "kind": "awakening",
+        "name": "Lion's Roar",
+        "description": ""
+      }
+    ],
+    "1063": [
+      {
+        "kind": "rage",
+        "name": "Firepower Assault",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Queen of Arms",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Steer Clear",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Perseverance",
+        "description": ""
+      },
+      {
+        "kind": "awakening",
+        "name": "Tribal Pride",
+        "description": ""
+      }
+    ],
+    "1081": [
+      {
+        "kind": "rage",
+        "name": "Super Thunder",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Armed Fortification",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Gutsy Stunt",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Secret Base",
+        "description": ""
+      },
+      {
+        "kind": "awakening",
+        "name": "Role Model",
+        "description": ""
+      }
+    ],
+    "1086": [
+      {
+        "kind": "rage",
+        "name": "Grand Feast",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Crisis Cook",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Brash Hunter",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Abyss Devourer",
+        "description": ""
+      },
+      {
+        "kind": "awakening",
+        "name": "Ravenous Ambition",
+        "description": ""
+      }
+    ],
+    "1087": [
+      {
+        "kind": "rage",
+        "name": "Heartbreak Rock",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Lucky Shield",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Eternal Groove",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Devil's Disguise",
+        "description": ""
+      },
+      {
+        "kind": "awakening",
+        "name": "Blazing Passion",
+        "description": ""
+      }
+    ],
+    "1092": [
+      {
+        "kind": "rage",
+        "name": "Raining Punches",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Prosthetic Arm",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Indomitable Soul",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Mighty Bear",
+        "description": ""
+      },
+      {
+        "kind": "awakening",
+        "name": "Great Ambition",
+        "description": ""
+      }
+    ],
+    "1095": [
+      {
+        "kind": "rage",
+        "name": "Two Heavens as One",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Defensive Posture",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Swift Momentum",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Quick-Draw Technique",
+        "description": ""
+      },
+      {
+        "kind": "awakening",
+        "name": "Five Rings",
+        "description": ""
+      }
+    ],
+    "1100": [
+      {
+        "kind": "rage",
+        "name": "It's Showtime",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Battle Dance",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Concert Tour",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Final Performance",
+        "description": ""
+      },
+      {
+        "kind": "awakening",
+        "name": "Encore!",
+        "description": ""
+      }
+    ],
+    "1101": [
+      {
+        "kind": "rage",
+        "name": "Gaining Enlightenment",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Six Faculties Purification",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Karma Cutting",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Ephemeral Body and Mind",
+        "description": ""
+      },
+      {
+        "kind": "awakening",
+        "name": "Boundless Dharma",
+        "description": ""
+      }
+    ],
+    "1107": [
+      {
+        "kind": "rage",
+        "name": "Chain Lightning",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Current Surge",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Overclocked Circuit",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Electromagnetic Acceleration",
+        "description": ""
+      },
+      {
+        "kind": "awakening",
+        "name": "High-Voltage Load",
+        "description": ""
+      }
+    ],
+    "1109": [
+      {
+        "kind": "rage",
+        "name": "Rift Frequency",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Predator's Deterrence",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Omni-Surveillance",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Kinetic Energy Recovery",
+        "description": ""
+      },
+      {
+        "kind": "awakening",
+        "name": "Sonic Pulse",
+        "description": ""
+      }
+    ],
+    "1115": [
+      {
+        "kind": "rage",
+        "name": "Grilled Feast",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Swift Service",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Premium Seasoning",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Flawless Kitchen",
+        "description": ""
+      },
+      {
+        "kind": "awakening",
+        "name": "Perfect Heat Control",
+        "description": ""
+      }
+    ],
+    "1116": [
+      {
+        "kind": "rage",
+        "name": "First Form: Deadwood Slash",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Second Form: Gale Thrust",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Third Form: Sunflare Dance",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Fourth Form: Mountain Shatter",
+        "description": ""
+      },
+      {
+        "kind": "awakening",
+        "name": "Final Form: Sakura",
+        "description": ""
+      }
+    ],
+    "1121": [
+      {
+        "kind": "rage",
+        "name": "Overload Slash",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Fluid Armor",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "High-Frequency Pulse",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Instinctive Deduction",
+        "description": ""
+      },
+      {
+        "kind": "awakening",
+        "name": "Integrated Combat",
+        "description": ""
+      }
+    ],
+    "1122": [
+      {
+        "kind": "rage",
+        "name": "Blade Dance",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Whirling Dance",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Graceful Dance",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Lightfoot Dance",
+        "description": ""
+      },
+      {
+        "kind": "awakening",
+        "name": "Dance of Death",
+        "description": ""
+      }
+    ],
+    "1202": [
+      {
+        "kind": "rage",
+        "name": "Explosive Shots",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Electronic Interference",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Steel Armor",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Slug Firepower",
+        "description": ""
+      },
+      {
+        "kind": "awakening",
+        "name": "Rescue Reward",
+        "description": ""
+      }
+    ]
+  }
+}

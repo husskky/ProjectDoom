@@ -1,0 +1,490 @@
+{
+  "skills": {
+    "1023": [
+      {
+        "kind": "rage",
+        "name": "Special Technique - Retribution",
+        "description": "Deals a large amount of DMG to the enemy (Damage Factor: 8000) and increases Squad ATK by 24%. Lasts 3s."
+      },
+      {
+        "kind": "passive",
+        "name": "Special Technique - Eagle Dance",
+        "description": "Increases Ranged Squad ATK by 15% and Travel Speed by 15%."
+      },
+      {
+        "kind": "passive",
+        "name": "Special Technique - Storm Array",
+        "description": "Squads' basic attacks have 10% chance to deal additional DMG to the target (Damage Factor: 4000)."
+      },
+      {
+        "kind": "passive",
+        "name": "Special Technique - Talisman",
+        "description": "When Squad HP is lower than 50%, increases Ranged Squad ATK by 26% and Travel Speed by 18%."
+      },
+      {
+        "kind": "awakening",
+        "name": "Special Technique - Kiai",
+        "description": "Increases DMG dealt to Infantry Squads by 10%."
+      }
+    ],
+    "1039": [
+      {
+        "kind": "rage",
+        "name": "To Hell",
+        "description": "Deals DMG to up to 5 enemy Squads in a fan-shaped area (Damage Factor: 10000). DMG taken by each enemy Squad reduces by 15% for every additional target enemy Squad."
+      },
+      {
+        "kind": "passive",
+        "name": "Massacre Concerto",
+        "description": "Increases Skill DMG by 30%.Increases the HP of Ranged Squads by 10% when garrisoning."
+      },
+      {
+        "kind": "passive",
+        "name": "Deadly Beat",
+        "description": "Increases Ranged Squad ATK by 30%."
+      },
+      {
+        "kind": "passive",
+        "name": "Sonata of Sorrow",
+        "description": "Squads gain an additional 25 Rage when using basic attacks."
+      },
+      {
+        "kind": "awakening",
+        "name": "Perfect Curtain Call",
+        "description": "Deals DMG to up to 5 enemy Squads in a circular area (Damage Factor: 12000). DMG taken by each enemy Squad reduces by 15% for every additional target enemy Squad."
+      }
+    ],
+    "1080": [
+      {
+        "kind": "rage",
+        "name": "Double Kill",
+        "description": "Deals DMG to 2 enemies in a straight line (Damage Factor 12000. When appointed as an Assistant, reduces DMG to 6000). If only one enemy is hit, increases DMG by 20%."
+      },
+      {
+        "kind": "passive",
+        "name": "Retribution",
+        "description": "When taking Skill DMG, restores 100 Rage instantly. There is a 50% chance to inflict <a href='95435'>Silence</a> on the attacker for 3s. This effect triggers once every 6s."
+      },
+      {
+        "kind": "passive",
+        "name": "Battle Elite",
+        "description": "When in battle, increases Ranged Squad HP by 20% and ATK by 20%."
+      },
+      {
+        "kind": "passive",
+        "name": "Resilience",
+        "description": "When leading Ranged Squad(s) only, increases Skill DMG by 25% and Travel Speed by 30%."
+      },
+      {
+        "kind": "awakening",
+        "name": "Swift Bolt",
+        "description": "Deals DMG to 2 enemies in a straight line (Damage Factor13000. When appointed as an Assistant, reduces DMG to 6500). If only one enemy is hit, increases DMG by 25%."
+      }
+    ],
+    "1082": [
+      {
+        "kind": "rage",
+        "name": "Tough Strike",
+        "description": "Deals DMG to target (Damage Factor 12000) and reduces target's healing effect by 40% for 3s."
+      },
+      {
+        "kind": "passive",
+        "name": "Maverick",
+        "description": "When outside Alliance territory, increases Ranged Squad ATK by 30% and DEF by 10%."
+      },
+      {
+        "kind": "passive",
+        "name": "Serial Killer",
+        "description": "Increases Skill DMG by 4% every second, up to 40%. After an Assistant unleashes a Rage Skill, the buff will reset and stack again."
+      },
+      {
+        "kind": "passive",
+        "name": "Extermination",
+        "description": "Increases Ranged Squad HP by 20%. During Sieges, basic attacks have a 20% to deal an additional DMG [color=#20%](Damage Factor 3120."
+      },
+      {
+        "kind": "awakening",
+        "name": "Lethal Toxins",
+        "description": "Deals DMG to target (Damage Factor 13750) and reduces target's healing effect by 50% for 5s."
+      }
+    ],
+    "1088": [
+      {
+        "kind": "rage",
+        "name": "Bird of Prey",
+        "description": "Deals DMG to up to 3 enemies (Damage Factor: 12500) in a fan-shaped area in front, and increases own Counter DMG by 23% for 3s. DMG taken by each enemy Squad reduces by 15% for every additional target enemy Squad."
+      },
+      {
+        "kind": "passive",
+        "name": "Earth's Champion",
+        "description": "Increases Ranged Squad HP by 20%, and increases all DMG dealt by 7.5% when garrisoning."
+      },
+      {
+        "kind": "passive",
+        "name": "Dance with the Eagle",
+        "description": "Deals DMG to up to 3 nearby enemy Squads (Damage Factor: 2000) every 8s. If garrisoning, also reduces the ATK of these Squads by 17% for 2s."
+      },
+      {
+        "kind": "passive",
+        "name": "Son of the Wind",
+        "description": "Increases all DMG by 16% if the remaining Squad Size is below 50%. Increases all DMG to 20% if the remaining Squad Size is less than 30%."
+      },
+      {
+        "kind": "awakening",
+        "name": "Eagle Strike",
+        "description": "Deals DMG to up to 3 enemies (Damage Factor: 13750) in a fan-shaped area in front, and increases own Counter DMG by 28% for 3s. DMG taken by each enemy Squad reduces by 15% for every additional target enemy Squad."
+      }
+    ],
+    "1089": [
+      {
+        "kind": "rage",
+        "name": "Stunning Magic",
+        "description": "Deals DMG to the target (Damage Factor: 12500) and restores 100 Rage to own Squad."
+      },
+      {
+        "kind": "passive",
+        "name": "Escape Preparation",
+        "description": "Increases Ranged Squad ATK by 20%, and increases Ranged Squad DEF by 20%."
+      },
+      {
+        "kind": "passive",
+        "name": "Mind Reading",
+        "description": "Reduces DMG taken from basic attacks by 20%. When Rage is more than 90%, increases Skill DMG dealt by 17% for 4s."
+      },
+      {
+        "kind": "passive",
+        "name": "Impenetrable",
+        "description": "Increases Ranged Squad HP by 40%. There is a 60% chance of being immune to taking increased DMG."
+      },
+      {
+        "kind": "awakening",
+        "name": "Miracle of the Century",
+        "description": "Deals DMG to the target (Damage Factor: 13750) and inflicts <a href='95435'>Silence</a> on the enemy for 3s. Also restores 120 Rage to own Squad."
+      }
+    ],
+    "1096": [
+      {
+        "kind": "rage",
+        "name": "Mass Annihilation",
+        "description": "Deals DMG to up to 3 enemy targets in a circular area (Damage Factor: 13000). DMG taken by each enemy target reduces by 15% for every additional enemy target. If this skill kills an enemy Squad, has 50% chance to immediately recover 60 Rage."
+      },
+      {
+        "kind": "passive",
+        "name": "Purge Weakness",
+        "description": "Increases Ranged Squad ATK by 30%. If the enemy is inflicted with <a href='95435'>Silence</a>, increases basic attack DMG dealt to them by 21%."
+      },
+      {
+        "kind": "passive",
+        "name": "Invincible Fleet",
+        "description": "During Sieges, increases Ranged Squad DEF by 25% and HP by 25%."
+      },
+      {
+        "kind": "passive",
+        "name": "Direct Confrontation",
+        "description": "During Rallies, increase Skill DMG dealt to Garrison Squads by 54%, but all DMG taken from Garrison Squads is increased by 12.5%."
+      },
+      {
+        "kind": "awakening",
+        "name": "Dominating the Seas",
+        "description": "Deals DMG to up to 3 enemy targets in a circular area (Damage Factor: 14300). DMG taken by each enemy target reduces by 15% for every additional enemy target. If this skill kills an enemy Squad, has 50% chance to immediately recover 65 Rage and increase own ATK by 30% for 3s."
+      }
+    ],
+    "1097": [
+      {
+        "kind": "rage",
+        "name": "Precise Breakthrough",
+        "description": "Deals DMG to the target (Damage Factor: 11700). If Flanked when not Rallying or Garrisoned, deals additional DMG to the current target (Damage Factor: 3000) and reduces Skill DMG taken by 20% for 2s."
+      },
+      {
+        "kind": "passive",
+        "name": "Auto Fortify",
+        "description": "Increases Ranged Squad ATK by 30%. If Flanked when not Rallying or Garrisoned, increases Ranged Squad DEF by 15%."
+      },
+      {
+        "kind": "passive",
+        "name": "Scan Weakness",
+        "description": "Increases Ranged Squad HP by 34%. Counterattacks have a 20% chance to reduce all DMG taken by 4.5% for 2s. This effect can be triggered only once in 4s."
+      },
+      {
+        "kind": "passive",
+        "name": "Tactical Maneuver",
+        "description": "Increases Counter DMG by 32% and Ranged Squad Travel Speed by 20%."
+      },
+      {
+        "kind": "awakening",
+        "name": "High Output Mode",
+        "description": "When in World Map battles, increases Ranged Squad DMG by 3%. If Flanked when not Rallying or Garrisoned, reduces DMG taken by 10%."
+      }
+    ],
+    "1102": [
+      {
+        "kind": "rage",
+        "name": "All Shots Fired",
+        "description": "Deals DMG to up to 3 enemies (Damage Factor: 13500) in a fan-shaped area in front, DMG taken by each enemy reduces by 15% for every additional enemy target. For every enemy target hit, gain 1 stack of Gunfire. If garrisoned, for every enemy target hit, gain 2 stacks of Gunfire instead. For every 10 stacks of Gunfire gained, increases Ranged Squad ATK by 10%."
+      },
+      {
+        "kind": "passive",
+        "name": "Gunfight Tactics",
+        "description": "Increases Ranged Squad ATK by 42%. Counterattacks have a 20% chance to grant 1 stack of <a href='95438'>Gunfire</a>."
+      },
+      {
+        "kind": "passive",
+        "name": "Tactical Deployment",
+        "description": "Increases Ranged Squad HP by 36% and reduces Squad's Skill DMG taken by 13% when garrisoned."
+      },
+      {
+        "kind": "passive",
+        "name": "Hunter Spirit",
+        "description": "Increases Ranged Squad DEF by 38%. If garrisoned, reduces all DMG taken by 10% for 1m after entering battle."
+      },
+      {
+        "kind": "awakening",
+        "name": "Killer Instinct",
+        "description": "Increases DMG of AoE Skills by 18%. At 30 stacks of Gunfire, remove all Gunfire stacks to deal DMG to up to 3 enemies in a circular area [color=#18%](Damage Factor: 13500)."
+      }
+    ],
+    "1103": [
+      {
+        "kind": "rage",
+        "name": "Giant's Wrath",
+        "description": "Deals DMG to the current target (Damage Factor: 13500) and increases Skill DMG received by nearby enemies, up to 3 enemies, by 20% for 3s."
+      },
+      {
+        "kind": "passive",
+        "name": "Shoulder Ride",
+        "description": "Increases Ranged Squad TRVL SPD by 20% and ATK by 32% when not rallying."
+      },
+      {
+        "kind": "passive",
+        "name": "Giant's Counterattack",
+        "description": "When using Rage Skills without <a href='95440'>Charge</a>, gains <a href='95440'>Charge</a>. When using Rage Skills with  <a href='95440'>Charge</a>, consumes  <a href='95440'>Charge</a> to deal DMG to up to 3 Squads in a circular area (Damage Factor: 7850).  <a href='95440'>Charge</a>: Increases Ranged Squad DMG by 10%."
+      },
+      {
+        "kind": "passive",
+        "name": "Bottled Dream",
+        "description": "Increases Ranged Squad HP by 32%, and increases Ranged Squad DMG Reduction by 5.5%."
+      },
+      {
+        "kind": "awakening",
+        "name": "Giant's Authority",
+        "description": "Immediately gains  <a href='95440'>Charge</a> for 15s when entering battle. Every time  <a href='95440'>Charge</a> is consumed, there is a 30% chance to deal DMG again."
+      }
+    ],
+    "1108": [
+      {
+        "kind": "rage",
+        "name": "Weakness Detection",
+        "description": "Increases Squad ATK by 46%. Squads' basic attacks deal bonus DMG [color=#46%](Damage Factor: 3750). Lasts 2s."
+      },
+      {
+        "kind": "passive",
+        "name": "Point and Shoot",
+        "description": "Increases Ranged Squad HP by 18%. During Sieges, increases Squads' basic attack DMG by 24%."
+      },
+      {
+        "kind": "passive",
+        "name": "Dynamic Vision",
+        "description": "Increases Ranged Squad ATK by 15% and DEF by 15%."
+      },
+      {
+        "kind": "passive",
+        "name": "Camouflage",
+        "description": "Reduces Counter DMG received by 17%. Basic attacks have a 20% chance to reduce enemy DEF by 16% for 3s."
+      },
+      {
+        "kind": "awakening",
+        "name": "Flying Bullets",
+        "description": "Increases Ranged Squad ATK by 20% and DEF by 20%. Also, reduces research time for all Technologies in the Research Lab by 0.5h, and increases research speed by 12%. This effect applies even when not deployed."
+      }
+    ],
+    "1110": [
+      {
+        "kind": "rage",
+        "name": "Dance of Slaughter",
+        "description": "Deals direct DMG to the target  (Damage Factor: 14000). When not garrisoned, deals additional damage to target and 2 other targets around self once (Damage Factor: 2500)."
+      },
+      {
+        "kind": "passive",
+        "name": "Shadow in the Fog",
+        "description": "Increases Ranged Squad DEF by 30%. During Rallies, increases Ranged Squad DMG by 10%."
+      },
+      {
+        "kind": "passive",
+        "name": "Night of Assassination",
+        "description": "Increases Ranged Squad ATK by 30%. During Rallies, counterattacks have a 30% chance to deal damage to Squads in the field [color=#30%](Damage Factor: 2000). This effect can be triggered up to 1 times every 3s."
+      },
+      {
+        "kind": "passive",
+        "name": "Perfect Attire",
+        "description": "Increases Ranged Squad HP by 30%. Reduces Skill DMG taken from Garrison Squads by 12%."
+      },
+      {
+        "kind": "awakening",
+        "name": "Bloody Storm",
+        "description": "Reduces current target's Skill DMG by 3% and Squad HP by 4% when Cedric uses a Rage Skill. This effect stacks up to 3 times, and lasts for 30s."
+      }
+    ],
+    "1111": [
+      {
+        "kind": "rage",
+        "name": "Magic Marksman",
+        "description": "Deals damage to the target (Damage Factor 14000). If the target is Flanked, the Damage Factor is increased to 15500. When not garrisoned, reduces enemy ATK by an additional 30% for 3s."
+      },
+      {
+        "kind": "passive",
+        "name": "Aurora Veil",
+        "description": "Increased Ranged Squad HP by 25%. When taking Skill DMG, reduces DMG taken by own Ranged Squad by 20% for 3s. This effect can be triggered up to 1 times every 10s."
+      },
+      {
+        "kind": "passive",
+        "name": "Prism Ruling",
+        "description": "Increases Ranged Squad DEF by 20%. When performing basic attacks, there is a 20% chance to steal 50 Rage from the enemy. This effect can be triggered up to 1 times every 4s."
+      },
+      {
+        "kind": "passive",
+        "name": "Shining Moment",
+        "description": "Increases Ranged Squad ATK by 20% and increases TRVL SPD by 20%. If target is Flanked, increases DMG received by 15% for 3s after using a Rage Skill."
+      },
+      {
+        "kind": "awakening",
+        "name": "Precise Reflection",
+        "description": "Increases Ranged Squad DEF by 25%. When performing basic attacks, there is a 20% chance to steal 50 Rage from the enemy. This effect can be triggered up to 1 times every 4s. After successfully stealing Rage, also steals 8% of Skill DMG from the enemy for 3s."
+      }
+    ],
+    "1117": [
+      {
+        "kind": "rage",
+        "name": "One-Shot Kill",
+        "description": "Deals DMG to the current target (Damage Factor: 14500), reducing their HP by 40% for 3s. While in the Aiming state, increases this DMG by 20%."
+      },
+      {
+        "kind": "passive",
+        "name": "Focused Breath",
+        "description": "Enters the Aiming state for 30s when entering battle. When not in a Rally or garrisoned, if not in the Aiming state, Charon uses a Rage Skill and enters the Aiming state for 10s. Aiming: Increases Rage Recovery Speed by 10%."
+      },
+      {
+        "kind": "passive",
+        "name": "Evasive Maneuver",
+        "description": "Increases Ranged Squad ATK by 30%, and increases Travel Speed by 20%. While in the Aiming state, reduces Counter DMG taken by 20%."
+      },
+      {
+        "kind": "passive",
+        "name": "Position Shift",
+        "description": "Increases Ranged Squad HP by 30%. If flanked when not in a Rally or garrisoned, increases Ranged Squad DEF by an additional 20%."
+      },
+      {
+        "kind": "awakening",
+        "name": "Death Radius",
+        "description": "Deals DMG to the current target (Damage Factor: 15000), and deals DMG (Damage Factor: 5000) to 2 other nearby enemy targets, reducing their HP by 40% for 3s. While in the Aiming state, increases this DMG by 20%."
+      }
+    ],
+    "1118": [
+      {
+        "kind": "rage",
+        "name": "Multithreaded Breach",
+        "description": "Deals DMG to up to 3 enemies in a fan-shaped area (Damage Factor: 14500, increased to 16500 when garrisoned). DMG taken by each enemy Squad reduces by 15% for every 1 additional target enemy Squads. Also reduces Skill DMG dealt by target Squads by 10% for 2s."
+      },
+      {
+        "kind": "passive",
+        "name": "Warm-Up Stream",
+        "description": "Increases Ranged Squad ATK by 40%. When garrisoned, increases Rage Recovery Speed by 10% for the first 1m after entering battle."
+      },
+      {
+        "kind": "passive",
+        "name": "Extreme Speedrun",
+        "description": "When not in a Rally, increases Ranged Squad DEF by 35% and Ranged Squad DMG Reduction by 8%."
+      },
+      {
+        "kind": "passive",
+        "name": "Virtual Avatar",
+        "description": "Increases Ranged Squad HP by 40%. When garrisoned, reduces Skill DMG taken by 12%."
+      },
+      {
+        "kind": "awakening",
+        "name": "Cheat Code",
+        "description": "Gains 1 stacks of <a href='95441'>Cheat Code</a> before the Leader uses a Rage Skill when not in a Rally. At 6 stacks, removes all stacks, increases Ranged Squad DMG by 10% for 3s, and if the Leader has a Ranged Squad Talent, the Leader will use a Rage Skill again the next second after the Assistant uses a Rage Skill. <a href='95441'>Cheat Code</a>: Increases Ranged Squad ATK by 3%."
+      }
+    ],
+    "1124": [
+      {
+        "kind": "rage",
+        "name": "Prelude to Death",
+        "description": "Deals damage to the target (Damage Factor 15000). When not garrisoned, the Damage Factor is increased to 18000, and increases DMG Reduction by 3% for every 1 nearby Squads when using the Skill. This effect stacks up to 3 times, and lasts for 3s."
+      },
+      {
+        "kind": "passive",
+        "name": "Marionette Aria",
+        "description": "During Rallies, increases Ranged Squad ATK by 40% and increases damage dealt to Infantry Squads by 10%."
+      },
+      {
+        "kind": "passive",
+        "name": "Phantom Variation",
+        "description": "Increases Ranged Squad DEF by 30%. When taking Skill DMG, there is a 30% chance to recover HP [color=#30%](<a href='95434'>Heal Factor</a>: 3000). This effect can be triggered up to 1 times every 6s."
+      },
+      {
+        "kind": "passive",
+        "name": "Puppet Rhapsody",
+        "description": "Increases Ranged Squad HP by 40%. During Rallies, counterattacks have a 25% chance to deal damage to Squads in the field [color=#40%](Damage Factor: 2500). This DMG increases by 100% in the first 1 minutes of battle."
+      },
+      {
+        "kind": "awakening",
+        "name": "Curtain Call Waltz",
+        "description": "Prelude to Death additionally reduces the target's DEF by 6%. This effect stacks up to 5 times, and lasts for 30s. Reduces Shield Effect of targets that reach the stack limit by 30% and increases own Skill DMG dealt to them by 15%."
+      }
+    ],
+    "1125": [
+      {
+        "kind": "rage",
+        "name": "Final Judgment",
+        "description": "Deals DMG to the target (Damage Factor: 15000). When not in a Rally or garrisoned, heals up to 3 nearby allies based on [color=#30%]30% of this DMG dealt."
+      },
+      {
+        "kind": "passive",
+        "name": "Path of Redemption",
+        "description": "When not in a Rally or garrisoned, increases own healing effect granted by [color=#20%]20%. For every 30% of Squad Size lost, additionally increases this by [color=#20%]10%."
+      },
+      {
+        "kind": "passive",
+        "name": "Breath of Dawn",
+        "description": "[Final Judgment] Additionally increases DMG of Squads that receive healing by 10%. This effect stacks up to 2 times, and lasts for 10s."
+      },
+      {
+        "kind": "passive",
+        "name": "Apocalyptic Dance",
+        "description": "Ranged Squad HP increases by 40%, and Travel Speed increases by 20%."
+      },
+      {
+        "kind": "awakening",
+        "name": "Ashen Huntres",
+        "description": "Deals DMG to the target (Damage Factor: 16000). When not in a Rally or garrisoned, heals up to 5 nearby allies based on [color=#35%]35% of this DMG dealt."
+      }
+    ],
+    "1203": [
+      {
+        "kind": "rage",
+        "name": "Resonance Shots",
+        "description": "Deals DMG to the current target (Damage Factor: 13500). When not Rallying or Garrisoned, recover HP based on the number of Squads flanking the enemy Squad (Flanking Squads x550). This effect counts up to 5 Flanking Squads."
+      },
+      {
+        "kind": "passive",
+        "name": "Coordinated Tactics",
+        "description": "Increases Squad HP by 30%. Basic attacks grant 10 Rage when flanking the enemy."
+      },
+      {
+        "kind": "passive",
+        "name": "Flanking Operation",
+        "description": "When not Rallying or Garrisoned, increases Skill DMG by 36% when remaining Squad Size is 50% or more. When Squad Size is less than 50%, reduces Skill DMG taken by 36% and increases Ranged Squad TRVL SPD by 20%."
+      },
+      {
+        "kind": "passive",
+        "name": "Speedy Travel",
+        "description": "Increases Squad TRVL SPD by 20% and ATK by 30%."
+      },
+      {
+        "kind": "awakening",
+        "name": "Perfect Sync",
+        "description": "Deals DMG to the current target (Damage Factor: 14850). When not Rallying or Garrisoned, recover HP based on the number of Squads flanking the enemy Squad (Flanking Squads x550).  The Assistant has a 50% recover additional HP (Flanking Squads x330) after casting a skill. This effect counts up to 5 Flanking Squads."
+      }
+    ]
+  }
+}

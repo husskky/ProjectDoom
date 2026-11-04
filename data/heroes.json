@@ -1,0 +1,517 @@
+{
+  "version": "1.62.0",
+  "heroes": [
+    {
+      "id": 1009,
+      "name": "Sven Schaefer",
+      "squad": "Rider",
+      "category": "Siege",
+      "superhero": false,
+      "role": "Support"
+    },
+    {
+      "id": 1011,
+      "name": "Catherine Calamity",
+      "squad": "Rider",
+      "category": "-",
+      "superhero": false,
+      "role": "Skills"
+    },
+    {
+      "id": 1013,
+      "name": "Peter Karelin",
+      "squad": "Leader",
+      "category": "Siege",
+      "superhero": false,
+      "role": "Attack"
+    },
+    {
+      "id": 1023,
+      "name": "Nakano Maaya",
+      "squad": "Ranged",
+      "category": "General",
+      "superhero": false,
+      "role": "Skills"
+    },
+    {
+      "id": 1031,
+      "name": "Raigoro",
+      "squad": "Infantry",
+      "category": "Garrison",
+      "superhero": false,
+      "role": "Defense"
+    },
+    {
+      "id": 1032,
+      "name": "Tom",
+      "squad": "Infantry",
+      "category": "Garrison",
+      "superhero": false,
+      "role": "Defense"
+    },
+    {
+      "id": 1033,
+      "name": "Hank Jannowitz",
+      "squad": "Leader",
+      "category": "Siege",
+      "superhero": false,
+      "role": "Skills"
+    },
+    {
+      "id": 1034,
+      "name": "Cynthia Calamity",
+      "squad": "Rider",
+      "category": "-",
+      "superhero": false,
+      "role": "-"
+    },
+    {
+      "id": 1036,
+      "name": "Lee Seung-won",
+      "squad": "Leader",
+      "category": "-",
+      "superhero": false,
+      "role": "Support"
+    },
+    {
+      "id": 1039,
+      "name": "Louis",
+      "squad": "Ranged",
+      "category": "Garrison",
+      "superhero": false,
+      "role": "Skills"
+    },
+    {
+      "id": 1040,
+      "name": "Master Jin",
+      "squad": "Leader",
+      "category": "Siege",
+      "superhero": false,
+      "role": "Support"
+    },
+    {
+      "id": 1061,
+      "name": "Jaden",
+      "squad": "Leader",
+      "category": "-",
+      "superhero": false,
+      "role": "Attack"
+    },
+    {
+      "id": 1062,
+      "name": "Maxine Wincott",
+      "squad": "Overall",
+      "category": "Gather",
+      "superhero": false,
+      "role": "Support"
+    },
+    {
+      "id": 1063,
+      "name": "Ammara",
+      "squad": "Infantry",
+      "category": "General",
+      "superhero": false,
+      "role": "Skills"
+    },
+    {
+      "id": 1070,
+      "name": "Martin",
+      "squad": "Overall",
+      "category": "-",
+      "superhero": false,
+      "role": "Support"
+    },
+    {
+      "id": 1080,
+      "name": "Chun",
+      "squad": "Ranged",
+      "category": "General",
+      "superhero": false,
+      "role": "Skills"
+    },
+    {
+      "id": 1081,
+      "name": "Thunder Peterson",
+      "squad": "Infantry",
+      "category": "Garrison",
+      "superhero": false,
+      "role": "Defense"
+    },
+    {
+      "id": 1082,
+      "name": "Johnny Kerry",
+      "squad": "Ranged",
+      "category": "Siege",
+      "superhero": false,
+      "role": "Attack"
+    },
+    {
+      "id": 1083,
+      "name": "Bella",
+      "squad": "Rider",
+      "category": "General",
+      "superhero": false,
+      "role": "Skills"
+    },
+    {
+      "id": 1084,
+      "name": "Jonathan",
+      "squad": "Rider",
+      "category": "General",
+      "superhero": false,
+      "role": "Support"
+    },
+    {
+      "id": 1085,
+      "name": "Elena",
+      "squad": "Rider",
+      "category": "General",
+      "superhero": false,
+      "role": "Skills"
+    },
+    {
+      "id": 1086,
+      "name": "Eddie",
+      "squad": "Infantry",
+      "category": "Siege",
+      "superhero": false,
+      "role": "Defense"
+    },
+    {
+      "id": 1087,
+      "name": "Robert",
+      "squad": "Infantry",
+      "category": "General",
+      "superhero": false,
+      "role": "Skills"
+    },
+    {
+      "id": 1088,
+      "name": "Jacob",
+      "squad": "Ranged",
+      "category": "Garrison",
+      "superhero": false,
+      "role": "Defense"
+    },
+    {
+      "id": 1089,
+      "name": "Julia",
+      "squad": "Ranged",
+      "category": "General",
+      "superhero": false,
+      "role": "Skills"
+    },
+    {
+      "id": 1090,
+      "name": "Victor Blackwood",
+      "squad": "Leader",
+      "category": "Garrison",
+      "superhero": false,
+      "role": "Defense"
+    },
+    {
+      "id": 1091,
+      "name": "Bianca Drake",
+      "squad": "Leader",
+      "category": "General",
+      "superhero": false,
+      "role": "Support"
+    },
+    {
+      "id": 1092,
+      "name": "Riven",
+      "squad": "Infantry",
+      "category": "General",
+      "superhero": false,
+      "role": "Defense"
+    },
+    {
+      "id": 1094,
+      "name": "Sara Vandermeer",
+      "squad": "Overall",
+      "category": "Gather",
+      "superhero": false,
+      "role": "Support"
+    },
+    {
+      "id": 1095,
+      "name": "Miyamoto Doichi",
+      "squad": "Infantry",
+      "category": "General",
+      "superhero": false,
+      "role": "Skills"
+    },
+    {
+      "id": 1096,
+      "name": "Bard",
+      "squad": "Ranged",
+      "category": "Siege",
+      "superhero": true,
+      "role": "Defense"
+    },
+    {
+      "id": 1097,
+      "name": "Lynne",
+      "squad": "Ranged",
+      "category": "General",
+      "superhero": false,
+      "role": "Skills"
+    },
+    {
+      "id": 1098,
+      "name": "Felix",
+      "squad": "Rider",
+      "category": "General",
+      "superhero": false,
+      "role": "Skills"
+    },
+    {
+      "id": 1099,
+      "name": "Chasey",
+      "squad": "Rider",
+      "category": "Garrison",
+      "superhero": true,
+      "role": "Skills"
+    },
+    {
+      "id": 1100,
+      "name": "Stella",
+      "squad": "Infantry",
+      "category": "Siege",
+      "superhero": true,
+      "role": "Skills"
+    },
+    {
+      "id": 1101,
+      "name": "Bodala",
+      "squad": "Infantry",
+      "category": "General",
+      "superhero": false,
+      "role": "Skills"
+    },
+    {
+      "id": 1102,
+      "name": "Ethan",
+      "squad": "Ranged",
+      "category": "Garrison",
+      "superhero": true,
+      "role": "Skills"
+    },
+    {
+      "id": 1103,
+      "name": "Sophie",
+      "squad": "Ranged",
+      "category": "General",
+      "superhero": false,
+      "role": "Skills"
+    },
+    {
+      "id": 1104,
+      "name": "Rubina",
+      "squad": "Rider",
+      "category": "Siege",
+      "superhero": true,
+      "role": "Skills"
+    },
+    {
+      "id": 1105,
+      "name": "Daryl",
+      "squad": "Rider",
+      "category": "General",
+      "superhero": false,
+      "role": "Skills"
+    },
+    {
+      "id": 1106,
+      "name": "Claude Le Blanc",
+      "squad": "Leader",
+      "category": "Coop",
+      "superhero": false,
+      "role": "Support"
+    },
+    {
+      "id": 1107,
+      "name": "Eileen Volt",
+      "squad": "Infantry",
+      "category": "General",
+      "superhero": false,
+      "role": "Skills"
+    },
+    {
+      "id": 1108,
+      "name": "Norah",
+      "squad": "Ranged",
+      "category": "Siege",
+      "superhero": false,
+      "role": "Attack"
+    },
+    {
+      "id": 1109,
+      "name": "Boyd Warden",
+      "squad": "Infantry",
+      "category": "Garrison",
+      "superhero": true,
+      "role": "Skills"
+    },
+    {
+      "id": 1110,
+      "name": "Cedric",
+      "squad": "Ranged",
+      "category": "Siege",
+      "superhero": true,
+      "role": "Skills"
+    },
+    {
+      "id": 1111,
+      "name": "Spectra",
+      "squad": "Ranged",
+      "category": "General",
+      "superhero": false,
+      "role": "Skills"
+    },
+    {
+      "id": 1112,
+      "name": "Rick Light",
+      "squad": "Rider",
+      "category": "Garrison",
+      "superhero": true,
+      "role": "Attack"
+    },
+    {
+      "id": 1113,
+      "name": "Janet Light",
+      "squad": "Rider",
+      "category": "General",
+      "superhero": false,
+      "role": "Skills"
+    },
+    {
+      "id": 1114,
+      "name": "Isabella Vincens",
+      "squad": "Leader",
+      "category": "Coop",
+      "superhero": true,
+      "role": "Skills"
+    },
+    {
+      "id": 1115,
+      "name": "Julien",
+      "squad": "Infantry",
+      "category": "General",
+      "superhero": false,
+      "role": "Support"
+    },
+    {
+      "id": 1116,
+      "name": "Sakura",
+      "squad": "Infantry",
+      "category": "Siege",
+      "superhero": true,
+      "role": "Skills"
+    },
+    {
+      "id": 1117,
+      "name": "Charon",
+      "squad": "Ranged",
+      "category": "General",
+      "superhero": false,
+      "role": "Skills"
+    },
+    {
+      "id": 1118,
+      "name": "Nova",
+      "squad": "Ranged",
+      "category": "Garrison",
+      "superhero": true,
+      "role": "Skills"
+    },
+    {
+      "id": 1119,
+      "name": "Maxwell",
+      "squad": "Rider",
+      "category": "General",
+      "superhero": false,
+      "role": "-"
+    },
+    {
+      "id": 1120,
+      "name": "Metok Tso",
+      "squad": "Rider",
+      "category": "Siege",
+      "superhero": true,
+      "role": "Skills"
+    },
+    {
+      "id": 1121,
+      "name": "Cassius",
+      "squad": "Infantry",
+      "category": "Garrison",
+      "superhero": true,
+      "role": "Skills"
+    },
+    {
+      "id": 1122,
+      "name": "Rozalia",
+      "squad": "Infantry",
+      "category": "General",
+      "superhero": false,
+      "role": "Skills"
+    },
+    {
+      "id": 1123,
+      "name": "Amir Suleiman",
+      "squad": "Leader",
+      "category": "Coop",
+      "superhero": false,
+      "role": "Skills"
+    },
+    {
+      "id": 1124,
+      "name": "Sebastian",
+      "squad": "Ranged",
+      "category": "Siege",
+      "superhero": true,
+      "role": "Skills"
+    },
+    {
+      "id": 1125,
+      "name": "Valeria Moretti",
+      "squad": "Ranged",
+      "category": "General",
+      "superhero": false,
+      "role": "Support"
+    },
+    {
+      "id": 1201,
+      "name": "Mai Shiranui",
+      "squad": "Rider",
+      "category": "General",
+      "superhero": false,
+      "role": "-"
+    },
+    {
+      "id": 1202,
+      "name": "Marco & Eri",
+      "squad": "Infantry",
+      "category": "General",
+      "superhero": false,
+      "role": "Skills"
+    },
+    {
+      "id": 1203,
+      "name": "Jack Bronte",
+      "squad": "Ranged",
+      "category": "General",
+      "superhero": false,
+      "role": "Skills"
+    },
+    {
+      "id": 1204,
+      "name": "Eren Yeager",
+      "squad": "Rider",
+      "category": "General",
+      "superhero": false,
+      "role": "Skills"
+    }
+  ]
+}

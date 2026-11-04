@@ -1,0 +1,6 @@
+{
+  "changes": {
+    "1123": "The trigger conditions of its effects were edited. Details are not decoded yet.",
+    "1124": "The awakening skill now also cuts the shield effect of targets at max stacks (30%, or 50% in the upgraded variant)."
+  }
+}

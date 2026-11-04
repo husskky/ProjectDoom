@@ -1,0 +1,120 @@
+{
+  "troops": [
+    {
+      "tier": 1,
+      "attack": 99,
+      "defense": 94,
+      "health": 95,
+      "speed": 880,
+      "capacity": 7,
+      "might": 1,
+      "trainingCost": {
+        "Food": 70,
+        "Wood": 30
+      },
+      "promotionCost": {
+        "Food": 28,
+        "Wood": 12
+      },
+      "trainingSeconds": 15
+    },
+    {
+      "tier": 2,
+      "attack": 129,
+      "defense": 122,
+      "health": 124,
+      "speed": 840,
+      "capacity": 9,
+      "might": 2,
+      "trainingCost": {
+        "Food": 100,
+        "Steel": 50
+      },
+      "promotionCost": {
+        "Food": 40,
+        "Steel": 20
+      },
+      "trainingSeconds": 30
+    },
+    {
+      "tier": 3,
+      "attack": 158,
+      "defense": 150,
+      "health": 154,
+      "speed": 800,
+      "capacity": 10,
+      "might": 3,
+      "trainingCost": {
+        "Food": 150,
+        "Steel": 75,
+        "Oil": 5
+      },
+      "promotionCost": {
+        "Food": 60,
+        "Steel": 30,
+        "Oil": 2
+      },
+      "trainingSeconds": 60
+    },
+    {
+      "tier": 4,
+      "attack": 178,
+      "defense": 169,
+      "health": 173,
+      "speed": 760,
+      "capacity": 11,
+      "might": 5,
+      "trainingCost": {
+        "Food": 360,
+        "Steel": 180,
+        "Oil": 15
+      },
+      "promotionCost": {
+        "Food": 144,
+        "Steel": 72,
+        "Oil": 6
+      },
+      "trainingSeconds": 80
+    },
+    {
+      "tier": 5,
+      "attack": 220,
+      "defense": 188,
+      "health": 192,
+      "speed": 725,
+      "capacity": 12,
+      "might": 9,
+      "trainingCost": {
+        "Food": 500,
+        "Steel": 250,
+        "Oil": 100
+      },
+      "promotionCost": {
+        "Food": 200,
+        "Steel": 100,
+        "Oil": 40
+      },
+      "trainingSeconds": 100
+    },
+    {
+      "tier": 6,
+      "attack": 254,
+      "defense": 207,
+      "health": 222,
+      "speed": 690,
+      "capacity": 14,
+      "might": 15,
+      "trainingCost": {
+        "Food": 900,
+        "Steel": 450,
+        "Oil": 180
+      },
+      "promotionCost": {
+        "Food": 360,
+        "Steel": 180,
+        "Oil": 72
+      },
+      "trainingSeconds": 120
+    }
+  ]
+}

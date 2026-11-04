@@ -1,0 +1,274 @@
+{
+  "skills": {
+    "1013": [
+      {
+        "kind": "rage",
+        "name": "Baikal Splendor",
+        "description": "For the next 3s, every basic attack has a 80% chance to deal additional DMG to the target (Damage Factor 4500)."
+      },
+      {
+        "kind": "passive",
+        "name": "Raging Blood",
+        "description": "Increases Squad Capacity by 12% and Rally Capacity by 12%."
+      },
+      {
+        "kind": "passive",
+        "name": "Bloodthirst",
+        "description": "If there are 2 or more types of troops in the Squad, increases Squad ATK by 24%."
+      },
+      {
+        "kind": "passive",
+        "name": "Drunken Rage",
+        "description": "Increases Squad DEF by 15% during Siege. Also increases DMG dealt to Lookout Towers by 30%."
+      },
+      {
+        "kind": "awakening",
+        "name": "Wartime",
+        "description": "For the next 3s, every basic attack has a 100% chance to deal additional DMG to the target (Damage Factor 4500)."
+      }
+    ],
+    "1033": [
+      {
+        "kind": "rage",
+        "name": "Fire Eating Grenade",
+        "description": "Deals direct DMG (Damage Factor: 4500) to target, and causes Burn DMG for the next 5s (Damage Factor: 900). Deals bonus DMG to Garrison Squads (Damage Factor: 3500)."
+      },
+      {
+        "kind": "passive",
+        "name": "Gunfire Symphony",
+        "description": "Increases DMG dealt to Lookout Towers by 30% during Siege. Also increases the amount of resources raided by 10%."
+      },
+      {
+        "kind": "passive",
+        "name": "Sinful Pleasure",
+        "description": "Squads' basic attacks have 10% chance to deal bonus DMG (Damage Factor: 3200) during Siege."
+      },
+      {
+        "kind": "passive",
+        "name": "Grenade Toss",
+        "description": "Increases Squad Capacity by 12% and Rally Capacity by 12%."
+      },
+      {
+        "kind": "awakening",
+        "name": "Explosive Tempo",
+        "description": "Basic attacks have 10% chance to reduce target's DMG by 8% and DEF by 20% for 3s."
+      }
+    ],
+    "1036": [
+      {
+        "kind": "rage",
+        "name": "Brutal Blow",
+        "description": "Pitches a spinning fastball, dealing DMG to up to 5 target Squads in a fan-shaped area in front (Damage Factor: 3800). Reduces targets' ATK, DEF, and HP by 30% for 2s."
+      },
+      {
+        "kind": "passive",
+        "name": "Energized",
+        "description": "Increases Squads' DMG dealt to Zombies by 25%. Heals some Lightly Wounded units after killing Zombies [color=#25%](<a href='95434'>Heal Factor</a>: 3800)."
+      },
+      {
+        "kind": "passive",
+        "name": "Baseball Star",
+        "description": "When leading 2 or more troop types, increases Squad ATK by 24%."
+      },
+      {
+        "kind": "passive",
+        "name": "Countercurrent Swing",
+        "description": "Reduces Counter DMG taken by 14%, and increases Rally Capacity by 12%."
+      },
+      {
+        "kind": "awakening",
+        "name": "Death Home Run",
+        "description": "Pitches a spinning fastball, dealing DMG to up to 5 target Squads in a fan-shaped area in front (Damage Factor: 4600). Reduces targets' ATK, DEF, and HP by 35% for 2s."
+      }
+    ],
+    "1040": [
+      {
+        "kind": "rage",
+        "name": "Hometown Nostalgia",
+        "description": "Increases Squad ATK by 45% and DEF by 45%, and gains an additional 20 Rage Points from each basic attack. Lasts 5s."
+      },
+      {
+        "kind": "passive",
+        "name": "Harmony First",
+        "description": "Reduces Squads' DMG taken by 7.5%. Also has 10% chance of healing when DMG is taken [color=#7.5%](<a href='95434'>Heal Factor</a>: 1500). This effect can be triggered only once in 6s."
+      },
+      {
+        "kind": "passive",
+        "name": "Earthly Desire",
+        "description": "Increases Rally Capacity by 15%. Also increases DMG dealt by Squad by 11% during Siege."
+      },
+      {
+        "kind": "passive",
+        "name": "Breach of Trust",
+        "description": "Increases Squad ATK by 18% and DEF by 18%."
+      },
+      {
+        "kind": "awakening",
+        "name": "Storm Command",
+        "description": "Increases Squad ATK by 55% and DEF by 55%, and gains an additional 25 Rage Points from each basic attack. Lasts 5s."
+      }
+    ],
+    "1061": [
+      {
+        "kind": "rage",
+        "name": "End's Awakening",
+        "description": "Deals DMG to the enemy (Damage Factor 8000, reduced to 4000 when acting as Vice-General). At the same time, reduces DEF of the attacked Squad by 25% for 3s."
+      },
+      {
+        "kind": "passive",
+        "name": "Desperate Escape",
+        "description": "Increases DMG dealt to Zombies by 25%. When attacking a Zombie, there is a 10% chance to heal Lightly Wounded Squads by [color=#25%](<a href='95434'>Heal Factor</a>: 1500)."
+      },
+      {
+        "kind": "passive",
+        "name": "Omen of Disaster",
+        "description": "When using a basic attack, there is a 20% chance to reduce Skill DMG taken by 25% for 3s."
+      },
+      {
+        "kind": "passive",
+        "name": "Zombie Herding",
+        "description": "Increases Squad ATK by 12% and DEF by 12%."
+      },
+      {
+        "kind": "awakening",
+        "name": "Wasteland Eulogy",
+        "description": "Deals DMG to the enemy (Damage Factor 9600, reduced to 4800 when acting as Vice-General). At the same time, reduces DEF of the attacked Squad by 30% for 3s."
+      }
+    ],
+    "1090": [
+      {
+        "kind": "rage",
+        "name": "Body Weapon",
+        "description": "Deals DMG to the target (Damage Factor: 12500). If garrisoning, increases this skill's DMG by 15%."
+      },
+      {
+        "kind": "passive",
+        "name": "Evolutionary Leader",
+        "description": "Increases own Squad ATK by 17%, and increases Squad HP by 17%."
+      },
+      {
+        "kind": "passive",
+        "name": "Supervisor Privileges",
+        "description": "Reduces Skill DMG taken by 17%. When Squad contains 2 or more types of Troops, increases Squad ATK by 20%."
+      },
+      {
+        "kind": "passive",
+        "name": "Survival of the Fittest",
+        "description": "When garrisoning, increases Squad HP by 20%. Basic attacks have a 20% chance to deal additional DMG to the target [color=#20%](Damage Factor: 1920)."
+      },
+      {
+        "kind": "awakening",
+        "name": "Natural Evolution",
+        "description": "Deals DMG to the target (Damage Factor: 13750). If garrisoning, increases this skill's DMG by 20%."
+      }
+    ],
+    "1091": [
+      {
+        "kind": "rage",
+        "name": "Queen's Troops",
+        "description": "Increases ATK by 38% and DEF by 38% for you and nearby allies. Lasts 4s. Also instantly restores 60 Rage to them. Affects up to 3 Squads."
+      },
+      {
+        "kind": "passive",
+        "name": "Queen's Trap",
+        "description": "Increases Squad DEF by 24% and Travel Speed by 20%."
+      },
+      {
+        "kind": "passive",
+        "name": "Queen vs Pawn",
+        "description": "Increases Squad ATK by 20%. Increases basic attack DMG by 20% if the remaining Squad Size is less than 50%."
+      },
+      {
+        "kind": "passive",
+        "name": "Queen's Defense",
+        "description": "Every 10s, grants a <a href='95433'>Shield</a> (Shield Factor: 2800) to you and nearby allies. Lasts 3s. Affects up to 3 Squads."
+      },
+      {
+        "kind": "awakening",
+        "name": "Queen's Gambit",
+        "description": "Increases ATK by 42% and DEF by 42% for you and nearby allies. Lasts 4s. Also instantly restores 60 Rage to them. Affects up to 5 Squads."
+      }
+    ],
+    "1106": [
+      {
+        "kind": "rage",
+        "name": "Blossoming Life",
+        "description": "Reduces Skill DMG taken by 20% for 4s, and grants a status to self and nearby allies. Increases the target's DMG by 25% for 4s if their remaining Squad Size is greater than 50%. When the target's Squad Size is less than 50%, heal Lightly Wounded Squads [color=#20%](<a href='95434'>Heal Factor</a>: 3000) and reduces their DMG taken by 15% for 4s. Affects up to 5 Squads."
+      },
+      {
+        "kind": "passive",
+        "name": "Lingering Miasma",
+        "description": "After using a Rage Skill, reduces HP and TRVL SPD of up to 5 enemies by 30% and 40% respectively for 3s."
+      },
+      {
+        "kind": "passive",
+        "name": "Spore Parasitism",
+        "description": "Increases Squad HP by 20%, TRVL SPD by 20%, and Squad Capacity by 10%."
+      },
+      {
+        "kind": "passive",
+        "name": "Photosynthetic Assimilation",
+        "description": "Reduces Counter DMG taken by 20%. When taking Skill DMG, gains a <a href='95433'>Shield</a> [color=#20%](Shield Factor: 3000) for 2s. This effect can be triggered only once in 6s."
+      },
+      {
+        "kind": "awakening",
+        "name": "Decay and Wither",
+        "description": "After using a Rage Skill, reduces HP and TRVL SPD of up to 5 enemies by 35% and 40% respectively for 3s. Also, reduces their Rage Recovery Speed by 20% during this time."
+      }
+    ],
+    "1114": [
+      {
+        "kind": "rage",
+        "name": "Grand Opening",
+        "description": "Deals DMG to the current target (Damage Factor: 14000). When not Rallying or Garrisoned, increases DMG received by 3 nearby enemy Squads by 10% for 3s."
+      },
+      {
+        "kind": "passive",
+        "name": "Lead the Trend",
+        "description": "Squad ATK increases by 30%, and Travel Speed increases by 15%."
+      },
+      {
+        "kind": "passive",
+        "name": "Intimidating Stance",
+        "description": "When not Rallying or Garrisoned, increases Squad HP by 30%. When Flanked, reduces Skill DMG taken by 8%."
+      },
+      {
+        "kind": "passive",
+        "name": "Deadly Elegance",
+        "description": "When not Rallying or Garrisoned, increases Skill DMG by 20%, and gains 30 Rage every 10s."
+      },
+      {
+        "kind": "awakening",
+        "name": "Couture Gala",
+        "description": "When serving as Leader and not Rallying or Garrisoned, gains additional effects based on the type of Squad led. Infantry-only Squad: Using \"Grand Opening\" increases Squad DMG by 3% for 20s. This effect stacks up to 5 times, and remains active when out of combat. Rider-only Squad: \"Grand Opening\" deals bonus DMG [color=#3%](Damage Factor: 3500) to 2 other nearby targets. Ranged-only Squad: Increases the DMG of \"Grand Opening\" by 20%."
+      }
+    ],
+    "1123": [
+      {
+        "kind": "rage",
+        "name": "Precision Volley",
+        "description": "Deals DMG to the target (Damage Factor: 12000) and increases ATK of up to 3 nearby allies by 20% for 3s."
+      },
+      {
+        "kind": "passive",
+        "name": "Graceful Steps",
+        "description": "Squad ATK increases by 30%, and Travel Speed increases by 15%."
+      },
+      {
+        "kind": "passive",
+        "name": "Glorious Command",
+        "description": "Increases Squad DEF by 30%. Increases Skill DMG by 15% when flanking the enemy."
+      },
+      {
+        "kind": "passive",
+        "name": "Blade of the Heavens",
+        "description": "Increases Squad HP by 20%. Basic attacks have a 20% chance to deal additional DMG to the target [color=#20%](Damage Factor: 2000)."
+      },
+      {
+        "kind": "awakening",
+        "name": "Desert Leader",
+        "description": "Increases Shelter Construction Speed by 15%. This effect applies even when not deployed."
+      }
+    ]
+  }
+}

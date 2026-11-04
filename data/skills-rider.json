@@ -1,0 +1,436 @@
+{
+  "skills": {
+    "1009": [
+      {
+        "kind": "rage",
+        "name": "Burning Hatred",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Gang Fight",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Wild Hunter",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Rampage of Doom",
+        "description": ""
+      },
+      {
+        "kind": "awakening",
+        "name": "Daredevil",
+        "description": ""
+      }
+    ],
+    "1011": [
+      {
+        "kind": "rage",
+        "name": "Bloody Saw",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Doom Girl",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Crazy Obsession",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Pink Lightning",
+        "description": ""
+      },
+      {
+        "kind": "awakening",
+        "name": "Chainsaw Dance",
+        "description": ""
+      }
+    ],
+    "1034": [
+      {
+        "kind": "rage",
+        "name": "Dual Fire",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Dodge and Strike",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "High Caliber",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Embers of Revenge",
+        "description": ""
+      },
+      {
+        "kind": "awakening",
+        "name": "Cool Heroine",
+        "description": ""
+      }
+    ],
+    "1083": [
+      {
+        "kind": "rage",
+        "name": "Fatal Claw",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Wild Rampage",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Piercing Fangs",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Savage Hunt",
+        "description": ""
+      },
+      {
+        "kind": "awakening",
+        "name": "Lion's Might",
+        "description": ""
+      }
+    ],
+    "1084": [
+      {
+        "kind": "rage",
+        "name": "Focused Strike",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Recycle",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Base Sets Sail",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Resource Adjustment",
+        "description": ""
+      },
+      {
+        "kind": "awakening",
+        "name": "Precision Air Strike",
+        "description": ""
+      }
+    ],
+    "1085": [
+      {
+        "kind": "rage",
+        "name": "Enforce Justice",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Tactical Rollover",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Ambush",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "High Noon",
+        "description": ""
+      },
+      {
+        "kind": "awakening",
+        "name": "Mounted Law",
+        "description": ""
+      }
+    ],
+    "1098": [
+      {
+        "kind": "rage",
+        "name": "Accelerate and Overtake",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Steady Airflow",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Champion Declaration",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Pit Stop",
+        "description": ""
+      },
+      {
+        "kind": "awakening",
+        "name": "Rapid Duel",
+        "description": ""
+      }
+    ],
+    "1099": [
+      {
+        "kind": "rage",
+        "name": "Unethical Thief",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Lost in the Moonlight",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Lashing Whip",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Wits and Eloquence",
+        "description": ""
+      },
+      {
+        "kind": "awakening",
+        "name": "Shadow Stalker",
+        "description": ""
+      }
+    ],
+    "1104": [
+      {
+        "kind": "rage",
+        "name": "Crimson Slaughter",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Wolfblood Pact",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "War Howls",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Crimson Moon Waltz",
+        "description": ""
+      },
+      {
+        "kind": "awakening",
+        "name": "Hunting Vestige",
+        "description": ""
+      }
+    ],
+    "1105": [
+      {
+        "kind": "rage",
+        "name": "Avalanche Interception",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Cold Snap",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Polar Rush",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Prism Armor",
+        "description": ""
+      },
+      {
+        "kind": "awakening",
+        "name": "Blizzard Barrage",
+        "description": ""
+      }
+    ],
+    "1112": [
+      {
+        "kind": "rage",
+        "name": "Shark Spin",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Trick Shooting",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Stunt Skating",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Freestyle",
+        "description": ""
+      },
+      {
+        "kind": "awakening",
+        "name": "Street Vaulter",
+        "description": ""
+      }
+    ],
+    "1113": [
+      {
+        "kind": "rage",
+        "name": "Paint Bomb",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Frantic Graffiti",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Rainbow Slide",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Neon Shuttle",
+        "description": ""
+      },
+      {
+        "kind": "awakening",
+        "name": "Inspiration Spray",
+        "description": ""
+      }
+    ],
+    "1119": [
+      {
+        "kind": "rage",
+        "name": "Mach Impact",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Overdrive Engine",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Stunt Skating",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Aerial Suppression",
+        "description": ""
+      },
+      {
+        "kind": "awakening",
+        "name": "High-Velocity Airflow",
+        "description": ""
+      }
+    ],
+    "1120": [
+      {
+        "kind": "rage",
+        "name": "Flock Command",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Ode to Nature",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Go With the Wind",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Highland Blessing",
+        "description": ""
+      },
+      {
+        "kind": "awakening",
+        "name": "Soul's Journey Home",
+        "description": ""
+      }
+    ],
+    "1201": [
+      {
+        "kind": "rage",
+        "name": "Hakuro no Mai",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Chou Hissatsu Shinobi-Bachi",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Kachousen",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Musasabi no Mai",
+        "description": ""
+      },
+      {
+        "kind": "awakening",
+        "name": "Houou no Mai",
+        "description": ""
+      }
+    ],
+    "1204": [
+      {
+        "kind": "rage",
+        "name": "Power of the Titans",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Omni-directional mobility",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Indomitable Will",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Precision Slice",
+        "description": ""
+      },
+      {
+        "kind": "awakening",
+        "name": "Attack Roar",
+        "description": ""
+      }
+    ]
+  }
+}

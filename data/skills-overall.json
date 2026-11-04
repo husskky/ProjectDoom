@@ -1,0 +1,85 @@
+{
+  "skills": {
+    "1062": [
+      {
+        "kind": "rage",
+        "name": "Invasive Attack",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Overload",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Keen Perception",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Lucky Break",
+        "description": ""
+      },
+      {
+        "kind": "awakening",
+        "name": "Homecoming",
+        "description": ""
+      }
+    ],
+    "1070": [
+      {
+        "kind": "rage",
+        "name": "Dogma of Salvation",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Heavenly Baptism",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Holy Protection",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Divine Grace",
+        "description": ""
+      },
+      {
+        "kind": "awakening",
+        "name": "Transcendental",
+        "description": ""
+      }
+    ],
+    "1094": [
+      {
+        "kind": "rage",
+        "name": "Logging Timber",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Forest Ranger",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Partner Assistance",
+        "description": ""
+      },
+      {
+        "kind": "passive",
+        "name": "Off-Road Patrol",
+        "description": ""
+      },
+      {
+        "kind": "awakening",
+        "name": "Parental Love",
+        "description": ""
+      }
+    ]
+  }
+}

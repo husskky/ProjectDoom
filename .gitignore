@@ -1,0 +1,30 @@
+# Original game files and local reverse-engineering inputs
+DoomsdayData/
+
+# Generated Unity decompression and parsed exports
+RevEngPhase/artifacts/
+
+# Dependencies and generated build output
+node_modules/
+dist/
+build/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+
+# Operating system and editor files
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/

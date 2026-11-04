@@ -1,0 +1,16 @@
+{
+  "version": "1.62.0",
+  "files": {
+    "heroes": "heroes.json",
+    "troops": "troops.json",
+    "research": "research.json",
+    "changes": "hero-changes.json",
+    "skills": {
+      "Ranged": "skills-ranged.json",
+      "Leader": "skills-leader.json",
+      "Infantry": "skills-infantry.json",
+      "Rider": "skills-rider.json",
+      "Overall": "skills-overall.json"
+    }
+  }
+}
