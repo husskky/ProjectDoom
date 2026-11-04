@@ -1,179 +1,2050 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Ranged Desk</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=Public+Sans:wght@400;500;600&display=swap">
-<style>
-:root{--bg:#e9edee;--pan:#f6f8f8;--ink:#17242c;--mut:#566872;--line:#c4cfd3;--acc:#1f7d73;--accInk:#fff;--flare:#c2441f;--ok:#1f7d4a;--head:"Barlow Semi Condensed","Arial Narrow",sans-serif;--body:"Public Sans","Segoe UI Variable","Segoe UI",system-ui,sans-serif;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1519;--pan:#152026;--ink:#e3ebee;--mut:#8fa3ac;--line:#27363e;--acc:#46c2b2;--accInk:#04201c;--flare:#ff8a65;--ok:#6fd49a;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#0e1519;--pan:#152026;--ink:#e3ebee;--mut:#8fa3ac;--line:#27363e;--acc:#46c2b2;--accInk:#04201c;--flare:#ff8a65;--ok:#6fd49a;color-scheme:dark}
-html{scroll-padding-top:env(safe-area-inset-top,0px)}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 var(--body)}
-.app{display:grid;grid-template-columns:230px minmax(0,1fr);min-height:100vh}
-.rail{display:flex;flex-direction:column;gap:4px;padding:24px 14px;border-right:1px solid var(--line);position:sticky;top:0;align-self:start;min-height:100vh}
-.brand{font:700 1.6rem var(--head);margin:0 0 14px 12px}
-.rail a{padding:10px 12px;border-radius:4px;color:var(--ink);text-decoration:none;font-weight:500}
-.rail a[aria-current=page]{background:var(--acc);color:var(--accInk)}
-.rail .fine{margin:auto 12px 0}
-main{padding:28px 28px 48px;max-width:980px}
-h1{font:600 2.1rem/1.15 var(--head);margin:0 0 6px}
-h2{font:600 1.3rem var(--head);margin:28px 0 8px}
-.lead,.fine{color:var(--mut)}.fine{font-size:.85rem}
-.bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:12px 0}
-button,select,input,textarea{font:inherit;color:var(--ink)}
-button,select{min-height:44px;padding:0 16px;border:1px solid var(--line);border-radius:4px;background:var(--pan);cursor:pointer}
-button.pri{background:var(--acc);border-color:var(--acc);color:var(--accInk);font-weight:600}
-input[type=number]{width:72px;min-height:40px;padding:0 8px;border:1px solid var(--line);border-radius:4px;background:var(--pan);text-align:right}
-input[type=number].w{width:130px}
-input[type=search]{min-height:44px;padding:0 12px;border:1px solid var(--line);border-radius:4px;background:var(--pan);width:220px}
-textarea{width:100%;padding:10px;border:1px solid var(--line);border-radius:4px;background:var(--pan)}
-:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
-.hero{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:flex-end;padding:16px 0;border-bottom:1px solid var(--line)}
-.nm{flex:1 1 100%;display:flex;gap:10px;align-items:baseline}.nm b{font:600 1.25rem var(--head)}.nm span{color:var(--mut);font-size:.9rem}
-.f{display:flex;flex-direction:column;gap:2px;font-size:.82rem;color:var(--mut)}
-.c{display:flex;gap:6px;align-items:center;min-height:44px}
-.empty{padding:20px 0;color:var(--mut)}
-.tot{font-size:1.1rem;margin:16px 0}.tot b{font:700 2.4rem var(--head);margin-right:6px}
-.plan{list-style:none;margin:0;padding:0}
-.plan li{display:grid;grid-template-columns:52px 1fr;gap:6px;padding:14px 0;border-top:1px solid var(--line)}
-.plan .n{font:700 2.2rem/1 var(--head);color:var(--acc)}
-.plan b{font:600 1.2rem var(--head)}
-.good{color:var(--ok);font-weight:600}.flare{color:var(--flare)}
-.wrap{overflow-x:auto}
-table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
-th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
-th:first-child,td:first-child{text-align:left}th{color:var(--mut);font-weight:500}
-ul{padding-left:20px}
-details{border-top:1px solid var(--line);padding:6px 0}summary{cursor:pointer;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;min-height:44px}summary b{font:600 1.2rem var(--head)}summary span{color:var(--mut);font-size:.9rem}
-.sk p{margin:2px 0 12px}.sk span{color:var(--mut);font-size:.85rem}.cols{display:grid;grid-template-columns:1fr 1fr;gap:28px}.rail .s{display:none}
-[hidden]{display:none!important}
-@media(max-width:800px){
-.app{display:block}
-.rail{position:fixed;left:0;right:0;bottom:0;min-height:0;flex-direction:row;gap:0;padding:0 0 env(safe-area-inset-bottom,0px);border:0;border-top:1px solid var(--line);background:var(--pan);z-index:5}
-.rail a{flex:1;text-align:center;border-radius:0;padding:14px 2px;font-size:.78rem}.rail .l{display:none}.rail .s{display:inline}.cols{grid-template-columns:1fr}
-.brand,.rail .fine{display:none}
-main{padding:20px 16px 96px}h1{font-size:1.8rem}
-}
-</style></head>
-<body><div class="app">
-<nav class="rail" aria-label="Tools"><div class="brand">Ranged Desk</div>
-<a href="#roster" data-v="roster"><span class="l">My roster</span><span class="s">Roster</span></a><a href="#legacy" data-v="legacy"><span class="l">Legacy planner</span><span class="s">Legacy</span></a><a href="#troops" data-v="troops"><span class="l">Troops and research</span><span class="s">Troops</span></a><a href="#heroes" data-v="heroes"><span class="l">Hero database</span><span class="s">Heroes</span></a><a href="#squad" data-v="squad"><span class="l">Squad builder</span><span class="s">Squad</span></a>
-<p class="fine" id="fine"></p></nav>
-<main>
-<section id="roster"><h1>My roster</h1><p class="lead">Add the heroes you own. Every tool reads this list, and it stays in this browser.</p>
-<div class="bar"><select id="add" aria-label="Hero"></select><button id="addb" class="pri">Add hero</button></div>
-<div id="list"></div>
-<h2>Backup</h2><p class="lead">Export your roster to move it to another device, or import a saved one.</p>
-<textarea id="bk" rows="3" aria-label="Roster backup"></textarea>
-<div class="bar"><button id="exp">Export</button><button id="imp">Import</button><span id="msg" role="status"></span></div></section>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Ranged Desk</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=Public+Sans:wght@400;500;600&display=swap"
+    />
+    <style>
+      :root {
+        --bg: #e9edee;
+        --pan: #f6f8f8;
+        --ink: #17242c;
+        --mut: #566872;
+        --line: #c4cfd3;
+        --acc: #1f7d73;
+        --accInk: #fff;
+        --flare: #c2441f;
+        --ok: #1f7d4a;
+        --head: 'Barlow Semi Condensed', 'Arial Narrow', sans-serif;
+        --body: 'Public Sans', 'Segoe UI Variable', 'Segoe UI', system-ui, sans-serif;
+        color-scheme: light;
+        box-sizing: border-box;
+        padding-top: env(safe-area-inset-top, 0px);
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme='light']) {
+          --bg: #0e1519;
+          --pan: #152026;
+          --ink: #e3ebee;
+          --mut: #8fa3ac;
+          --line: #27363e;
+          --acc: #46c2b2;
+          --accInk: #04201c;
+          --flare: #ff8a65;
+          --ok: #6fd49a;
+          color-scheme: dark;
+        }
+      }
+      :root[data-theme='dark'] {
+        --bg: #0e1519;
+        --pan: #152026;
+        --ink: #e3ebee;
+        --mut: #8fa3ac;
+        --line: #27363e;
+        --acc: #46c2b2;
+        --accInk: #04201c;
+        --flare: #ff8a65;
+        --ok: #6fd49a;
+        color-scheme: dark;
+      }
+      html {
+        scroll-padding-top: env(safe-area-inset-top, 0px);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font: 16px/1.55 var(--body);
+      }
+      .app {
+        display: grid;
+        grid-template-columns: 230px minmax(0, 1fr);
+        min-height: 100vh;
+      }
+      .rail {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        padding: 24px 14px;
+        border-right: 1px solid var(--line);
+        position: sticky;
+        top: 0;
+        align-self: start;
+        min-height: 100vh;
+      }
+      .brand {
+        font: 700 1.6rem var(--head);
+        margin: 0 0 14px 12px;
+      }
+      .rail a {
+        padding: 10px 12px;
+        border-radius: 4px;
+        color: var(--ink);
+        text-decoration: none;
+        font-weight: 500;
+      }
+      .rail a[aria-current='page'] {
+        background: var(--acc);
+        color: var(--accInk);
+      }
+      .rail .fine {
+        margin: auto 12px 0;
+      }
+      main {
+        padding: 28px 28px 48px;
+        max-width: 980px;
+      }
+      h1 {
+        font: 600 2.1rem/1.15 var(--head);
+        margin: 0 0 6px;
+      }
+      h2 {
+        font: 600 1.3rem var(--head);
+        margin: 28px 0 8px;
+      }
+      .lead,
+      .fine {
+        color: var(--mut);
+      }
+      .fine {
+        font-size: 0.85rem;
+      }
+      .bar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        margin: 12px 0;
+      }
+      button,
+      select,
+      input,
+      textarea {
+        font: inherit;
+        color: var(--ink);
+      }
+      button,
+      select {
+        min-height: 44px;
+        padding: 0 16px;
+        border: 1px solid var(--line);
+        border-radius: 4px;
+        background: var(--pan);
+        cursor: pointer;
+      }
+      button.pri {
+        background: var(--acc);
+        border-color: var(--acc);
+        color: var(--accInk);
+        font-weight: 600;
+      }
+      input[type='number'] {
+        width: 72px;
+        min-height: 40px;
+        padding: 0 8px;
+        border: 1px solid var(--line);
+        border-radius: 4px;
+        background: var(--pan);
+        text-align: right;
+      }
+      input[type='number'].w {
+        width: 130px;
+      }
+      input[type='search'] {
+        min-height: 44px;
+        padding: 0 12px;
+        border: 1px solid var(--line);
+        border-radius: 4px;
+        background: var(--pan);
+        width: 220px;
+      }
+      textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid var(--line);
+        border-radius: 4px;
+        background: var(--pan);
+      }
+      :focus-visible {
+        outline: 2px solid var(--acc);
+        outline-offset: 2px;
+      }
+      .hero {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 14px;
+        align-items: flex-end;
+        padding: 16px 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .nm {
+        flex: 1 1 100%;
+        display: flex;
+        gap: 10px;
+        align-items: baseline;
+      }
+      .nm b {
+        font: 600 1.25rem var(--head);
+      }
+      .nm span {
+        color: var(--mut);
+        font-size: 0.9rem;
+      }
+      .f {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        font-size: 0.82rem;
+        color: var(--mut);
+      }
+      .c {
+        display: flex;
+        gap: 6px;
+        align-items: center;
+        min-height: 44px;
+      }
+      .empty {
+        padding: 20px 0;
+        color: var(--mut);
+      }
+      .tot {
+        font-size: 1.1rem;
+        margin: 16px 0;
+      }
+      .tot b {
+        font: 700 2.4rem var(--head);
+        margin-right: 6px;
+      }
+      .plan {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .plan li {
+        display: grid;
+        grid-template-columns: 52px 1fr;
+        gap: 6px;
+        padding: 14px 0;
+        border-top: 1px solid var(--line);
+      }
+      .plan .n {
+        font: 700 2.2rem/1 var(--head);
+        color: var(--acc);
+      }
+      .plan b {
+        font: 600 1.2rem var(--head);
+      }
+      .good {
+        color: var(--ok);
+        font-weight: 600;
+      }
+      .flare {
+        color: var(--flare);
+      }
+      .wrap {
+        overflow-x: auto;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-variant-numeric: tabular-nums;
+      }
+      th,
+      td {
+        padding: 8px 10px;
+        border-bottom: 1px solid var(--line);
+        text-align: right;
+        white-space: nowrap;
+      }
+      th:first-child,
+      td:first-child {
+        text-align: left;
+      }
+      th {
+        color: var(--mut);
+        font-weight: 500;
+      }
+      ul {
+        padding-left: 20px;
+      }
+      details {
+        border-top: 1px solid var(--line);
+        padding: 6px 0;
+      }
+      summary {
+        cursor: pointer;
+        display: flex;
+        gap: 10px;
+        align-items: baseline;
+        flex-wrap: wrap;
+        min-height: 44px;
+      }
+      summary b {
+        font: 600 1.2rem var(--head);
+      }
+      summary span {
+        color: var(--mut);
+        font-size: 0.9rem;
+      }
+      .sk p {
+        margin: 2px 0 12px;
+      }
+      .sk span {
+        color: var(--mut);
+        font-size: 0.85rem;
+      }
+      .cols {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+      }
+      .rail .s {
+        display: none;
+      }
+      [hidden] {
+        display: none !important;
+      }
+      @media (max-width: 800px) {
+        .app {
+          display: block;
+        }
+        .rail {
+          position: fixed;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          min-height: 0;
+          flex-direction: row;
+          gap: 0;
+          padding: 0 0 env(safe-area-inset-bottom, 0px);
+          border: 0;
+          border-top: 1px solid var(--line);
+          background: var(--pan);
+          z-index: 5;
+        }
+        .rail a {
+          flex: 1;
+          text-align: center;
+          border-radius: 0;
+          padding: 14px 2px;
+          font-size: 0.78rem;
+        }
+        .rail .l {
+          display: none;
+        }
+        .rail .s {
+          display: inline;
+        }
+        .cols {
+          grid-template-columns: 1fr;
+        }
+        .brand,
+        .rail .fine {
+          display: none;
+        }
+        main {
+          padding: 20px 16px 96px;
+        }
+        h1 {
+          font-size: 1.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <nav class="rail" aria-label="Tools">
+        <div class="brand">Ranged Desk</div>
+        <a href="#roster" data-v="roster"
+          ><span class="l">My roster</span><span class="s">Roster</span></a
+        ><a href="#legacy" data-v="legacy"
+          ><span class="l">Legacy planner</span><span class="s">Legacy</span></a
+        ><a href="#troops" data-v="troops"
+          ><span class="l">Troops and research</span><span class="s">Troops</span></a
+        ><a href="#heroes" data-v="heroes"
+          ><span class="l">Hero database</span><span class="s">Heroes</span></a
+        ><a href="#squad" data-v="squad"
+          ><span class="l">Squad builder</span><span class="s">Squad</span></a
+        >
+        <p class="fine" id="fine"></p>
+      </nav>
+      <main>
+        <section id="roster">
+          <h1>My roster</h1>
+          <p class="lead">
+            Add the heroes you own. Every tool reads this list, and it stays in this browser.
+          </p>
+          <div class="bar">
+            <select id="add" aria-label="Hero"></select
+            ><button id="addb" class="pri">Add hero</button>
+          </div>
+          <div id="list"></div>
+          <h2>Backup</h2>
+          <p class="lead">
+            Export your roster to move it to another device, or import a saved one.
+          </p>
+          <textarea id="bk" rows="3" aria-label="Roster backup"></textarea>
+          <div class="bar">
+            <button id="exp">Export</button><button id="imp">Import</button
+            ><span id="msg" role="status"></span>
+          </div>
+        </section>
 
-<section id="legacy" hidden><h1>Legacy planner</h1><p class="lead">The best swaps from your unused donors into the heroes you use. A swap exchanges level, rank and skill levels between two Legendary heroes.</p>
-<label class="c">Swap chances <input type="number" id="ch" min="1" max="20"></label>
-<div id="plan"></div></section>
+        <section id="legacy" hidden>
+          <h1>Legacy planner</h1>
+          <p class="lead">
+            The best swaps from your unused donors into the heroes you use. A swap exchanges level,
+            rank and skill levels between two Legendary heroes.
+          </p>
+          <label class="c">Swap chances <input type="number" id="ch" min="1" max="20" /></label>
+          <div id="plan"></div>
+        </section>
 
-<section id="troops" hidden><h1>Troops and research</h1><p class="lead">Ranged troops only for now. Convert tiers, then plan the research.</p>
-<div class="bar"><label class="c">From <select id="from"></select></label><label class="c">To <select id="to"></select></label><label class="c">Troops <input type="number" class="w" id="cnt" min="0" step="10000"></label></div>
-<div id="tout"></div>
-<h2>Research</h2>
-<label class="c">Research speed bonus % <input type="number" id="sp" min="0"></label>
-<div class="wrap"><table id="rtab"></table></div>
-<p class="tot" id="path"></p>
-<p class="fine">Times are base times divided by one plus your bonus, which is an assumption. Costs are what is left from the level you enter.</p></section>
+        <section id="troops" hidden>
+          <h1>Troops and research</h1>
+          <p class="lead">Ranged troops only for now. Convert tiers, then plan the research.</p>
+          <div class="bar">
+            <label class="c"
+              >From
+              <select id="from"></select></label
+            ><label class="c"
+              >To
+              <select id="to"></select></label
+            ><label class="c"
+              >Troops <input type="number" class="w" id="cnt" min="0" step="10000"
+            /></label>
+          </div>
+          <div id="tout"></div>
+          <h2>Research</h2>
+          <label class="c">Research speed bonus % <input type="number" id="sp" min="0" /></label>
+          <div class="wrap"><table id="rtab"></table></div>
+          <p class="tot" id="path"></p>
+          <p class="fine">
+            Times are base times divided by one plus your bonus, which is an assumption. Costs are
+            what is left from the level you enter.
+          </p>
+        </section>
 
-<section id="heroes" hidden><h1>Hero database</h1><p class="lead">Skills at their maximum level, straight from the game files. Ranged and Leader heroes have full text for now.</p>
-<div class="bar"><input type="search" id="hq" placeholder="Search by name" aria-label="Search heroes" class="w2"><select id="hs" aria-label="Squad type"></select><label class="c"><input type="checkbox" id="hso">Superheroes only</label></div>
-<div id="hl2"></div></section>
+        <section id="heroes" hidden>
+          <h1>Hero database</h1>
+          <p class="lead">
+            Skills at their maximum level, straight from the game files. Ranged and Leader heroes
+            have full text for now.
+          </p>
+          <div class="bar">
+            <input
+              type="search"
+              id="hq"
+              placeholder="Search by name"
+              aria-label="Search heroes"
+              class="w2"
+            /><select id="hs" aria-label="Squad type"></select
+            ><label class="c"><input type="checkbox" id="hso" />Superheroes only</label>
+          </div>
+          <div id="hl2"></div>
+        </section>
 
-<section id="squad" hidden><h1>Squad builder</h1><p class="lead">Pick a leader and an assistant from your roster to see what applies to each.</p>
-<div class="bar"><label class="c">Leader <select id="ld"></select></label><label class="c">Assistant <select id="as"></select></label></div>
-<div id="sq"></div></section>
-</main></div>
-<script>
-const D={"v":"1.62.0","heroes":[[1009,"Sven Schaefer","Rider","Siege",0,"Support"],[1011,"Catherine Calamity","Rider","-",0,"Skills"],[1013,"Peter Karelin","Leader","Siege",0,"Attack"],[1023,"Nakano Maaya","Ranged","General",0,"Skills"],[1031,"Raigoro","Infantry","Garrison",0,"Defense"],[1032,"Tom","Infantry","Garrison",0,"Defense"],[1033,"Hank Jannowitz","Leader","Siege",0,"Skills"],[1034,"Cynthia Calamity","Rider","-",0,"-"],[1036,"Lee Seung-won","Leader","-",0,"Support"],[1039,"Louis","Ranged","Garrison",0,"Skills"],[1040,"Master Jin","Leader","Siege",0,"Support"],[1061,"Jaden","Leader","-",0,"Attack"],[1062,"Maxine Wincott","Overall","Gather",0,"Support"],[1063,"Ammara","Infantry","General",0,"Skills"],[1070,"Martin","Overall","-",0,"Support"],[1080,"Chun","Ranged","General",0,"Skills"],[1081,"Thunder Peterson","Infantry","Garrison",0,"Defense"],[1082,"Johnny Kerry","Ranged","Siege",0,"Attack"],[1083,"Bella","Rider","General",0,"Skills"],[1084,"Jonathan","Rider","General",0,"Support"],[1085,"Elena","Rider","General",0,"Skills"],[1086,"Eddie","Infantry","Siege",0,"Defense"],[1087,"Robert","Infantry","General",0,"Skills"],[1088,"Jacob","Ranged","Garrison",0,"Defense"],[1089,"Julia","Ranged","General",0,"Skills"],[1090,"Victor Blackwood","Leader","Garrison",0,"Defense"],[1091,"Bianca Drake","Leader","General",0,"Support"],[1092,"Riven","Infantry","General",0,"Defense"],[1094,"Sara Vandermeer","Overall","Gather",0,"Support"],[1095,"Miyamoto Doichi","Infantry","General",0,"Skills"],[1096,"Bard","Ranged","Siege",1,"Defense"],[1097,"Lynne","Ranged","General",0,"Skills"],[1098,"Felix","Rider","General",0,"Skills"],[1099,"Chasey","Rider","Garrison",1,"Skills"],[1100,"Stella","Infantry","Siege",1,"Skills"],[1101,"Bodala","Infantry","General",0,"Skills"],[1102,"Ethan","Ranged","Garrison",1,"Skills"],[1103,"Sophie","Ranged","General",0,"Skills"],[1104,"Rubina","Rider","Siege",1,"Skills"],[1105,"Daryl","Rider","General",0,"Skills"],[1106,"Claude Le Blanc","Leader","Coop",0,"Support"],[1107,"Eileen Volt","Infantry","General",0,"Skills"],[1108,"Norah","Ranged","Siege",0,"Attack"],[1109,"Boyd Warden","Infantry","Garrison",1,"Skills"],[1110,"Cedric","Ranged","Siege",1,"Skills"],[1111,"Spectra","Ranged","General",0,"Skills"],[1112,"Rick Light","Rider","Garrison",1,"Attack"],[1113,"Janet Light","Rider","General",0,"Skills"],[1114,"Isabella Vincens","Leader","Coop",1,"Skills"],[1115,"Julien","Infantry","General",0,"Support"],[1116,"Sakura","Infantry","Siege",1,"Skills"],[1117,"Charon","Ranged","General",0,"Skills"],[1118,"Nova","Ranged","Garrison",1,"Skills"],[1119,"Maxwell","Rider","General",0,"-"],[1120,"Metok Tso","Rider","Siege",1,"Skills"],[1121,"Cassius","Infantry","Garrison",1,"Skills"],[1122,"Rozalia","Infantry","General",0,"Skills"],[1123,"Amir Suleiman","Leader","Coop",0,"Skills"],[1124,"Sebastian","Ranged","Siege",1,"Skills"],[1125,"Valeria Moretti","Ranged","General",0,"Support"],[1201,"Mai Shiranui","Rider","General",0,"-"],[1202,"Marco & Eri","Infantry","General",0,"Skills"],[1203,"Jack Bronte","Ranged","General",0,"Skills"],[1204,"Eren Yeager","Rider","General",0,"Skills"]],"troops":[[1,99,94,95,880,7,1,{"Food":70,"Wood":30},{"Food":28,"Wood":12},15],[2,129,122,124,840,9,2,{"Food":100,"Steel":50},{"Food":40,"Steel":20},30],[3,158,150,154,800,10,3,{"Food":150,"Steel":75,"Oil":5},{"Food":60,"Steel":30,"Oil":2},60],[4,178,169,173,760,11,5,{"Food":360,"Steel":180,"Oil":15},{"Food":144,"Steel":72,"Oil":6},80],[5,220,188,192,725,12,9,{"Food":500,"Steel":250,"Oil":100},{"Food":200,"Steel":100,"Oil":40},100],[6,254,207,222,690,14,15,{"Food":900,"Steel":450,"Oil":180},{"Food":360,"Steel":180,"Oil":72},120]],"research":[[2007,"Optical Sight",[[28800,{"Food":750000,"Wood":750000,"Steel":375000,"Oil":225000}],[43800,{"Food":900000,"Wood":900000,"Steel":450000,"Oil":270000}],[66600,{"Food":1080000,"Wood":1080000,"Steel":540000,"Oil":324000}],[101400,{"Food":1296000,"Wood":1296000,"Steel":648000,"Oil":388800}],[154200,{"Food":1556000,"Wood":1556000,"Steel":778000,"Oil":466800}],[234600,{"Food":1868000,"Wood":1868000,"Steel":934000,"Oil":560400}],[357000,{"Food":2242000,"Wood":2242000,"Steel":1121000,"Oil":672600}],[543000,{"Food":2691000,"Wood":2691000,"Steel":1345500,"Oil":807300}],[825600,{"Food":3230000,"Wood":3230000,"Steel":1615000,"Oil":969000}],[1255200,{"Food":3876000,"Wood":3876000,"Steel":1938000,"Oil":1162800}],[1908000,{"Food":5427000,"Wood":5427000,"Steel":2713500,"Oil":1628100}],[2900400,{"Food":7598000,"Wood":7598000,"Steel":3799000,"Oil":2279400}],[4408800,{"Food":10638000,"Wood":10638000,"Steel":5319000,"Oil":3191400}],[6701400,{"Food":14894000,"Wood":14894000,"Steel":7447000,"Oil":4468200}],[10186200,{"Food":20852000,"Wood":20852000,"Steel":10426000,"Oil":6255600}]]],[2008,"Shooting Position",[[28800,{"Food":750000,"Wood":750000,"Steel":375000,"Oil":225000}],[43800,{"Food":900000,"Wood":900000,"Steel":450000,"Oil":270000}],[66600,{"Food":1080000,"Wood":1080000,"Steel":540000,"Oil":324000}],[101400,{"Food":1296000,"Wood":1296000,"Steel":648000,"Oil":388800}],[154200,{"Food":1556000,"Wood":1556000,"Steel":778000,"Oil":466800}],[234600,{"Food":1868000,"Wood":1868000,"Steel":934000,"Oil":560400}],[357000,{"Food":2242000,"Wood":2242000,"Steel":1121000,"Oil":672600}],[543000,{"Food":2691000,"Wood":2691000,"Steel":1345500,"Oil":807300}],[825600,{"Food":3230000,"Wood":3230000,"Steel":1615000,"Oil":969000}],[1255200,{"Food":3876000,"Wood":3876000,"Steel":1938000,"Oil":1162800}],[1908000,{"Food":5427000,"Wood":5427000,"Steel":2713500,"Oil":1628100}],[2900400,{"Food":7598000,"Wood":7598000,"Steel":3799000,"Oil":2279400}],[4408800,{"Food":10638000,"Wood":10638000,"Steel":5319000,"Oil":3191400}],[6701400,{"Food":14894000,"Wood":14894000,"Steel":7447000,"Oil":4468200}],[10186200,{"Food":20852000,"Wood":20852000,"Steel":10426000,"Oil":6255600}]]],[2009,"Camo Finish",[[28800,{"Food":750000,"Wood":750000,"Steel":375000,"Oil":225000}],[43800,{"Food":900000,"Wood":900000,"Steel":450000,"Oil":270000}],[66600,{"Food":1080000,"Wood":1080000,"Steel":540000,"Oil":324000}],[101400,{"Food":1296000,"Wood":1296000,"Steel":648000,"Oil":388800}],[154200,{"Food":1556000,"Wood":1556000,"Steel":778000,"Oil":466800}],[234600,{"Food":1868000,"Wood":1868000,"Steel":934000,"Oil":560400}],[357000,{"Food":2242000,"Wood":2242000,"Steel":1121000,"Oil":672600}],[543000,{"Food":2691000,"Wood":2691000,"Steel":1345500,"Oil":807300}],[825600,{"Food":3230000,"Wood":3230000,"Steel":1615000,"Oil":969000}],[1255200,{"Food":3876000,"Wood":3876000,"Steel":1938000,"Oil":1162800}],[1908000,{"Food":5427000,"Wood":5427000,"Steel":2713500,"Oil":1628100}],[2900400,{"Food":7598000,"Wood":7598000,"Steel":3799000,"Oil":2279400}],[4408800,{"Food":10638000,"Wood":10638000,"Steel":5319000,"Oil":3191400}],[6701400,{"Food":14894000,"Wood":14894000,"Steel":7447000,"Oil":4468200}],[10186200,{"Food":20852000,"Wood":20852000,"Steel":10426000,"Oil":6255600}]]],[3013,"Encirclement",[[43200,{"Food":1200000,"Wood":1200000,"Steel":600000,"Oil":360000}],[86400,{"Food":1800000,"Wood":1800000,"Steel":900000,"Oil":540000}],[172800,{"Food":2700000,"Wood":2700000,"Steel":1350000,"Oil":810000}],[345600,{"Food":4050000,"Wood":4050000,"Steel":2025000,"Oil":1215000}],[691200,{"Food":6075000,"Wood":6075000,"Steel":3037500,"Oil":1822500}],[1382400,{"Food":9113000,"Wood":9113000,"Steel":4556500,"Oil":2733900}],[2764800,{"Food":13670000,"Wood":13670000,"Steel":6835000,"Oil":4101000}],[5529600,{"Food":20505000,"Wood":20505000,"Steel":10252500,"Oil":6151500}],[11059200,{"Food":30758000,"Wood":30758000,"Steel":15379000,"Oil":9227400}],[22118400,{"Food":46137000,"Wood":46137000,"Steel":23068500,"Oil":13841100}]]],[3014,"Cushion Fiber",[[43200,{"Food":1200000,"Wood":1200000,"Steel":600000,"Oil":360000}],[86400,{"Food":1800000,"Wood":1800000,"Steel":900000,"Oil":540000}],[172800,{"Food":2700000,"Wood":2700000,"Steel":1350000,"Oil":810000}],[345600,{"Food":4050000,"Wood":4050000,"Steel":2025000,"Oil":1215000}],[691200,{"Food":6075000,"Wood":6075000,"Steel":3037500,"Oil":1822500}],[1382400,{"Food":9113000,"Wood":9113000,"Steel":4556500,"Oil":2733900}],[2764800,{"Food":13670000,"Wood":13670000,"Steel":6835000,"Oil":4101000}],[5529600,{"Food":20505000,"Wood":20505000,"Steel":10252500,"Oil":6151500}],[11059200,{"Food":30758000,"Wood":30758000,"Steel":15379000,"Oil":9227400}],[22118400,{"Food":46137000,"Wood":46137000,"Steel":23068500,"Oil":13841100}]]],[3015,"Battlefield Medicine",[[43200,{"Food":1200000,"Wood":1200000,"Steel":600000,"Oil":360000}],[86400,{"Food":1800000,"Wood":1800000,"Steel":900000,"Oil":540000}],[172800,{"Food":2700000,"Wood":2700000,"Steel":1350000,"Oil":810000}],[345600,{"Food":4050000,"Wood":4050000,"Steel":2025000,"Oil":1215000}],[691200,{"Food":6075000,"Wood":6075000,"Steel":3037500,"Oil":1822500}],[1382400,{"Food":9113000,"Wood":9113000,"Steel":4556500,"Oil":2733900}],[2764800,{"Food":13670000,"Wood":13670000,"Steel":6835000,"Oil":4101000}],[5529600,{"Food":20505000,"Wood":20505000,"Steel":10252500,"Oil":6151500}],[11059200,{"Food":30758000,"Wood":30758000,"Steel":15379000,"Oil":9227400}],[22118400,{"Food":46137000,"Wood":46137000,"Steel":23068500,"Oil":13841100}]]],[5022,"{1}",[[12960000,{"Food":25000000,"Wood":25000000,"Steel":12500000,"Oil":15000000}]]]],"sk":{"1009":[["r","Burning Hatred",""],["p","Gang Fight",""],["p","Wild Hunter",""],["p","Rampage of Doom",""],["a","Daredevil",""]],"1011":[["r","Bloody Saw",""],["p","Doom Girl",""],["p","Crazy Obsession",""],["p","Pink Lightning",""],["a","Chainsaw Dance",""]],"1013":[["r","Baikal Splendor","For the next 3s, every basic attack has a 80% chance to deal additional DMG to the target (Damage Factor 4500)."],["p","Raging Blood","Increases Squad Capacity by 12% and Rally Capacity by 12%."],["p","Bloodthirst","If there are 2 or more types of troops in the Squad, increases Squad ATK by 24%."],["p","Drunken Rage","Increases Squad DEF by 15% during Siege. Also increases DMG dealt to Lookout Towers by 30%."],["a","Wartime","For the next 3s, every basic attack has a 100% chance to deal additional DMG to the target (Damage Factor 4500)."]],"1023":[["r","Special Technique - Retribution","Deals a large amount of DMG to the enemy (Damage Factor: 8000) and increases Squad ATK by 24%. Lasts 3s."],["p","Special Technique - Eagle Dance","Increases Ranged Squad ATK by 15% and Travel Speed by 15%."],["p","Special Technique - Storm Array","Squads' basic attacks have 10% chance to deal additional DMG to the target (Damage Factor: 4000)."],["p","Special Technique - Talisman","When Squad HP is lower than 50%, increases Ranged Squad ATK by 26% and Travel Speed by 18%."],["a","Special Technique - Kiai","Increases DMG dealt to Infantry Squads by 10%."]],"1031":[["r","Guardian Deity",""],["p","Yorikiri",""],["p","Oshidashi",""],["p","Yokozuna",""],["a","Storm Possession",""]],"1032":[["r","Power Crash",""],["p","Double Quarterback",""],["p","Special Defense",""],["p","Absolute Defense",""],["a","Lion's Roar",""]],"1033":[["r","Fire Eating Grenade","Deals direct DMG (Damage Factor: 4500) to target, and causes Burn DMG for the next 5s (Damage Factor: 900). Deals bonus DMG to Garrison Squads (Damage Factor: 3500)."],["p","Gunfire Symphony","Increases DMG dealt to Lookout Towers by 30% during Siege. Also increases the amount of resources raided by 10%."],["p","Sinful Pleasure","Squads' basic attacks have 10% chance to deal bonus DMG (Damage Factor: 3200) during Siege."],["p","Grenade Toss","Increases Squad Capacity by 12% and Rally Capacity by 12%."],["a","Explosive Tempo","Basic attacks have 10% chance to reduce target's DMG by 8% and DEF by 20% for 3s."]],"1034":[["r","Dual Fire",""],["p","Dodge and Strike",""],["p","High Caliber",""],["p","Embers of Revenge",""],["a","Cool Heroine",""]],"1036":[["r","Brutal Blow","Pitches a spinning fastball, dealing DMG to up to 5 target Squads in a fan-shaped area in front (Damage Factor: 3800). Reduces targets' ATK, DEF, and HP by 30% for 2s."],["p","Energized","Increases Squads' DMG dealt to Zombies by 25%. Heals some Lightly Wounded units after killing Zombies [color=#25%](<a href='95434'>Heal Factor</a>: 3800)."],["p","Baseball Star","When leading 2 or more troop types, increases Squad ATK by 24%."],["p","Countercurrent Swing","Reduces Counter DMG taken by 14%, and increases Rally Capacity by 12%."],["a","Death Home Run","Pitches a spinning fastball, dealing DMG to up to 5 target Squads in a fan-shaped area in front (Damage Factor: 4600). Reduces targets' ATK, DEF, and HP by 35% for 2s."]],"1039":[["r","To Hell","Deals DMG to up to 5 enemy Squads in a fan-shaped area (Damage Factor: 10000). DMG taken by each enemy Squad reduces by 15% for every additional target enemy Squad."],["p","Massacre Concerto","Increases Skill DMG by 30%.Increases the HP of Ranged Squads by 10% when garrisoning."],["p","Deadly Beat","Increases Ranged Squad ATK by 30%."],["p","Sonata of Sorrow","Squads gain an additional 25 Rage when using basic attacks."],["a","Perfect Curtain Call","Deals DMG to up to 5 enemy Squads in a circular area (Damage Factor: 12000). DMG taken by each enemy Squad reduces by 15% for every additional target enemy Squad."]],"1040":[["r","Hometown Nostalgia","Increases Squad ATK by 45% and DEF by 45%, and gains an additional 20 Rage Points from each basic attack. Lasts 5s."],["p","Harmony First","Reduces Squads' DMG taken by 7.5%. Also has 10% chance of healing when DMG is taken [color=#7.5%](<a href='95434'>Heal Factor</a>: 1500). This effect can be triggered only once in 6s."],["p","Earthly Desire","Increases Rally Capacity by 15%. Also increases DMG dealt by Squad by 11% during Siege."],["p","Breach of Trust","Increases Squad ATK by 18% and DEF by 18%."],["a","Storm Command","Increases Squad ATK by 55% and DEF by 55%, and gains an additional 25 Rage Points from each basic attack. Lasts 5s."]],"1061":[["r","End's Awakening","Deals DMG to the enemy (Damage Factor 8000, reduced to 4000 when acting as Vice-General). At the same time, reduces DEF of the attacked Squad by 25% for 3s."],["p","Desperate Escape","Increases DMG dealt to Zombies by 25%. When attacking a Zombie, there is a 10% chance to heal Lightly Wounded Squads by [color=#25%](<a href='95434'>Heal Factor</a>: 1500)."],["p","Omen of Disaster","When using a basic attack, there is a 20% chance to reduce Skill DMG taken by 25% for 3s."],["p","Zombie Herding","Increases Squad ATK by 12% and DEF by 12%."],["a","Wasteland Eulogy","Deals DMG to the enemy (Damage Factor 9600, reduced to 4800 when acting as Vice-General). At the same time, reduces DEF of the attacked Squad by 30% for 3s."]],"1062":[["r","Invasive Attack",""],["p","Overload",""],["p","Keen Perception",""],["p","Lucky Break",""],["a","Homecoming",""]],"1063":[["r","Firepower Assault",""],["p","Queen of Arms",""],["p","Steer Clear",""],["p","Perseverance",""],["a","Tribal Pride",""]],"1070":[["r","Dogma of Salvation",""],["p","Heavenly Baptism",""],["p","Holy Protection",""],["p","Divine Grace",""],["a","Transcendental",""]],"1080":[["r","Double Kill","Deals DMG to 2 enemies in a straight line (Damage Factor 12000. When appointed as an Assistant, reduces DMG to 6000). If only one enemy is hit, increases DMG by 20%."],["p","Retribution","When taking Skill DMG, restores 100 Rage instantly. There is a 50% chance to inflict <a href='95435'>Silence</a> on the attacker for 3s. This effect triggers once every 6s."],["p","Battle Elite","When in battle, increases Ranged Squad HP by 20% and ATK by 20%."],["p","Resilience","When leading Ranged Squad(s) only, increases Skill DMG by 25% and Travel Speed by 30%."],["a","Swift Bolt","Deals DMG to 2 enemies in a straight line (Damage Factor13000. When appointed as an Assistant, reduces DMG to 6500). If only one enemy is hit, increases DMG by 25%."]],"1081":[["r","Super Thunder",""],["p","Armed Fortification",""],["p","Gutsy Stunt",""],["p","Secret Base",""],["a","Role Model",""]],"1082":[["r","Tough Strike","Deals DMG to target (Damage Factor 12000) and reduces target's healing effect by 40% for 3s."],["p","Maverick","When outside Alliance territory, increases Ranged Squad ATK by 30% and DEF by 10%."],["p","Serial Killer","Increases Skill DMG by 4% every second, up to 40%. After an Assistant unleashes a Rage Skill, the buff will reset and stack again."],["p","Extermination","Increases Ranged Squad HP by 20%. During Sieges, basic attacks have a 20% to deal an additional DMG [color=#20%](Damage Factor 3120."],["a","Lethal Toxins","Deals DMG to target (Damage Factor 13750) and reduces target's healing effect by 50% for 5s."]],"1083":[["r","Fatal Claw",""],["p","Wild Rampage",""],["p","Piercing Fangs",""],["p","Savage Hunt",""],["a","Lion's Might",""]],"1084":[["r","Focused Strike",""],["p","Recycle",""],["p","Base Sets Sail",""],["p","Resource Adjustment",""],["a","Precision Air Strike",""]],"1085":[["r","Enforce Justice",""],["p","Tactical Rollover",""],["p","Ambush",""],["p","High Noon",""],["a","Mounted Law",""]],"1086":[["r","Grand Feast",""],["p","Crisis Cook",""],["p","Brash Hunter",""],["p","Abyss Devourer",""],["a","Ravenous Ambition",""]],"1087":[["r","Heartbreak Rock",""],["p","Lucky Shield",""],["p","Eternal Groove",""],["p","Devil's Disguise",""],["a","Blazing Passion",""]],"1088":[["r","Bird of Prey","Deals DMG to up to 3 enemies (Damage Factor: 12500) in a fan-shaped area in front, and increases own Counter DMG by 23% for 3s. DMG taken by each enemy Squad reduces by 15% for every additional target enemy Squad."],["p","Earth's Champion","Increases Ranged Squad HP by 20%, and increases all DMG dealt by 7.5% when garrisoning."],["p","Dance with the Eagle","Deals DMG to up to 3 nearby enemy Squads (Damage Factor: 2000) every 8s. If garrisoning, also reduces the ATK of these Squads by 17% for 2s."],["p","Son of the Wind","Increases all DMG by 16% if the remaining Squad Size is below 50%. Increases all DMG to 20% if the remaining Squad Size is less than 30%."],["a","Eagle Strike","Deals DMG to up to 3 enemies (Damage Factor: 13750) in a fan-shaped area in front, and increases own Counter DMG by 28% for 3s. DMG taken by each enemy Squad reduces by 15% for every additional target enemy Squad."]],"1089":[["r","Stunning Magic","Deals DMG to the target (Damage Factor: 12500) and restores 100 Rage to own Squad."],["p","Escape Preparation","Increases Ranged Squad ATK by 20%, and increases Ranged Squad DEF by 20%."],["p","Mind Reading","Reduces DMG taken from basic attacks by 20%. When Rage is more than 90%, increases Skill DMG dealt by 17% for 4s."],["p","Impenetrable","Increases Ranged Squad HP by 40%. There is a 60% chance of being immune to taking increased DMG."],["a","Miracle of the Century","Deals DMG to the target (Damage Factor: 13750) and inflicts <a href='95435'>Silence</a> on the enemy for 3s. Also restores 120 Rage to own Squad."]],"1090":[["r","Body Weapon","Deals DMG to the target (Damage Factor: 12500). If garrisoning, increases this skill's DMG by 15%."],["p","Evolutionary Leader","Increases own Squad ATK by 17%, and increases Squad HP by 17%."],["p","Supervisor Privileges","Reduces Skill DMG taken by 17%. When Squad contains 2 or more types of Troops, increases Squad ATK by 20%."],["p","Survival of the Fittest","When garrisoning, increases Squad HP by 20%. Basic attacks have a 20% chance to deal additional DMG to the target [color=#20%](Damage Factor: 1920)."],["a","Natural Evolution","Deals DMG to the target (Damage Factor: 13750). If garrisoning, increases this skill's DMG by 20%."]],"1091":[["r","Queen's Troops","Increases ATK by 38% and DEF by 38% for you and nearby allies. Lasts 4s. Also instantly restores 60 Rage to them. Affects up to 3 Squads."],["p","Queen's Trap","Increases Squad DEF by 24% and Travel Speed by 20%."],["p","Queen vs Pawn","Increases Squad ATK by 20%. Increases basic attack DMG by 20% if the remaining Squad Size is less than 50%."],["p","Queen's Defense","Every 10s, grants a <a href='95433'>Shield</a> (Shield Factor: 2800) to you and nearby allies. Lasts 3s. Affects up to 3 Squads."],["a","Queen's Gambit","Increases ATK by 42% and DEF by 42% for you and nearby allies. Lasts 4s. Also instantly restores 60 Rage to them. Affects up to 5 Squads."]],"1092":[["r","Raining Punches",""],["p","Prosthetic Arm",""],["p","Indomitable Soul",""],["p","Mighty Bear",""],["a","Great Ambition",""]],"1094":[["r","Logging Timber",""],["p","Forest Ranger",""],["p","Partner Assistance",""],["p","Off-Road Patrol",""],["a","Parental Love",""]],"1095":[["r","Two Heavens as One",""],["p","Defensive Posture",""],["p","Swift Momentum",""],["p","Quick-Draw Technique",""],["a","Five Rings",""]],"1096":[["r","Mass Annihilation","Deals DMG to up to 3 enemy targets in a circular area (Damage Factor: 13000). DMG taken by each enemy target reduces by 15% for every additional enemy target. If this skill kills an enemy Squad, has 50% chance to immediately recover 60 Rage."],["p","Purge Weakness","Increases Ranged Squad ATK by 30%. If the enemy is inflicted with <a href='95435'>Silence</a>, increases basic attack DMG dealt to them by 21%."],["p","Invincible Fleet","During Sieges, increases Ranged Squad DEF by 25% and HP by 25%."],["p","Direct Confrontation","During Rallies, increase Skill DMG dealt to Garrison Squads by 54%, but all DMG taken from Garrison Squads is increased by 12.5%."],["a","Dominating the Seas","Deals DMG to up to 3 enemy targets in a circular area (Damage Factor: 14300). DMG taken by each enemy target reduces by 15% for every additional enemy target. If this skill kills an enemy Squad, has 50% chance to immediately recover 65 Rage and increase own ATK by 30% for 3s."]],"1097":[["r","Precise Breakthrough","Deals DMG to the target (Damage Factor: 11700). If Flanked when not Rallying or Garrisoned, deals additional DMG to the current target (Damage Factor: 3000) and reduces Skill DMG taken by 20% for 2s."],["p","Auto Fortify","Increases Ranged Squad ATK by 30%. If Flanked when not Rallying or Garrisoned, increases Ranged Squad DEF by 15%."],["p","Scan Weakness","Increases Ranged Squad HP by 34%. Counterattacks have a 20% chance to reduce all DMG taken by 4.5% for 2s. This effect can be triggered only once in 4s."],["p","Tactical Maneuver","Increases Counter DMG by 32% and Ranged Squad Travel Speed by 20%."],["a","High Output Mode","When in World Map battles, increases Ranged Squad DMG by 3%. If Flanked when not Rallying or Garrisoned, reduces DMG taken by 10%."]],"1098":[["r","Accelerate and Overtake",""],["p","Steady Airflow",""],["p","Champion Declaration",""],["p","Pit Stop",""],["a","Rapid Duel",""]],"1099":[["r","Unethical Thief",""],["p","Lost in the Moonlight",""],["p","Lashing Whip",""],["p","Wits and Eloquence",""],["a","Shadow Stalker",""]],"1100":[["r","It's Showtime",""],["p","Battle Dance",""],["p","Concert Tour",""],["p","Final Performance",""],["a","Encore!",""]],"1101":[["r","Gaining Enlightenment",""],["p","Six Faculties Purification",""],["p","Karma Cutting",""],["p","Ephemeral Body and Mind",""],["a","Boundless Dharma",""]],"1102":[["r","All Shots Fired","Deals DMG to up to 3 enemies (Damage Factor: 13500) in a fan-shaped area in front, DMG taken by each enemy reduces by 15% for every additional enemy target. For every enemy target hit, gain 1 stack of Gunfire. If garrisoned, for every enemy target hit, gain 2 stacks of Gunfire instead. For every 10 stacks of Gunfire gained, increases Ranged Squad ATK by 10%."],["p","Gunfight Tactics","Increases Ranged Squad ATK by 42%. Counterattacks have a 20% chance to grant 1 stack of <a href='95438'>Gunfire</a>."],["p","Tactical Deployment","Increases Ranged Squad HP by 36% and reduces Squad's Skill DMG taken by 13% when garrisoned."],["p","Hunter Spirit","Increases Ranged Squad DEF by 38%. If garrisoned, reduces all DMG taken by 10% for 1m after entering battle."],["a","Killer Instinct","Increases DMG of AoE Skills by 18%. At 30 stacks of Gunfire, remove all Gunfire stacks to deal DMG to up to 3 enemies in a circular area [color=#18%](Damage Factor: 13500)."]],"1103":[["r","Giant's Wrath","Deals DMG to the current target (Damage Factor: 13500) and increases Skill DMG received by nearby enemies, up to 3 enemies, by 20% for 3s."],["p","Shoulder Ride","Increases Ranged Squad TRVL SPD by 20% and ATK by 32% when not rallying."],["p","Giant's Counterattack","When using Rage Skills without <a href='95440'>Charge</a>, gains <a href='95440'>Charge</a>. When using Rage Skills with  <a href='95440'>Charge</a>, consumes  <a href='95440'>Charge</a> to deal DMG to up to 3 Squads in a circular area (Damage Factor: 7850).  <a href='95440'>Charge</a>: Increases Ranged Squad DMG by 10%."],["p","Bottled Dream","Increases Ranged Squad HP by 32%, and increases Ranged Squad DMG Reduction by 5.5%."],["a","Giant's Authority","Immediately gains  <a href='95440'>Charge</a> for 15s when entering battle. Every time  <a href='95440'>Charge</a> is consumed, there is a 30% chance to deal DMG again."]],"1104":[["r","Crimson Slaughter",""],["p","Wolfblood Pact",""],["p","War Howls",""],["p","Crimson Moon Waltz",""],["a","Hunting Vestige",""]],"1105":[["r","Avalanche Interception",""],["p","Cold Snap",""],["p","Polar Rush",""],["p","Prism Armor",""],["a","Blizzard Barrage",""]],"1106":[["r","Blossoming Life","Reduces Skill DMG taken by 20% for 4s, and grants a status to self and nearby allies. Increases the target's DMG by 25% for 4s if their remaining Squad Size is greater than 50%. When the target's Squad Size is less than 50%, heal Lightly Wounded Squads [color=#20%](<a href='95434'>Heal Factor</a>: 3000) and reduces their DMG taken by 15% for 4s. Affects up to 5 Squads."],["p","Lingering Miasma","After using a Rage Skill, reduces HP and TRVL SPD of up to 5 enemies by 30% and 40% respectively for 3s."],["p","Spore Parasitism","Increases Squad HP by 20%, TRVL SPD by 20%, and Squad Capacity by 10%."],["p","Photosynthetic Assimilation","Reduces Counter DMG taken by 20%. When taking Skill DMG, gains a <a href='95433'>Shield</a> [color=#20%](Shield Factor: 3000) for 2s. This effect can be triggered only once in 6s."],["a","Decay and Wither","After using a Rage Skill, reduces HP and TRVL SPD of up to 5 enemies by 35% and 40% respectively for 3s. Also, reduces their Rage Recovery Speed by 20% during this time."]],"1107":[["r","Chain Lightning",""],["p","Current Surge",""],["p","Overclocked Circuit",""],["p","Electromagnetic Acceleration",""],["a","High-Voltage Load",""]],"1108":[["r","Weakness Detection","Increases Squad ATK by 46%. Squads' basic attacks deal bonus DMG [color=#46%](Damage Factor: 3750). Lasts 2s."],["p","Point and Shoot","Increases Ranged Squad HP by 18%. During Sieges, increases Squads' basic attack DMG by 24%."],["p","Dynamic Vision","Increases Ranged Squad ATK by 15% and DEF by 15%."],["p","Camouflage","Reduces Counter DMG received by 17%. Basic attacks have a 20% chance to reduce enemy DEF by 16% for 3s."],["a","Flying Bullets","Increases Ranged Squad ATK by 20% and DEF by 20%. Also, reduces research time for all Technologies in the Research Lab by 0.5h, and increases research speed by 12%. This effect applies even when not deployed."]],"1109":[["r","Rift Frequency",""],["p","Predator's Deterrence",""],["p","Omni-Surveillance",""],["p","Kinetic Energy Recovery",""],["a","Sonic Pulse",""]],"1110":[["r","Dance of Slaughter","Deals direct DMG to the target  (Damage Factor: 14000). When not garrisoned, deals additional damage to target and 2 other targets around self once (Damage Factor: 2500)."],["p","Shadow in the Fog","Increases Ranged Squad DEF by 30%. During Rallies, increases Ranged Squad DMG by 10%."],["p","Night of Assassination","Increases Ranged Squad ATK by 30%. During Rallies, counterattacks have a 30% chance to deal damage to Squads in the field [color=#30%](Damage Factor: 2000). This effect can be triggered up to 1 times every 3s."],["p","Perfect Attire","Increases Ranged Squad HP by 30%. Reduces Skill DMG taken from Garrison Squads by 12%."],["a","Bloody Storm","Reduces current target's Skill DMG by 3% and Squad HP by 4% when Cedric uses a Rage Skill. This effect stacks up to 3 times, and lasts for 30s."]],"1111":[["r","Magic Marksman","Deals damage to the target (Damage Factor 14000). If the target is Flanked, the Damage Factor is increased to 15500. When not garrisoned, reduces enemy ATK by an additional 30% for 3s."],["p","Aurora Veil","Increased Ranged Squad HP by 25%. When taking Skill DMG, reduces DMG taken by own Ranged Squad by 20% for 3s. This effect can be triggered up to 1 times every 10s."],["p","Prism Ruling","Increases Ranged Squad DEF by 20%. When performing basic attacks, there is a 20% chance to steal 50 Rage from the enemy. This effect can be triggered up to 1 times every 4s."],["p","Shining Moment","Increases Ranged Squad ATK by 20% and increases TRVL SPD by 20%. If target is Flanked, increases DMG received by 15% for 3s after using a Rage Skill."],["a","Precise Reflection","Increases Ranged Squad DEF by 25%. When performing basic attacks, there is a 20% chance to steal 50 Rage from the enemy. This effect can be triggered up to 1 times every 4s. After successfully stealing Rage, also steals 8% of Skill DMG from the enemy for 3s."]],"1112":[["r","Shark Spin",""],["p","Trick Shooting",""],["p","Stunt Skating",""],["p","Freestyle",""],["a","Street Vaulter",""]],"1113":[["r","Paint Bomb",""],["p","Frantic Graffiti",""],["p","Rainbow Slide",""],["p","Neon Shuttle",""],["a","Inspiration Spray",""]],"1114":[["r","Grand Opening","Deals DMG to the current target (Damage Factor: 14000). When not Rallying or Garrisoned, increases DMG received by 3 nearby enemy Squads by 10% for 3s."],["p","Lead the Trend","Squad ATK increases by 30%, and Travel Speed increases by 15%."],["p","Intimidating Stance","When not Rallying or Garrisoned, increases Squad HP by 30%. When Flanked, reduces Skill DMG taken by 8%."],["p","Deadly Elegance","When not Rallying or Garrisoned, increases Skill DMG by 20%, and gains 30 Rage every 10s."],["a","Couture Gala","When serving as Leader and not Rallying or Garrisoned, gains additional effects based on the type of Squad led. Infantry-only Squad: Using \"Grand Opening\" increases Squad DMG by 3% for 20s. This effect stacks up to 5 times, and remains active when out of combat. Rider-only Squad: \"Grand Opening\" deals bonus DMG [color=#3%](Damage Factor: 3500) to 2 other nearby targets. Ranged-only Squad: Increases the DMG of \"Grand Opening\" by 20%."]],"1115":[["r","Grilled Feast",""],["p","Swift Service",""],["p","Premium Seasoning",""],["p","Flawless Kitchen",""],["a","Perfect Heat Control",""]],"1116":[["r","First Form: Deadwood Slash",""],["p","Second Form: Gale Thrust",""],["p","Third Form: Sunflare Dance",""],["p","Fourth Form: Mountain Shatter",""],["a","Final Form: Sakura",""]],"1117":[["r","One-Shot Kill","Deals DMG to the current target (Damage Factor: 14500), reducing their HP by 40% for 3s. While in the Aiming state, increases this DMG by 20%."],["p","Focused Breath","Enters the Aiming state for 30s when entering battle. When not in a Rally or garrisoned, if not in the Aiming state, Charon uses a Rage Skill and enters the Aiming state for 10s. Aiming: Increases Rage Recovery Speed by 10%."],["p","Evasive Maneuver","Increases Ranged Squad ATK by 30%, and increases Travel Speed by 20%. While in the Aiming state, reduces Counter DMG taken by 20%."],["p","Position Shift","Increases Ranged Squad HP by 30%. If flanked when not in a Rally or garrisoned, increases Ranged Squad DEF by an additional 20%."],["a","Death Radius","Deals DMG to the current target (Damage Factor: 15000), and deals DMG (Damage Factor: 5000) to 2 other nearby enemy targets, reducing their HP by 40% for 3s. While in the Aiming state, increases this DMG by 20%."]],"1118":[["r","Multithreaded Breach","Deals DMG to up to 3 enemies in a fan-shaped area (Damage Factor: 14500, increased to 16500 when garrisoned). DMG taken by each enemy Squad reduces by 15% for every 1 additional target enemy Squads. Also reduces Skill DMG dealt by target Squads by 10% for 2s."],["p","Warm-Up Stream","Increases Ranged Squad ATK by 40%. When garrisoned, increases Rage Recovery Speed by 10% for the first 1m after entering battle."],["p","Extreme Speedrun","When not in a Rally, increases Ranged Squad DEF by 35% and Ranged Squad DMG Reduction by 8%."],["p","Virtual Avatar","Increases Ranged Squad HP by 40%. When garrisoned, reduces Skill DMG taken by 12%."],["a","Cheat Code","Gains 1 stacks of <a href='95441'>Cheat Code</a> before the Leader uses a Rage Skill when not in a Rally. At 6 stacks, removes all stacks, increases Ranged Squad DMG by 10% for 3s, and if the Leader has a Ranged Squad Talent, the Leader will use a Rage Skill again the next second after the Assistant uses a Rage Skill. <a href='95441'>Cheat Code</a>: Increases Ranged Squad ATK by 3%."]],"1119":[["r","Mach Impact",""],["p","Overdrive Engine",""],["p","Stunt Skating",""],["p","Aerial Suppression",""],["a","High-Velocity Airflow",""]],"1120":[["r","Flock Command",""],["p","Ode to Nature",""],["p","Go With the Wind",""],["p","Highland Blessing",""],["a","Soul's Journey Home",""]],"1121":[["r","Overload Slash",""],["p","Fluid Armor",""],["p","High-Frequency Pulse",""],["p","Instinctive Deduction",""],["a","Integrated Combat",""]],"1122":[["r","Blade Dance",""],["p","Whirling Dance",""],["p","Graceful Dance",""],["p","Lightfoot Dance",""],["a","Dance of Death",""]],"1123":[["r","Precision Volley","Deals DMG to the target (Damage Factor: 12000) and increases ATK of up to 3 nearby allies by 20% for 3s."],["p","Graceful Steps","Squad ATK increases by 30%, and Travel Speed increases by 15%."],["p","Glorious Command","Increases Squad DEF by 30%. Increases Skill DMG by 15% when flanking the enemy."],["p","Blade of the Heavens","Increases Squad HP by 20%. Basic attacks have a 20% chance to deal additional DMG to the target [color=#20%](Damage Factor: 2000)."],["a","Desert Leader","Increases Shelter Construction Speed by 15%. This effect applies even when not deployed."]],"1124":[["r","Prelude to Death","Deals damage to the target (Damage Factor 15000). When not garrisoned, the Damage Factor is increased to 18000, and increases DMG Reduction by 3% for every 1 nearby Squads when using the Skill. This effect stacks up to 3 times, and lasts for 3s."],["p","Marionette Aria","During Rallies, increases Ranged Squad ATK by 40% and increases damage dealt to Infantry Squads by 10%."],["p","Phantom Variation","Increases Ranged Squad DEF by 30%. When taking Skill DMG, there is a 30% chance to recover HP [color=#30%](<a href='95434'>Heal Factor</a>: 3000). This effect can be triggered up to 1 times every 6s."],["p","Puppet Rhapsody","Increases Ranged Squad HP by 40%. During Rallies, counterattacks have a 25% chance to deal damage to Squads in the field [color=#40%](Damage Factor: 2500). This DMG increases by 100% in the first 1 minutes of battle."],["a","Curtain Call Waltz","Prelude to Death additionally reduces the target's DEF by 6%. This effect stacks up to 5 times, and lasts for 30s. Reduces Shield Effect of targets that reach the stack limit by 30% and increases own Skill DMG dealt to them by 15%."]],"1125":[["r","Final Judgment","Deals DMG to the target (Damage Factor: 15000). When not in a Rally or garrisoned, heals up to 3 nearby allies based on [color=#30%]30% of this DMG dealt."],["p","Path of Redemption","When not in a Rally or garrisoned, increases own healing effect granted by [color=#20%]20%. For every 30% of Squad Size lost, additionally increases this by [color=#20%]10%."],["p","Breath of Dawn","[Final Judgment] Additionally increases DMG of Squads that receive healing by 10%. This effect stacks up to 2 times, and lasts for 10s."],["p","Apocalyptic Dance","Ranged Squad HP increases by 40%, and Travel Speed increases by 20%."],["a","Ashen Huntres","Deals DMG to the target (Damage Factor: 16000). When not in a Rally or garrisoned, heals up to 5 nearby allies based on [color=#35%]35% of this DMG dealt."]],"1201":[["r","Hakuro no Mai",""],["p","Chou Hissatsu Shinobi-Bachi",""],["p","Kachousen",""],["p","Musasabi no Mai",""],["a","Houou no Mai",""]],"1202":[["r","Explosive Shots",""],["p","Electronic Interference",""],["p","Steel Armor",""],["p","Slug Firepower",""],["a","Rescue Reward",""]],"1203":[["r","Resonance Shots","Deals DMG to the current target (Damage Factor: 13500). When not Rallying or Garrisoned, recover HP based on the number of Squads flanking the enemy Squad (Flanking Squads x550). This effect counts up to 5 Flanking Squads."],["p","Coordinated Tactics","Increases Squad HP by 30%. Basic attacks grant 10 Rage when flanking the enemy."],["p","Flanking Operation","When not Rallying or Garrisoned, increases Skill DMG by 36% when remaining Squad Size is 50% or more. When Squad Size is less than 50%, reduces Skill DMG taken by 36% and increases Ranged Squad TRVL SPD by 20%."],["p","Speedy Travel","Increases Squad TRVL SPD by 20% and ATK by 30%."],["a","Perfect Sync","Deals DMG to the current target (Damage Factor: 14850). When not Rallying or Garrisoned, recover HP based on the number of Squads flanking the enemy Squad (Flanking Squads x550).  The Assistant has a 50% recover additional HP (Flanking Squads x330) after casting a skill. This effect counts up to 5 Flanking Squads."]],"1204":[["r","Power of the Titans",""],["p","Omni-directional mobility",""],["p","Indomitable Will",""],["p","Precision Slice",""],["a","Attack Roar",""]]},"chg":{"1124":"The awakening skill now also cuts the shield effect of targets at max stacks (30%, or 50% in the upgraded variant).","1123":"The trigger conditions of its effects were edited. Details are not decoded yet."}};
-const $=s=>document.querySelector(s),nf=n=>Math.round(n).toLocaleString('en-US'),sum=a=>a.reduce((p,q)=>p+q,0);
-const m=v=>v>=1e9?(v/1e9).toFixed(2)+'B':v>=1e6?(v/1e6).toFixed(1)+'M':nf(v);
-const dur=s=>{const d=Math.floor(s/86400),h=Math.round(s%86400/3600);return d?`${d}d ${h}h`:`${h}h`};
-const cl=(v,a,b)=>Math.min(b,Math.max(a,+v||a));
-const EX=['Catherine','Master Jin','Jaden','Maxine','Norah'],RES=['Food','Wood','Steel','Oil'],V=['roster','legacy','troops','heroes','squad'];
-const HB=Object.fromEntries(D.heroes.map(h=>[h[0],h]));
-const def={ld:0,as:0,ch:5,from:5,to:6,n:1000000,sp:0,lv:{}};
-let S={roster:[],ui:{...def}};
-try{const o=JSON.parse(localStorage.getItem('rd1')||'null');if(o&&Array.isArray(o.roster))S={roster:o.roster.filter(x=>HB[x.id]),ui:{...def,...o.ui}}}catch(e){}
-const save=()=>{try{localStorage.setItem('rd1',JSON.stringify(S))}catch(e){}};
-const tp=(l,r)=>Math.max(0,l-1)+(r>=6?15:r>=5?5:0);
-const fld=(l,k,v,a,b)=>`<label class="f">${l}<input type="number" data-k="${k}" min="${a}" max="${b}" value="${v}"></label>`;
-function row(x,i){const h=HB[x.id];return `<div class="hero" data-i="${i}"><div class="nm"><b>${h[1]}</b><span>${h[2]}, ${h[3]}${h[4]?', Superhero':''}</span></div>
-${fld('Rank','r',x.r,1,6)}${fld('Level','l',x.l,1,60)}${x.k.map((v,j)=>fld(['Rage','Passive 1','Passive 2','Passive 3'][j],'k'+j,v,1,5)).join('')}
-<label class="f">Status<select data-k="u"><option value="main"${x.u=='main'?' selected':''}>In use</option><option value="donor"${x.u=='donor'?' selected':''}>Unused donor</option></select></label>
-<label class="c"><input type="checkbox" data-k="lead"${x.lead?' checked':''}>Leader</label>
-${h[4]?`<label class="c"><input type="checkbox" data-k="w"${x.w?' checked':''}>Weapon upgraded</label>`:''}
-<button data-rm>Remove</button></div>`}
-function acct(){$('#list').innerHTML=S.roster.length?S.roster.map(row).join(''):'<p class="empty">No heroes yet. Pick one above, then set its rank, level and skill levels.</p>'}
-function legacy(){
-const exc=x=>{const h=HB[x.id];return EX.some(e=>h[1]===e||h[1].startsWith(e+' '))?'excluded from the event':h[4]&&x.w?'its Doomsday Weapon is upgraded':''};
-const R=S.roster,don=R.filter(x=>x.u=='donor'&&!exc(x)),tar=R.filter(x=>x.u=='main'&&!exc(x)),c=[];
-don.forEach(d=>tar.forEach(t=>{const net=sum(d.k)-sum(t.k),dr=d.r-t.r;if(net>0&&!(t.lead&&dr<0))c.push({d,t,net,dr})}));
-c.sort((a,b)=>b.net-a.net||b.dr-a.dr);
-const ud=new Set,ut=new Set,pl=[];
-for(const x of c){if(pl.length>=S.ui.ch)break;if(ud.has(x.d.id)||ut.has(x.t.id))continue;ud.add(x.d.id);ut.add(x.t.id);pl.push(x)}
-const nm=x=>HB[x.id][1];let o='';
-if(!don.length||!tar.length)o='<p class="empty">Mark at least one hero In use and one Unused donor in My roster.</p>';
-else if(!pl.length)o='<p class="empty">No swap would improve your heroes. A donor needs higher skill levels than its target.</p>';
-else o=`<p class="tot"><b>+${sum(pl.map(x=>x.net))}</b> skill levels from ${pl.length} of ${S.ui.ch} swaps</p><ol class="plan">`+pl.map((x,i)=>{const a=tp(x.t.l,x.t.r),b=tp(x.d.l,x.d.r),w=[];
-if(x.dr<0)w.push(`Rank drops by ${-x.dr}, so the target loses ${Math.max(0,a-b)} talent points. Fine only if it never leads.`);
-if(x.d.l<x.t.l)w.push(`Level drops from ${x.t.l} to ${x.d.l}.`);
-return `<li><span class="n">${i+1}</span><div><b>${nm(x.d)} into ${nm(x.t)}</b><div>${x.t.k.join('-')} becomes ${x.d.k.join('-')}, <span class="good">+${x.net}</span> levels. Rank ${x.t.r} to ${x.d.r}, talent points ${a} to ${b}.</div>${w.map(t=>`<div class="flare">${t}</div>`).join('')}</div></li>`}).join('')+'</ol>';
-const sk=R.map(x=>[x,exc(x)]).filter(p=>p[1]);
-if(sk.length)o+=`<h2>Left out</h2><ul>${sk.map(p=>`<li>${nm(p[0])}: ${p[1]}.</li>`).join('')}</ul>`;
-o+='<p class="fine">Each swap also resets talents on both heroes. This assumes skill levels move slot by slot, which is unconfirmed. Check how many chances your event gives you.</p>';
-$('#plan').innerHTML=o}
-function trp(){
-const u=S.ui,A=D.troops[u.from-1],B=D.troops[u.to-1],n=u.n,dm=(B[6]-A[6])*n;
-const st=[['Attack',1],['Defense',2],['Health',3],['Speed',4],['Capacity',5],['Might',6]].map(([l,i])=>{const p=(B[i]/A[i]-1)*100;return `<tr><td>${l}</td><td>${A[i]}</td><td>${B[i]}</td><td class="${p<0?'flare':'good'}">${p>0?'+':''}${p.toFixed(1)}%</td></tr>`}).join('');
-const cr=RES.filter(k=>B[7][k]||A[7][k]).map(k=>`<tr><td>${k}</td><td>${nf((B[7][k]||0)*n)}</td><td>${nf(((B[7][k]||0)-(A[7][k]||0))*n)}</td><td>${nf((B[8][k]||0)*n)}</td></tr>`).join('');
-$('#tout').innerHTML=`<p class="tot"><b>${dm>=0?'+':''}${nf(dm)}</b>troop might</p>
+        <section id="squad" hidden>
+          <h1>Squad builder</h1>
+          <p class="lead">
+            Pick a leader and an assistant from your roster to see what applies to each.
+          </p>
+          <div class="bar">
+            <label class="c"
+              >Leader
+              <select id="ld"></select></label
+            ><label class="c"
+              >Assistant
+              <select id="as"></select
+            ></label>
+          </div>
+          <div id="sq"></div>
+        </section>
+      </main>
+    </div>
+    <script>
+      const D = {
+        v: '1.62.0',
+        heroes: [
+          [1009, 'Sven Schaefer', 'Rider', 'Siege', 0, 'Support'],
+          [1011, 'Catherine Calamity', 'Rider', '-', 0, 'Skills'],
+          [1013, 'Peter Karelin', 'Leader', 'Siege', 0, 'Attack'],
+          [1023, 'Nakano Maaya', 'Ranged', 'General', 0, 'Skills'],
+          [1031, 'Raigoro', 'Infantry', 'Garrison', 0, 'Defense'],
+          [1032, 'Tom', 'Infantry', 'Garrison', 0, 'Defense'],
+          [1033, 'Hank Jannowitz', 'Leader', 'Siege', 0, 'Skills'],
+          [1034, 'Cynthia Calamity', 'Rider', '-', 0, '-'],
+          [1036, 'Lee Seung-won', 'Leader', '-', 0, 'Support'],
+          [1039, 'Louis', 'Ranged', 'Garrison', 0, 'Skills'],
+          [1040, 'Master Jin', 'Leader', 'Siege', 0, 'Support'],
+          [1061, 'Jaden', 'Leader', '-', 0, 'Attack'],
+          [1062, 'Maxine Wincott', 'Overall', 'Gather', 0, 'Support'],
+          [1063, 'Ammara', 'Infantry', 'General', 0, 'Skills'],
+          [1070, 'Martin', 'Overall', '-', 0, 'Support'],
+          [1080, 'Chun', 'Ranged', 'General', 0, 'Skills'],
+          [1081, 'Thunder Peterson', 'Infantry', 'Garrison', 0, 'Defense'],
+          [1082, 'Johnny Kerry', 'Ranged', 'Siege', 0, 'Attack'],
+          [1083, 'Bella', 'Rider', 'General', 0, 'Skills'],
+          [1084, 'Jonathan', 'Rider', 'General', 0, 'Support'],
+          [1085, 'Elena', 'Rider', 'General', 0, 'Skills'],
+          [1086, 'Eddie', 'Infantry', 'Siege', 0, 'Defense'],
+          [1087, 'Robert', 'Infantry', 'General', 0, 'Skills'],
+          [1088, 'Jacob', 'Ranged', 'Garrison', 0, 'Defense'],
+          [1089, 'Julia', 'Ranged', 'General', 0, 'Skills'],
+          [1090, 'Victor Blackwood', 'Leader', 'Garrison', 0, 'Defense'],
+          [1091, 'Bianca Drake', 'Leader', 'General', 0, 'Support'],
+          [1092, 'Riven', 'Infantry', 'General', 0, 'Defense'],
+          [1094, 'Sara Vandermeer', 'Overall', 'Gather', 0, 'Support'],
+          [1095, 'Miyamoto Doichi', 'Infantry', 'General', 0, 'Skills'],
+          [1096, 'Bard', 'Ranged', 'Siege', 1, 'Defense'],
+          [1097, 'Lynne', 'Ranged', 'General', 0, 'Skills'],
+          [1098, 'Felix', 'Rider', 'General', 0, 'Skills'],
+          [1099, 'Chasey', 'Rider', 'Garrison', 1, 'Skills'],
+          [1100, 'Stella', 'Infantry', 'Siege', 1, 'Skills'],
+          [1101, 'Bodala', 'Infantry', 'General', 0, 'Skills'],
+          [1102, 'Ethan', 'Ranged', 'Garrison', 1, 'Skills'],
+          [1103, 'Sophie', 'Ranged', 'General', 0, 'Skills'],
+          [1104, 'Rubina', 'Rider', 'Siege', 1, 'Skills'],
+          [1105, 'Daryl', 'Rider', 'General', 0, 'Skills'],
+          [1106, 'Claude Le Blanc', 'Leader', 'Coop', 0, 'Support'],
+          [1107, 'Eileen Volt', 'Infantry', 'General', 0, 'Skills'],
+          [1108, 'Norah', 'Ranged', 'Siege', 0, 'Attack'],
+          [1109, 'Boyd Warden', 'Infantry', 'Garrison', 1, 'Skills'],
+          [1110, 'Cedric', 'Ranged', 'Siege', 1, 'Skills'],
+          [1111, 'Spectra', 'Ranged', 'General', 0, 'Skills'],
+          [1112, 'Rick Light', 'Rider', 'Garrison', 1, 'Attack'],
+          [1113, 'Janet Light', 'Rider', 'General', 0, 'Skills'],
+          [1114, 'Isabella Vincens', 'Leader', 'Coop', 1, 'Skills'],
+          [1115, 'Julien', 'Infantry', 'General', 0, 'Support'],
+          [1116, 'Sakura', 'Infantry', 'Siege', 1, 'Skills'],
+          [1117, 'Charon', 'Ranged', 'General', 0, 'Skills'],
+          [1118, 'Nova', 'Ranged', 'Garrison', 1, 'Skills'],
+          [1119, 'Maxwell', 'Rider', 'General', 0, '-'],
+          [1120, 'Metok Tso', 'Rider', 'Siege', 1, 'Skills'],
+          [1121, 'Cassius', 'Infantry', 'Garrison', 1, 'Skills'],
+          [1122, 'Rozalia', 'Infantry', 'General', 0, 'Skills'],
+          [1123, 'Amir Suleiman', 'Leader', 'Coop', 0, 'Skills'],
+          [1124, 'Sebastian', 'Ranged', 'Siege', 1, 'Skills'],
+          [1125, 'Valeria Moretti', 'Ranged', 'General', 0, 'Support'],
+          [1201, 'Mai Shiranui', 'Rider', 'General', 0, '-'],
+          [1202, 'Marco & Eri', 'Infantry', 'General', 0, 'Skills'],
+          [1203, 'Jack Bronte', 'Ranged', 'General', 0, 'Skills'],
+          [1204, 'Eren Yeager', 'Rider', 'General', 0, 'Skills'],
+        ],
+        troops: [
+          [1, 99, 94, 95, 880, 7, 1, { Food: 70, Wood: 30 }, { Food: 28, Wood: 12 }, 15],
+          [2, 129, 122, 124, 840, 9, 2, { Food: 100, Steel: 50 }, { Food: 40, Steel: 20 }, 30],
+          [
+            3,
+            158,
+            150,
+            154,
+            800,
+            10,
+            3,
+            { Food: 150, Steel: 75, Oil: 5 },
+            { Food: 60, Steel: 30, Oil: 2 },
+            60,
+          ],
+          [
+            4,
+            178,
+            169,
+            173,
+            760,
+            11,
+            5,
+            { Food: 360, Steel: 180, Oil: 15 },
+            { Food: 144, Steel: 72, Oil: 6 },
+            80,
+          ],
+          [
+            5,
+            220,
+            188,
+            192,
+            725,
+            12,
+            9,
+            { Food: 500, Steel: 250, Oil: 100 },
+            { Food: 200, Steel: 100, Oil: 40 },
+            100,
+          ],
+          [
+            6,
+            254,
+            207,
+            222,
+            690,
+            14,
+            15,
+            { Food: 900, Steel: 450, Oil: 180 },
+            { Food: 360, Steel: 180, Oil: 72 },
+            120,
+          ],
+        ],
+        research: [
+          [
+            2007,
+            'Optical Sight',
+            [
+              [28800, { Food: 750000, Wood: 750000, Steel: 375000, Oil: 225000 }],
+              [43800, { Food: 900000, Wood: 900000, Steel: 450000, Oil: 270000 }],
+              [66600, { Food: 1080000, Wood: 1080000, Steel: 540000, Oil: 324000 }],
+              [101400, { Food: 1296000, Wood: 1296000, Steel: 648000, Oil: 388800 }],
+              [154200, { Food: 1556000, Wood: 1556000, Steel: 778000, Oil: 466800 }],
+              [234600, { Food: 1868000, Wood: 1868000, Steel: 934000, Oil: 560400 }],
+              [357000, { Food: 2242000, Wood: 2242000, Steel: 1121000, Oil: 672600 }],
+              [543000, { Food: 2691000, Wood: 2691000, Steel: 1345500, Oil: 807300 }],
+              [825600, { Food: 3230000, Wood: 3230000, Steel: 1615000, Oil: 969000 }],
+              [1255200, { Food: 3876000, Wood: 3876000, Steel: 1938000, Oil: 1162800 }],
+              [1908000, { Food: 5427000, Wood: 5427000, Steel: 2713500, Oil: 1628100 }],
+              [2900400, { Food: 7598000, Wood: 7598000, Steel: 3799000, Oil: 2279400 }],
+              [4408800, { Food: 10638000, Wood: 10638000, Steel: 5319000, Oil: 3191400 }],
+              [6701400, { Food: 14894000, Wood: 14894000, Steel: 7447000, Oil: 4468200 }],
+              [10186200, { Food: 20852000, Wood: 20852000, Steel: 10426000, Oil: 6255600 }],
+            ],
+          ],
+          [
+            2008,
+            'Shooting Position',
+            [
+              [28800, { Food: 750000, Wood: 750000, Steel: 375000, Oil: 225000 }],
+              [43800, { Food: 900000, Wood: 900000, Steel: 450000, Oil: 270000 }],
+              [66600, { Food: 1080000, Wood: 1080000, Steel: 540000, Oil: 324000 }],
+              [101400, { Food: 1296000, Wood: 1296000, Steel: 648000, Oil: 388800 }],
+              [154200, { Food: 1556000, Wood: 1556000, Steel: 778000, Oil: 466800 }],
+              [234600, { Food: 1868000, Wood: 1868000, Steel: 934000, Oil: 560400 }],
+              [357000, { Food: 2242000, Wood: 2242000, Steel: 1121000, Oil: 672600 }],
+              [543000, { Food: 2691000, Wood: 2691000, Steel: 1345500, Oil: 807300 }],
+              [825600, { Food: 3230000, Wood: 3230000, Steel: 1615000, Oil: 969000 }],
+              [1255200, { Food: 3876000, Wood: 3876000, Steel: 1938000, Oil: 1162800 }],
+              [1908000, { Food: 5427000, Wood: 5427000, Steel: 2713500, Oil: 1628100 }],
+              [2900400, { Food: 7598000, Wood: 7598000, Steel: 3799000, Oil: 2279400 }],
+              [4408800, { Food: 10638000, Wood: 10638000, Steel: 5319000, Oil: 3191400 }],
+              [6701400, { Food: 14894000, Wood: 14894000, Steel: 7447000, Oil: 4468200 }],
+              [10186200, { Food: 20852000, Wood: 20852000, Steel: 10426000, Oil: 6255600 }],
+            ],
+          ],
+          [
+            2009,
+            'Camo Finish',
+            [
+              [28800, { Food: 750000, Wood: 750000, Steel: 375000, Oil: 225000 }],
+              [43800, { Food: 900000, Wood: 900000, Steel: 450000, Oil: 270000 }],
+              [66600, { Food: 1080000, Wood: 1080000, Steel: 540000, Oil: 324000 }],
+              [101400, { Food: 1296000, Wood: 1296000, Steel: 648000, Oil: 388800 }],
+              [154200, { Food: 1556000, Wood: 1556000, Steel: 778000, Oil: 466800 }],
+              [234600, { Food: 1868000, Wood: 1868000, Steel: 934000, Oil: 560400 }],
+              [357000, { Food: 2242000, Wood: 2242000, Steel: 1121000, Oil: 672600 }],
+              [543000, { Food: 2691000, Wood: 2691000, Steel: 1345500, Oil: 807300 }],
+              [825600, { Food: 3230000, Wood: 3230000, Steel: 1615000, Oil: 969000 }],
+              [1255200, { Food: 3876000, Wood: 3876000, Steel: 1938000, Oil: 1162800 }],
+              [1908000, { Food: 5427000, Wood: 5427000, Steel: 2713500, Oil: 1628100 }],
+              [2900400, { Food: 7598000, Wood: 7598000, Steel: 3799000, Oil: 2279400 }],
+              [4408800, { Food: 10638000, Wood: 10638000, Steel: 5319000, Oil: 3191400 }],
+              [6701400, { Food: 14894000, Wood: 14894000, Steel: 7447000, Oil: 4468200 }],
+              [10186200, { Food: 20852000, Wood: 20852000, Steel: 10426000, Oil: 6255600 }],
+            ],
+          ],
+          [
+            3013,
+            'Encirclement',
+            [
+              [43200, { Food: 1200000, Wood: 1200000, Steel: 600000, Oil: 360000 }],
+              [86400, { Food: 1800000, Wood: 1800000, Steel: 900000, Oil: 540000 }],
+              [172800, { Food: 2700000, Wood: 2700000, Steel: 1350000, Oil: 810000 }],
+              [345600, { Food: 4050000, Wood: 4050000, Steel: 2025000, Oil: 1215000 }],
+              [691200, { Food: 6075000, Wood: 6075000, Steel: 3037500, Oil: 1822500 }],
+              [1382400, { Food: 9113000, Wood: 9113000, Steel: 4556500, Oil: 2733900 }],
+              [2764800, { Food: 13670000, Wood: 13670000, Steel: 6835000, Oil: 4101000 }],
+              [5529600, { Food: 20505000, Wood: 20505000, Steel: 10252500, Oil: 6151500 }],
+              [11059200, { Food: 30758000, Wood: 30758000, Steel: 15379000, Oil: 9227400 }],
+              [22118400, { Food: 46137000, Wood: 46137000, Steel: 23068500, Oil: 13841100 }],
+            ],
+          ],
+          [
+            3014,
+            'Cushion Fiber',
+            [
+              [43200, { Food: 1200000, Wood: 1200000, Steel: 600000, Oil: 360000 }],
+              [86400, { Food: 1800000, Wood: 1800000, Steel: 900000, Oil: 540000 }],
+              [172800, { Food: 2700000, Wood: 2700000, Steel: 1350000, Oil: 810000 }],
+              [345600, { Food: 4050000, Wood: 4050000, Steel: 2025000, Oil: 1215000 }],
+              [691200, { Food: 6075000, Wood: 6075000, Steel: 3037500, Oil: 1822500 }],
+              [1382400, { Food: 9113000, Wood: 9113000, Steel: 4556500, Oil: 2733900 }],
+              [2764800, { Food: 13670000, Wood: 13670000, Steel: 6835000, Oil: 4101000 }],
+              [5529600, { Food: 20505000, Wood: 20505000, Steel: 10252500, Oil: 6151500 }],
+              [11059200, { Food: 30758000, Wood: 30758000, Steel: 15379000, Oil: 9227400 }],
+              [22118400, { Food: 46137000, Wood: 46137000, Steel: 23068500, Oil: 13841100 }],
+            ],
+          ],
+          [
+            3015,
+            'Battlefield Medicine',
+            [
+              [43200, { Food: 1200000, Wood: 1200000, Steel: 600000, Oil: 360000 }],
+              [86400, { Food: 1800000, Wood: 1800000, Steel: 900000, Oil: 540000 }],
+              [172800, { Food: 2700000, Wood: 2700000, Steel: 1350000, Oil: 810000 }],
+              [345600, { Food: 4050000, Wood: 4050000, Steel: 2025000, Oil: 1215000 }],
+              [691200, { Food: 6075000, Wood: 6075000, Steel: 3037500, Oil: 1822500 }],
+              [1382400, { Food: 9113000, Wood: 9113000, Steel: 4556500, Oil: 2733900 }],
+              [2764800, { Food: 13670000, Wood: 13670000, Steel: 6835000, Oil: 4101000 }],
+              [5529600, { Food: 20505000, Wood: 20505000, Steel: 10252500, Oil: 6151500 }],
+              [11059200, { Food: 30758000, Wood: 30758000, Steel: 15379000, Oil: 9227400 }],
+              [22118400, { Food: 46137000, Wood: 46137000, Steel: 23068500, Oil: 13841100 }],
+            ],
+          ],
+          [
+            5022,
+            '{1}',
+            [[12960000, { Food: 25000000, Wood: 25000000, Steel: 12500000, Oil: 15000000 }]],
+          ],
+        ],
+        sk: {
+          1009: [
+            ['r', 'Burning Hatred', ''],
+            ['p', 'Gang Fight', ''],
+            ['p', 'Wild Hunter', ''],
+            ['p', 'Rampage of Doom', ''],
+            ['a', 'Daredevil', ''],
+          ],
+          1011: [
+            ['r', 'Bloody Saw', ''],
+            ['p', 'Doom Girl', ''],
+            ['p', 'Crazy Obsession', ''],
+            ['p', 'Pink Lightning', ''],
+            ['a', 'Chainsaw Dance', ''],
+          ],
+          1013: [
+            [
+              'r',
+              'Baikal Splendor',
+              'For the next 3s, every basic attack has a 80% chance to deal additional DMG to the target (Damage Factor 4500).',
+            ],
+            ['p', 'Raging Blood', 'Increases Squad Capacity by 12% and Rally Capacity by 12%.'],
+            [
+              'p',
+              'Bloodthirst',
+              'If there are 2 or more types of troops in the Squad, increases Squad ATK by 24%.',
+            ],
+            [
+              'p',
+              'Drunken Rage',
+              'Increases Squad DEF by 15% during Siege. Also increases DMG dealt to Lookout Towers by 30%.',
+            ],
+            [
+              'a',
+              'Wartime',
+              'For the next 3s, every basic attack has a 100% chance to deal additional DMG to the target (Damage Factor 4500).',
+            ],
+          ],
+          1023: [
+            [
+              'r',
+              'Special Technique - Retribution',
+              'Deals a large amount of DMG to the enemy (Damage Factor: 8000) and increases Squad ATK by 24%. Lasts 3s.',
+            ],
+            [
+              'p',
+              'Special Technique - Eagle Dance',
+              'Increases Ranged Squad ATK by 15% and Travel Speed by 15%.',
+            ],
+            [
+              'p',
+              'Special Technique - Storm Array',
+              "Squads' basic attacks have 10% chance to deal additional DMG to the target (Damage Factor: 4000).",
+            ],
+            [
+              'p',
+              'Special Technique - Talisman',
+              'When Squad HP is lower than 50%, increases Ranged Squad ATK by 26% and Travel Speed by 18%.',
+            ],
+            ['a', 'Special Technique - Kiai', 'Increases DMG dealt to Infantry Squads by 10%.'],
+          ],
+          1031: [
+            ['r', 'Guardian Deity', ''],
+            ['p', 'Yorikiri', ''],
+            ['p', 'Oshidashi', ''],
+            ['p', 'Yokozuna', ''],
+            ['a', 'Storm Possession', ''],
+          ],
+          1032: [
+            ['r', 'Power Crash', ''],
+            ['p', 'Double Quarterback', ''],
+            ['p', 'Special Defense', ''],
+            ['p', 'Absolute Defense', ''],
+            ['a', "Lion's Roar", ''],
+          ],
+          1033: [
+            [
+              'r',
+              'Fire Eating Grenade',
+              'Deals direct DMG (Damage Factor: 4500) to target, and causes Burn DMG for the next 5s (Damage Factor: 900). Deals bonus DMG to Garrison Squads (Damage Factor: 3500).',
+            ],
+            [
+              'p',
+              'Gunfire Symphony',
+              'Increases DMG dealt to Lookout Towers by 30% during Siege. Also increases the amount of resources raided by 10%.',
+            ],
+            [
+              'p',
+              'Sinful Pleasure',
+              "Squads' basic attacks have 10% chance to deal bonus DMG (Damage Factor: 3200) during Siege.",
+            ],
+            ['p', 'Grenade Toss', 'Increases Squad Capacity by 12% and Rally Capacity by 12%.'],
+            [
+              'a',
+              'Explosive Tempo',
+              "Basic attacks have 10% chance to reduce target's DMG by 8% and DEF by 20% for 3s.",
+            ],
+          ],
+          1034: [
+            ['r', 'Dual Fire', ''],
+            ['p', 'Dodge and Strike', ''],
+            ['p', 'High Caliber', ''],
+            ['p', 'Embers of Revenge', ''],
+            ['a', 'Cool Heroine', ''],
+          ],
+          1036: [
+            [
+              'r',
+              'Brutal Blow',
+              "Pitches a spinning fastball, dealing DMG to up to 5 target Squads in a fan-shaped area in front (Damage Factor: 3800). Reduces targets' ATK, DEF, and HP by 30% for 2s.",
+            ],
+            [
+              'p',
+              'Energized',
+              "Increases Squads' DMG dealt to Zombies by 25%. Heals some Lightly Wounded units after killing Zombies [color=#25%](<a href='95434'>Heal Factor</a>: 3800).",
+            ],
+            [
+              'p',
+              'Baseball Star',
+              'When leading 2 or more troop types, increases Squad ATK by 24%.',
+            ],
+            [
+              'p',
+              'Countercurrent Swing',
+              'Reduces Counter DMG taken by 14%, and increases Rally Capacity by 12%.',
+            ],
+            [
+              'a',
+              'Death Home Run',
+              "Pitches a spinning fastball, dealing DMG to up to 5 target Squads in a fan-shaped area in front (Damage Factor: 4600). Reduces targets' ATK, DEF, and HP by 35% for 2s.",
+            ],
+          ],
+          1039: [
+            [
+              'r',
+              'To Hell',
+              'Deals DMG to up to 5 enemy Squads in a fan-shaped area (Damage Factor: 10000). DMG taken by each enemy Squad reduces by 15% for every additional target enemy Squad.',
+            ],
+            [
+              'p',
+              'Massacre Concerto',
+              'Increases Skill DMG by 30%.Increases the HP of Ranged Squads by 10% when garrisoning.',
+            ],
+            ['p', 'Deadly Beat', 'Increases Ranged Squad ATK by 30%.'],
+            [
+              'p',
+              'Sonata of Sorrow',
+              'Squads gain an additional 25 Rage when using basic attacks.',
+            ],
+            [
+              'a',
+              'Perfect Curtain Call',
+              'Deals DMG to up to 5 enemy Squads in a circular area (Damage Factor: 12000). DMG taken by each enemy Squad reduces by 15% for every additional target enemy Squad.',
+            ],
+          ],
+          1040: [
+            [
+              'r',
+              'Hometown Nostalgia',
+              'Increases Squad ATK by 45% and DEF by 45%, and gains an additional 20 Rage Points from each basic attack. Lasts 5s.',
+            ],
+            [
+              'p',
+              'Harmony First',
+              "Reduces Squads' DMG taken by 7.5%. Also has 10% chance of healing when DMG is taken [color=#7.5%](<a href='95434'>Heal Factor</a>: 1500). This effect can be triggered only once in 6s.",
+            ],
+            [
+              'p',
+              'Earthly Desire',
+              'Increases Rally Capacity by 15%. Also increases DMG dealt by Squad by 11% during Siege.',
+            ],
+            ['p', 'Breach of Trust', 'Increases Squad ATK by 18% and DEF by 18%.'],
+            [
+              'a',
+              'Storm Command',
+              'Increases Squad ATK by 55% and DEF by 55%, and gains an additional 25 Rage Points from each basic attack. Lasts 5s.',
+            ],
+          ],
+          1061: [
+            [
+              'r',
+              "End's Awakening",
+              'Deals DMG to the enemy (Damage Factor 8000, reduced to 4000 when acting as Vice-General). At the same time, reduces DEF of the attacked Squad by 25% for 3s.',
+            ],
+            [
+              'p',
+              'Desperate Escape',
+              "Increases DMG dealt to Zombies by 25%. When attacking a Zombie, there is a 10% chance to heal Lightly Wounded Squads by [color=#25%](<a href='95434'>Heal Factor</a>: 1500).",
+            ],
+            [
+              'p',
+              'Omen of Disaster',
+              'When using a basic attack, there is a 20% chance to reduce Skill DMG taken by 25% for 3s.',
+            ],
+            ['p', 'Zombie Herding', 'Increases Squad ATK by 12% and DEF by 12%.'],
+            [
+              'a',
+              'Wasteland Eulogy',
+              'Deals DMG to the enemy (Damage Factor 9600, reduced to 4800 when acting as Vice-General). At the same time, reduces DEF of the attacked Squad by 30% for 3s.',
+            ],
+          ],
+          1062: [
+            ['r', 'Invasive Attack', ''],
+            ['p', 'Overload', ''],
+            ['p', 'Keen Perception', ''],
+            ['p', 'Lucky Break', ''],
+            ['a', 'Homecoming', ''],
+          ],
+          1063: [
+            ['r', 'Firepower Assault', ''],
+            ['p', 'Queen of Arms', ''],
+            ['p', 'Steer Clear', ''],
+            ['p', 'Perseverance', ''],
+            ['a', 'Tribal Pride', ''],
+          ],
+          1070: [
+            ['r', 'Dogma of Salvation', ''],
+            ['p', 'Heavenly Baptism', ''],
+            ['p', 'Holy Protection', ''],
+            ['p', 'Divine Grace', ''],
+            ['a', 'Transcendental', ''],
+          ],
+          1080: [
+            [
+              'r',
+              'Double Kill',
+              'Deals DMG to 2 enemies in a straight line (Damage Factor 12000. When appointed as an Assistant, reduces DMG to 6000). If only one enemy is hit, increases DMG by 20%.',
+            ],
+            [
+              'p',
+              'Retribution',
+              "When taking Skill DMG, restores 100 Rage instantly. There is a 50% chance to inflict <a href='95435'>Silence</a> on the attacker for 3s. This effect triggers once every 6s.",
+            ],
+            [
+              'p',
+              'Battle Elite',
+              'When in battle, increases Ranged Squad HP by 20% and ATK by 20%.',
+            ],
+            [
+              'p',
+              'Resilience',
+              'When leading Ranged Squad(s) only, increases Skill DMG by 25% and Travel Speed by 30%.',
+            ],
+            [
+              'a',
+              'Swift Bolt',
+              'Deals DMG to 2 enemies in a straight line (Damage Factor13000. When appointed as an Assistant, reduces DMG to 6500). If only one enemy is hit, increases DMG by 25%.',
+            ],
+          ],
+          1081: [
+            ['r', 'Super Thunder', ''],
+            ['p', 'Armed Fortification', ''],
+            ['p', 'Gutsy Stunt', ''],
+            ['p', 'Secret Base', ''],
+            ['a', 'Role Model', ''],
+          ],
+          1082: [
+            [
+              'r',
+              'Tough Strike',
+              "Deals DMG to target (Damage Factor 12000) and reduces target's healing effect by 40% for 3s.",
+            ],
+            [
+              'p',
+              'Maverick',
+              'When outside Alliance territory, increases Ranged Squad ATK by 30% and DEF by 10%.',
+            ],
+            [
+              'p',
+              'Serial Killer',
+              'Increases Skill DMG by 4% every second, up to 40%. After an Assistant unleashes a Rage Skill, the buff will reset and stack again.',
+            ],
+            [
+              'p',
+              'Extermination',
+              'Increases Ranged Squad HP by 20%. During Sieges, basic attacks have a 20% to deal an additional DMG [color=#20%](Damage Factor 3120.',
+            ],
+            [
+              'a',
+              'Lethal Toxins',
+              "Deals DMG to target (Damage Factor 13750) and reduces target's healing effect by 50% for 5s.",
+            ],
+          ],
+          1083: [
+            ['r', 'Fatal Claw', ''],
+            ['p', 'Wild Rampage', ''],
+            ['p', 'Piercing Fangs', ''],
+            ['p', 'Savage Hunt', ''],
+            ['a', "Lion's Might", ''],
+          ],
+          1084: [
+            ['r', 'Focused Strike', ''],
+            ['p', 'Recycle', ''],
+            ['p', 'Base Sets Sail', ''],
+            ['p', 'Resource Adjustment', ''],
+            ['a', 'Precision Air Strike', ''],
+          ],
+          1085: [
+            ['r', 'Enforce Justice', ''],
+            ['p', 'Tactical Rollover', ''],
+            ['p', 'Ambush', ''],
+            ['p', 'High Noon', ''],
+            ['a', 'Mounted Law', ''],
+          ],
+          1086: [
+            ['r', 'Grand Feast', ''],
+            ['p', 'Crisis Cook', ''],
+            ['p', 'Brash Hunter', ''],
+            ['p', 'Abyss Devourer', ''],
+            ['a', 'Ravenous Ambition', ''],
+          ],
+          1087: [
+            ['r', 'Heartbreak Rock', ''],
+            ['p', 'Lucky Shield', ''],
+            ['p', 'Eternal Groove', ''],
+            ['p', "Devil's Disguise", ''],
+            ['a', 'Blazing Passion', ''],
+          ],
+          1088: [
+            [
+              'r',
+              'Bird of Prey',
+              'Deals DMG to up to 3 enemies (Damage Factor: 12500) in a fan-shaped area in front, and increases own Counter DMG by 23% for 3s. DMG taken by each enemy Squad reduces by 15% for every additional target enemy Squad.',
+            ],
+            [
+              'p',
+              "Earth's Champion",
+              'Increases Ranged Squad HP by 20%, and increases all DMG dealt by 7.5% when garrisoning.',
+            ],
+            [
+              'p',
+              'Dance with the Eagle',
+              'Deals DMG to up to 3 nearby enemy Squads (Damage Factor: 2000) every 8s. If garrisoning, also reduces the ATK of these Squads by 17% for 2s.',
+            ],
+            [
+              'p',
+              'Son of the Wind',
+              'Increases all DMG by 16% if the remaining Squad Size is below 50%. Increases all DMG to 20% if the remaining Squad Size is less than 30%.',
+            ],
+            [
+              'a',
+              'Eagle Strike',
+              'Deals DMG to up to 3 enemies (Damage Factor: 13750) in a fan-shaped area in front, and increases own Counter DMG by 28% for 3s. DMG taken by each enemy Squad reduces by 15% for every additional target enemy Squad.',
+            ],
+          ],
+          1089: [
+            [
+              'r',
+              'Stunning Magic',
+              'Deals DMG to the target (Damage Factor: 12500) and restores 100 Rage to own Squad.',
+            ],
+            [
+              'p',
+              'Escape Preparation',
+              'Increases Ranged Squad ATK by 20%, and increases Ranged Squad DEF by 20%.',
+            ],
+            [
+              'p',
+              'Mind Reading',
+              'Reduces DMG taken from basic attacks by 20%. When Rage is more than 90%, increases Skill DMG dealt by 17% for 4s.',
+            ],
+            [
+              'p',
+              'Impenetrable',
+              'Increases Ranged Squad HP by 40%. There is a 60% chance of being immune to taking increased DMG.',
+            ],
+            [
+              'a',
+              'Miracle of the Century',
+              "Deals DMG to the target (Damage Factor: 13750) and inflicts <a href='95435'>Silence</a> on the enemy for 3s. Also restores 120 Rage to own Squad.",
+            ],
+          ],
+          1090: [
+            [
+              'r',
+              'Body Weapon',
+              "Deals DMG to the target (Damage Factor: 12500). If garrisoning, increases this skill's DMG by 15%.",
+            ],
+            [
+              'p',
+              'Evolutionary Leader',
+              'Increases own Squad ATK by 17%, and increases Squad HP by 17%.',
+            ],
+            [
+              'p',
+              'Supervisor Privileges',
+              'Reduces Skill DMG taken by 17%. When Squad contains 2 or more types of Troops, increases Squad ATK by 20%.',
+            ],
+            [
+              'p',
+              'Survival of the Fittest',
+              'When garrisoning, increases Squad HP by 20%. Basic attacks have a 20% chance to deal additional DMG to the target [color=#20%](Damage Factor: 1920).',
+            ],
+            [
+              'a',
+              'Natural Evolution',
+              "Deals DMG to the target (Damage Factor: 13750). If garrisoning, increases this skill's DMG by 20%.",
+            ],
+          ],
+          1091: [
+            [
+              'r',
+              "Queen's Troops",
+              'Increases ATK by 38% and DEF by 38% for you and nearby allies. Lasts 4s. Also instantly restores 60 Rage to them. Affects up to 3 Squads.',
+            ],
+            ['p', "Queen's Trap", 'Increases Squad DEF by 24% and Travel Speed by 20%.'],
+            [
+              'p',
+              'Queen vs Pawn',
+              'Increases Squad ATK by 20%. Increases basic attack DMG by 20% if the remaining Squad Size is less than 50%.',
+            ],
+            [
+              'p',
+              "Queen's Defense",
+              "Every 10s, grants a <a href='95433'>Shield</a> (Shield Factor: 2800) to you and nearby allies. Lasts 3s. Affects up to 3 Squads.",
+            ],
+            [
+              'a',
+              "Queen's Gambit",
+              'Increases ATK by 42% and DEF by 42% for you and nearby allies. Lasts 4s. Also instantly restores 60 Rage to them. Affects up to 5 Squads.',
+            ],
+          ],
+          1092: [
+            ['r', 'Raining Punches', ''],
+            ['p', 'Prosthetic Arm', ''],
+            ['p', 'Indomitable Soul', ''],
+            ['p', 'Mighty Bear', ''],
+            ['a', 'Great Ambition', ''],
+          ],
+          1094: [
+            ['r', 'Logging Timber', ''],
+            ['p', 'Forest Ranger', ''],
+            ['p', 'Partner Assistance', ''],
+            ['p', 'Off-Road Patrol', ''],
+            ['a', 'Parental Love', ''],
+          ],
+          1095: [
+            ['r', 'Two Heavens as One', ''],
+            ['p', 'Defensive Posture', ''],
+            ['p', 'Swift Momentum', ''],
+            ['p', 'Quick-Draw Technique', ''],
+            ['a', 'Five Rings', ''],
+          ],
+          1096: [
+            [
+              'r',
+              'Mass Annihilation',
+              'Deals DMG to up to 3 enemy targets in a circular area (Damage Factor: 13000). DMG taken by each enemy target reduces by 15% for every additional enemy target. If this skill kills an enemy Squad, has 50% chance to immediately recover 60 Rage.',
+            ],
+            [
+              'p',
+              'Purge Weakness',
+              "Increases Ranged Squad ATK by 30%. If the enemy is inflicted with <a href='95435'>Silence</a>, increases basic attack DMG dealt to them by 21%.",
+            ],
+            [
+              'p',
+              'Invincible Fleet',
+              'During Sieges, increases Ranged Squad DEF by 25% and HP by 25%.',
+            ],
+            [
+              'p',
+              'Direct Confrontation',
+              'During Rallies, increase Skill DMG dealt to Garrison Squads by 54%, but all DMG taken from Garrison Squads is increased by 12.5%.',
+            ],
+            [
+              'a',
+              'Dominating the Seas',
+              'Deals DMG to up to 3 enemy targets in a circular area (Damage Factor: 14300). DMG taken by each enemy target reduces by 15% for every additional enemy target. If this skill kills an enemy Squad, has 50% chance to immediately recover 65 Rage and increase own ATK by 30% for 3s.',
+            ],
+          ],
+          1097: [
+            [
+              'r',
+              'Precise Breakthrough',
+              'Deals DMG to the target (Damage Factor: 11700). If Flanked when not Rallying or Garrisoned, deals additional DMG to the current target (Damage Factor: 3000) and reduces Skill DMG taken by 20% for 2s.',
+            ],
+            [
+              'p',
+              'Auto Fortify',
+              'Increases Ranged Squad ATK by 30%. If Flanked when not Rallying or Garrisoned, increases Ranged Squad DEF by 15%.',
+            ],
+            [
+              'p',
+              'Scan Weakness',
+              'Increases Ranged Squad HP by 34%. Counterattacks have a 20% chance to reduce all DMG taken by 4.5% for 2s. This effect can be triggered only once in 4s.',
+            ],
+            [
+              'p',
+              'Tactical Maneuver',
+              'Increases Counter DMG by 32% and Ranged Squad Travel Speed by 20%.',
+            ],
+            [
+              'a',
+              'High Output Mode',
+              'When in World Map battles, increases Ranged Squad DMG by 3%. If Flanked when not Rallying or Garrisoned, reduces DMG taken by 10%.',
+            ],
+          ],
+          1098: [
+            ['r', 'Accelerate and Overtake', ''],
+            ['p', 'Steady Airflow', ''],
+            ['p', 'Champion Declaration', ''],
+            ['p', 'Pit Stop', ''],
+            ['a', 'Rapid Duel', ''],
+          ],
+          1099: [
+            ['r', 'Unethical Thief', ''],
+            ['p', 'Lost in the Moonlight', ''],
+            ['p', 'Lashing Whip', ''],
+            ['p', 'Wits and Eloquence', ''],
+            ['a', 'Shadow Stalker', ''],
+          ],
+          1100: [
+            ['r', "It's Showtime", ''],
+            ['p', 'Battle Dance', ''],
+            ['p', 'Concert Tour', ''],
+            ['p', 'Final Performance', ''],
+            ['a', 'Encore!', ''],
+          ],
+          1101: [
+            ['r', 'Gaining Enlightenment', ''],
+            ['p', 'Six Faculties Purification', ''],
+            ['p', 'Karma Cutting', ''],
+            ['p', 'Ephemeral Body and Mind', ''],
+            ['a', 'Boundless Dharma', ''],
+          ],
+          1102: [
+            [
+              'r',
+              'All Shots Fired',
+              'Deals DMG to up to 3 enemies (Damage Factor: 13500) in a fan-shaped area in front, DMG taken by each enemy reduces by 15% for every additional enemy target. For every enemy target hit, gain 1 stack of Gunfire. If garrisoned, for every enemy target hit, gain 2 stacks of Gunfire instead. For every 10 stacks of Gunfire gained, increases Ranged Squad ATK by 10%.',
+            ],
+            [
+              'p',
+              'Gunfight Tactics',
+              "Increases Ranged Squad ATK by 42%. Counterattacks have a 20% chance to grant 1 stack of <a href='95438'>Gunfire</a>.",
+            ],
+            [
+              'p',
+              'Tactical Deployment',
+              "Increases Ranged Squad HP by 36% and reduces Squad's Skill DMG taken by 13% when garrisoned.",
+            ],
+            [
+              'p',
+              'Hunter Spirit',
+              'Increases Ranged Squad DEF by 38%. If garrisoned, reduces all DMG taken by 10% for 1m after entering battle.',
+            ],
+            [
+              'a',
+              'Killer Instinct',
+              'Increases DMG of AoE Skills by 18%. At 30 stacks of Gunfire, remove all Gunfire stacks to deal DMG to up to 3 enemies in a circular area [color=#18%](Damage Factor: 13500).',
+            ],
+          ],
+          1103: [
+            [
+              'r',
+              "Giant's Wrath",
+              'Deals DMG to the current target (Damage Factor: 13500) and increases Skill DMG received by nearby enemies, up to 3 enemies, by 20% for 3s.',
+            ],
+            [
+              'p',
+              'Shoulder Ride',
+              'Increases Ranged Squad TRVL SPD by 20% and ATK by 32% when not rallying.',
+            ],
+            [
+              'p',
+              "Giant's Counterattack",
+              "When using Rage Skills without <a href='95440'>Charge</a>, gains <a href='95440'>Charge</a>. When using Rage Skills with  <a href='95440'>Charge</a>, consumes  <a href='95440'>Charge</a> to deal DMG to up to 3 Squads in a circular area (Damage Factor: 7850).  <a href='95440'>Charge</a>: Increases Ranged Squad DMG by 10%.",
+            ],
+            [
+              'p',
+              'Bottled Dream',
+              'Increases Ranged Squad HP by 32%, and increases Ranged Squad DMG Reduction by 5.5%.',
+            ],
+            [
+              'a',
+              "Giant's Authority",
+              "Immediately gains  <a href='95440'>Charge</a> for 15s when entering battle. Every time  <a href='95440'>Charge</a> is consumed, there is a 30% chance to deal DMG again.",
+            ],
+          ],
+          1104: [
+            ['r', 'Crimson Slaughter', ''],
+            ['p', 'Wolfblood Pact', ''],
+            ['p', 'War Howls', ''],
+            ['p', 'Crimson Moon Waltz', ''],
+            ['a', 'Hunting Vestige', ''],
+          ],
+          1105: [
+            ['r', 'Avalanche Interception', ''],
+            ['p', 'Cold Snap', ''],
+            ['p', 'Polar Rush', ''],
+            ['p', 'Prism Armor', ''],
+            ['a', 'Blizzard Barrage', ''],
+          ],
+          1106: [
+            [
+              'r',
+              'Blossoming Life',
+              "Reduces Skill DMG taken by 20% for 4s, and grants a status to self and nearby allies. Increases the target's DMG by 25% for 4s if their remaining Squad Size is greater than 50%. When the target's Squad Size is less than 50%, heal Lightly Wounded Squads [color=#20%](<a href='95434'>Heal Factor</a>: 3000) and reduces their DMG taken by 15% for 4s. Affects up to 5 Squads.",
+            ],
+            [
+              'p',
+              'Lingering Miasma',
+              'After using a Rage Skill, reduces HP and TRVL SPD of up to 5 enemies by 30% and 40% respectively for 3s.',
+            ],
+            [
+              'p',
+              'Spore Parasitism',
+              'Increases Squad HP by 20%, TRVL SPD by 20%, and Squad Capacity by 10%.',
+            ],
+            [
+              'p',
+              'Photosynthetic Assimilation',
+              "Reduces Counter DMG taken by 20%. When taking Skill DMG, gains a <a href='95433'>Shield</a> [color=#20%](Shield Factor: 3000) for 2s. This effect can be triggered only once in 6s.",
+            ],
+            [
+              'a',
+              'Decay and Wither',
+              'After using a Rage Skill, reduces HP and TRVL SPD of up to 5 enemies by 35% and 40% respectively for 3s. Also, reduces their Rage Recovery Speed by 20% during this time.',
+            ],
+          ],
+          1107: [
+            ['r', 'Chain Lightning', ''],
+            ['p', 'Current Surge', ''],
+            ['p', 'Overclocked Circuit', ''],
+            ['p', 'Electromagnetic Acceleration', ''],
+            ['a', 'High-Voltage Load', ''],
+          ],
+          1108: [
+            [
+              'r',
+              'Weakness Detection',
+              "Increases Squad ATK by 46%. Squads' basic attacks deal bonus DMG [color=#46%](Damage Factor: 3750). Lasts 2s.",
+            ],
+            [
+              'p',
+              'Point and Shoot',
+              "Increases Ranged Squad HP by 18%. During Sieges, increases Squads' basic attack DMG by 24%.",
+            ],
+            ['p', 'Dynamic Vision', 'Increases Ranged Squad ATK by 15% and DEF by 15%.'],
+            [
+              'p',
+              'Camouflage',
+              'Reduces Counter DMG received by 17%. Basic attacks have a 20% chance to reduce enemy DEF by 16% for 3s.',
+            ],
+            [
+              'a',
+              'Flying Bullets',
+              'Increases Ranged Squad ATK by 20% and DEF by 20%. Also, reduces research time for all Technologies in the Research Lab by 0.5h, and increases research speed by 12%. This effect applies even when not deployed.',
+            ],
+          ],
+          1109: [
+            ['r', 'Rift Frequency', ''],
+            ['p', "Predator's Deterrence", ''],
+            ['p', 'Omni-Surveillance', ''],
+            ['p', 'Kinetic Energy Recovery', ''],
+            ['a', 'Sonic Pulse', ''],
+          ],
+          1110: [
+            [
+              'r',
+              'Dance of Slaughter',
+              'Deals direct DMG to the target  (Damage Factor: 14000). When not garrisoned, deals additional damage to target and 2 other targets around self once (Damage Factor: 2500).',
+            ],
+            [
+              'p',
+              'Shadow in the Fog',
+              'Increases Ranged Squad DEF by 30%. During Rallies, increases Ranged Squad DMG by 10%.',
+            ],
+            [
+              'p',
+              'Night of Assassination',
+              'Increases Ranged Squad ATK by 30%. During Rallies, counterattacks have a 30% chance to deal damage to Squads in the field [color=#30%](Damage Factor: 2000). This effect can be triggered up to 1 times every 3s.',
+            ],
+            [
+              'p',
+              'Perfect Attire',
+              'Increases Ranged Squad HP by 30%. Reduces Skill DMG taken from Garrison Squads by 12%.',
+            ],
+            [
+              'a',
+              'Bloody Storm',
+              "Reduces current target's Skill DMG by 3% and Squad HP by 4% when Cedric uses a Rage Skill. This effect stacks up to 3 times, and lasts for 30s.",
+            ],
+          ],
+          1111: [
+            [
+              'r',
+              'Magic Marksman',
+              'Deals damage to the target (Damage Factor 14000). If the target is Flanked, the Damage Factor is increased to 15500. When not garrisoned, reduces enemy ATK by an additional 30% for 3s.',
+            ],
+            [
+              'p',
+              'Aurora Veil',
+              'Increased Ranged Squad HP by 25%. When taking Skill DMG, reduces DMG taken by own Ranged Squad by 20% for 3s. This effect can be triggered up to 1 times every 10s.',
+            ],
+            [
+              'p',
+              'Prism Ruling',
+              'Increases Ranged Squad DEF by 20%. When performing basic attacks, there is a 20% chance to steal 50 Rage from the enemy. This effect can be triggered up to 1 times every 4s.',
+            ],
+            [
+              'p',
+              'Shining Moment',
+              'Increases Ranged Squad ATK by 20% and increases TRVL SPD by 20%. If target is Flanked, increases DMG received by 15% for 3s after using a Rage Skill.',
+            ],
+            [
+              'a',
+              'Precise Reflection',
+              'Increases Ranged Squad DEF by 25%. When performing basic attacks, there is a 20% chance to steal 50 Rage from the enemy. This effect can be triggered up to 1 times every 4s. After successfully stealing Rage, also steals 8% of Skill DMG from the enemy for 3s.',
+            ],
+          ],
+          1112: [
+            ['r', 'Shark Spin', ''],
+            ['p', 'Trick Shooting', ''],
+            ['p', 'Stunt Skating', ''],
+            ['p', 'Freestyle', ''],
+            ['a', 'Street Vaulter', ''],
+          ],
+          1113: [
+            ['r', 'Paint Bomb', ''],
+            ['p', 'Frantic Graffiti', ''],
+            ['p', 'Rainbow Slide', ''],
+            ['p', 'Neon Shuttle', ''],
+            ['a', 'Inspiration Spray', ''],
+          ],
+          1114: [
+            [
+              'r',
+              'Grand Opening',
+              'Deals DMG to the current target (Damage Factor: 14000). When not Rallying or Garrisoned, increases DMG received by 3 nearby enemy Squads by 10% for 3s.',
+            ],
+            [
+              'p',
+              'Lead the Trend',
+              'Squad ATK increases by 30%, and Travel Speed increases by 15%.',
+            ],
+            [
+              'p',
+              'Intimidating Stance',
+              'When not Rallying or Garrisoned, increases Squad HP by 30%. When Flanked, reduces Skill DMG taken by 8%.',
+            ],
+            [
+              'p',
+              'Deadly Elegance',
+              'When not Rallying or Garrisoned, increases Skill DMG by 20%, and gains 30 Rage every 10s.',
+            ],
+            [
+              'a',
+              'Couture Gala',
+              'When serving as Leader and not Rallying or Garrisoned, gains additional effects based on the type of Squad led. Infantry-only Squad: Using "Grand Opening" increases Squad DMG by 3% for 20s. This effect stacks up to 5 times, and remains active when out of combat. Rider-only Squad: "Grand Opening" deals bonus DMG [color=#3%](Damage Factor: 3500) to 2 other nearby targets. Ranged-only Squad: Increases the DMG of "Grand Opening" by 20%.',
+            ],
+          ],
+          1115: [
+            ['r', 'Grilled Feast', ''],
+            ['p', 'Swift Service', ''],
+            ['p', 'Premium Seasoning', ''],
+            ['p', 'Flawless Kitchen', ''],
+            ['a', 'Perfect Heat Control', ''],
+          ],
+          1116: [
+            ['r', 'First Form: Deadwood Slash', ''],
+            ['p', 'Second Form: Gale Thrust', ''],
+            ['p', 'Third Form: Sunflare Dance', ''],
+            ['p', 'Fourth Form: Mountain Shatter', ''],
+            ['a', 'Final Form: Sakura', ''],
+          ],
+          1117: [
+            [
+              'r',
+              'One-Shot Kill',
+              'Deals DMG to the current target (Damage Factor: 14500), reducing their HP by 40% for 3s. While in the Aiming state, increases this DMG by 20%.',
+            ],
+            [
+              'p',
+              'Focused Breath',
+              'Enters the Aiming state for 30s when entering battle. When not in a Rally or garrisoned, if not in the Aiming state, Charon uses a Rage Skill and enters the Aiming state for 10s. Aiming: Increases Rage Recovery Speed by 10%.',
+            ],
+            [
+              'p',
+              'Evasive Maneuver',
+              'Increases Ranged Squad ATK by 30%, and increases Travel Speed by 20%. While in the Aiming state, reduces Counter DMG taken by 20%.',
+            ],
+            [
+              'p',
+              'Position Shift',
+              'Increases Ranged Squad HP by 30%. If flanked when not in a Rally or garrisoned, increases Ranged Squad DEF by an additional 20%.',
+            ],
+            [
+              'a',
+              'Death Radius',
+              'Deals DMG to the current target (Damage Factor: 15000), and deals DMG (Damage Factor: 5000) to 2 other nearby enemy targets, reducing their HP by 40% for 3s. While in the Aiming state, increases this DMG by 20%.',
+            ],
+          ],
+          1118: [
+            [
+              'r',
+              'Multithreaded Breach',
+              'Deals DMG to up to 3 enemies in a fan-shaped area (Damage Factor: 14500, increased to 16500 when garrisoned). DMG taken by each enemy Squad reduces by 15% for every 1 additional target enemy Squads. Also reduces Skill DMG dealt by target Squads by 10% for 2s.',
+            ],
+            [
+              'p',
+              'Warm-Up Stream',
+              'Increases Ranged Squad ATK by 40%. When garrisoned, increases Rage Recovery Speed by 10% for the first 1m after entering battle.',
+            ],
+            [
+              'p',
+              'Extreme Speedrun',
+              'When not in a Rally, increases Ranged Squad DEF by 35% and Ranged Squad DMG Reduction by 8%.',
+            ],
+            [
+              'p',
+              'Virtual Avatar',
+              'Increases Ranged Squad HP by 40%. When garrisoned, reduces Skill DMG taken by 12%.',
+            ],
+            [
+              'a',
+              'Cheat Code',
+              "Gains 1 stacks of <a href='95441'>Cheat Code</a> before the Leader uses a Rage Skill when not in a Rally. At 6 stacks, removes all stacks, increases Ranged Squad DMG by 10% for 3s, and if the Leader has a Ranged Squad Talent, the Leader will use a Rage Skill again the next second after the Assistant uses a Rage Skill. <a href='95441'>Cheat Code</a>: Increases Ranged Squad ATK by 3%.",
+            ],
+          ],
+          1119: [
+            ['r', 'Mach Impact', ''],
+            ['p', 'Overdrive Engine', ''],
+            ['p', 'Stunt Skating', ''],
+            ['p', 'Aerial Suppression', ''],
+            ['a', 'High-Velocity Airflow', ''],
+          ],
+          1120: [
+            ['r', 'Flock Command', ''],
+            ['p', 'Ode to Nature', ''],
+            ['p', 'Go With the Wind', ''],
+            ['p', 'Highland Blessing', ''],
+            ['a', "Soul's Journey Home", ''],
+          ],
+          1121: [
+            ['r', 'Overload Slash', ''],
+            ['p', 'Fluid Armor', ''],
+            ['p', 'High-Frequency Pulse', ''],
+            ['p', 'Instinctive Deduction', ''],
+            ['a', 'Integrated Combat', ''],
+          ],
+          1122: [
+            ['r', 'Blade Dance', ''],
+            ['p', 'Whirling Dance', ''],
+            ['p', 'Graceful Dance', ''],
+            ['p', 'Lightfoot Dance', ''],
+            ['a', 'Dance of Death', ''],
+          ],
+          1123: [
+            [
+              'r',
+              'Precision Volley',
+              'Deals DMG to the target (Damage Factor: 12000) and increases ATK of up to 3 nearby allies by 20% for 3s.',
+            ],
+            [
+              'p',
+              'Graceful Steps',
+              'Squad ATK increases by 30%, and Travel Speed increases by 15%.',
+            ],
+            [
+              'p',
+              'Glorious Command',
+              'Increases Squad DEF by 30%. Increases Skill DMG by 15% when flanking the enemy.',
+            ],
+            [
+              'p',
+              'Blade of the Heavens',
+              'Increases Squad HP by 20%. Basic attacks have a 20% chance to deal additional DMG to the target [color=#20%](Damage Factor: 2000).',
+            ],
+            [
+              'a',
+              'Desert Leader',
+              'Increases Shelter Construction Speed by 15%. This effect applies even when not deployed.',
+            ],
+          ],
+          1124: [
+            [
+              'r',
+              'Prelude to Death',
+              'Deals damage to the target (Damage Factor 15000). When not garrisoned, the Damage Factor is increased to 18000, and increases DMG Reduction by 3% for every 1 nearby Squads when using the Skill. This effect stacks up to 3 times, and lasts for 3s.',
+            ],
+            [
+              'p',
+              'Marionette Aria',
+              'During Rallies, increases Ranged Squad ATK by 40% and increases damage dealt to Infantry Squads by 10%.',
+            ],
+            [
+              'p',
+              'Phantom Variation',
+              "Increases Ranged Squad DEF by 30%. When taking Skill DMG, there is a 30% chance to recover HP [color=#30%](<a href='95434'>Heal Factor</a>: 3000). This effect can be triggered up to 1 times every 6s.",
+            ],
+            [
+              'p',
+              'Puppet Rhapsody',
+              'Increases Ranged Squad HP by 40%. During Rallies, counterattacks have a 25% chance to deal damage to Squads in the field [color=#40%](Damage Factor: 2500). This DMG increases by 100% in the first 1 minutes of battle.',
+            ],
+            [
+              'a',
+              'Curtain Call Waltz',
+              "Prelude to Death additionally reduces the target's DEF by 6%. This effect stacks up to 5 times, and lasts for 30s. Reduces Shield Effect of targets that reach the stack limit by 30% and increases own Skill DMG dealt to them by 15%.",
+            ],
+          ],
+          1125: [
+            [
+              'r',
+              'Final Judgment',
+              'Deals DMG to the target (Damage Factor: 15000). When not in a Rally or garrisoned, heals up to 3 nearby allies based on [color=#30%]30% of this DMG dealt.',
+            ],
+            [
+              'p',
+              'Path of Redemption',
+              'When not in a Rally or garrisoned, increases own healing effect granted by [color=#20%]20%. For every 30% of Squad Size lost, additionally increases this by [color=#20%]10%.',
+            ],
+            [
+              'p',
+              'Breath of Dawn',
+              '[Final Judgment] Additionally increases DMG of Squads that receive healing by 10%. This effect stacks up to 2 times, and lasts for 10s.',
+            ],
+            [
+              'p',
+              'Apocalyptic Dance',
+              'Ranged Squad HP increases by 40%, and Travel Speed increases by 20%.',
+            ],
+            [
+              'a',
+              'Ashen Huntres',
+              'Deals DMG to the target (Damage Factor: 16000). When not in a Rally or garrisoned, heals up to 5 nearby allies based on [color=#35%]35% of this DMG dealt.',
+            ],
+          ],
+          1201: [
+            ['r', 'Hakuro no Mai', ''],
+            ['p', 'Chou Hissatsu Shinobi-Bachi', ''],
+            ['p', 'Kachousen', ''],
+            ['p', 'Musasabi no Mai', ''],
+            ['a', 'Houou no Mai', ''],
+          ],
+          1202: [
+            ['r', 'Explosive Shots', ''],
+            ['p', 'Electronic Interference', ''],
+            ['p', 'Steel Armor', ''],
+            ['p', 'Slug Firepower', ''],
+            ['a', 'Rescue Reward', ''],
+          ],
+          1203: [
+            [
+              'r',
+              'Resonance Shots',
+              'Deals DMG to the current target (Damage Factor: 13500). When not Rallying or Garrisoned, recover HP based on the number of Squads flanking the enemy Squad (Flanking Squads x550). This effect counts up to 5 Flanking Squads.',
+            ],
+            [
+              'p',
+              'Coordinated Tactics',
+              'Increases Squad HP by 30%. Basic attacks grant 10 Rage when flanking the enemy.',
+            ],
+            [
+              'p',
+              'Flanking Operation',
+              'When not Rallying or Garrisoned, increases Skill DMG by 36% when remaining Squad Size is 50% or more. When Squad Size is less than 50%, reduces Skill DMG taken by 36% and increases Ranged Squad TRVL SPD by 20%.',
+            ],
+            ['p', 'Speedy Travel', 'Increases Squad TRVL SPD by 20% and ATK by 30%.'],
+            [
+              'a',
+              'Perfect Sync',
+              'Deals DMG to the current target (Damage Factor: 14850). When not Rallying or Garrisoned, recover HP based on the number of Squads flanking the enemy Squad (Flanking Squads x550).  The Assistant has a 50% recover additional HP (Flanking Squads x330) after casting a skill. This effect counts up to 5 Flanking Squads.',
+            ],
+          ],
+          1204: [
+            ['r', 'Power of the Titans', ''],
+            ['p', 'Omni-directional mobility', ''],
+            ['p', 'Indomitable Will', ''],
+            ['p', 'Precision Slice', ''],
+            ['a', 'Attack Roar', ''],
+          ],
+        },
+        chg: {
+          1124: 'The awakening skill now also cuts the shield effect of targets at max stacks (30%, or 50% in the upgraded variant).',
+          1123: 'The trigger conditions of its effects were edited. Details are not decoded yet.',
+        },
+      };
+      const $ = (s) => document.querySelector(s),
+        nf = (n) => Math.round(n).toLocaleString('en-US'),
+        sum = (a) => a.reduce((p, q) => p + q, 0);
+      const m = (v) =>
+        v >= 1e9 ? (v / 1e9).toFixed(2) + 'B' : v >= 1e6 ? (v / 1e6).toFixed(1) + 'M' : nf(v);
+      const dur = (s) => {
+        const d = Math.floor(s / 86400),
+          h = Math.round((s % 86400) / 3600);
+        return d ? `${d}d ${h}h` : `${h}h`;
+      };
+      const cl = (v, a, b) => Math.min(b, Math.max(a, +v || a));
+      const EX = ['Catherine', 'Master Jin', 'Jaden', 'Maxine', 'Norah'],
+        RES = ['Food', 'Wood', 'Steel', 'Oil'],
+        V = ['roster', 'legacy', 'troops', 'heroes', 'squad'];
+      const HB = Object.fromEntries(D.heroes.map((h) => [h[0], h]));
+      const def = { ld: 0, as: 0, ch: 5, from: 5, to: 6, n: 1000000, sp: 0, lv: {} };
+      let S = { roster: [], ui: { ...def } };
+      try {
+        const o = JSON.parse(localStorage.getItem('rd1') || 'null');
+        if (o && Array.isArray(o.roster))
+          S = { roster: o.roster.filter((x) => HB[x.id]), ui: { ...def, ...o.ui } };
+      } catch (e) {}
+      const save = () => {
+        try {
+          localStorage.setItem('rd1', JSON.stringify(S));
+        } catch (e) {}
+      };
+      const tp = (l, r) => Math.max(0, l - 1) + (r >= 6 ? 15 : r >= 5 ? 5 : 0);
+      const fld = (l, k, v, a, b) =>
+        `<label class="f">${l}<input type="number" data-k="${k}" min="${a}" max="${b}" value="${v}"></label>`;
+      function row(x, i) {
+        const h = HB[x.id];
+        return `<div class="hero" data-i="${i}"><div class="nm"><b>${h[1]}</b><span>${h[2]}, ${h[3]}${h[4] ? ', Superhero' : ''}</span></div>
+${fld('Rank', 'r', x.r, 1, 6)}${fld('Level', 'l', x.l, 1, 60)}${x.k.map((v, j) => fld(['Rage', 'Passive 1', 'Passive 2', 'Passive 3'][j], 'k' + j, v, 1, 5)).join('')}
+<label class="f">Status<select data-k="u"><option value="main"${x.u == 'main' ? ' selected' : ''}>In use</option><option value="donor"${x.u == 'donor' ? ' selected' : ''}>Unused donor</option></select></label>
+<label class="c"><input type="checkbox" data-k="lead"${x.lead ? ' checked' : ''}>Leader</label>
+${h[4] ? `<label class="c"><input type="checkbox" data-k="w"${x.w ? ' checked' : ''}>Weapon upgraded</label>` : ''}
+<button data-rm>Remove</button></div>`;
+      }
+      function acct() {
+        $('#list').innerHTML = S.roster.length
+          ? S.roster.map(row).join('')
+          : '<p class="empty">No heroes yet. Pick one above, then set its rank, level and skill levels.</p>';
+      }
+      function legacy() {
+        const exc = (x) => {
+          const h = HB[x.id];
+          return EX.some((e) => h[1] === e || h[1].startsWith(e + ' '))
+            ? 'excluded from the event'
+            : h[4] && x.w
+              ? 'its Doomsday Weapon is upgraded'
+              : '';
+        };
+        const R = S.roster,
+          don = R.filter((x) => x.u == 'donor' && !exc(x)),
+          tar = R.filter((x) => x.u == 'main' && !exc(x)),
+          c = [];
+        don.forEach((d) =>
+          tar.forEach((t) => {
+            const net = sum(d.k) - sum(t.k),
+              dr = d.r - t.r;
+            if (net > 0 && !(t.lead && dr < 0)) c.push({ d, t, net, dr });
+          }),
+        );
+        c.sort((a, b) => b.net - a.net || b.dr - a.dr);
+        const ud = new Set(),
+          ut = new Set(),
+          pl = [];
+        for (const x of c) {
+          if (pl.length >= S.ui.ch) break;
+          if (ud.has(x.d.id) || ut.has(x.t.id)) continue;
+          ud.add(x.d.id);
+          ut.add(x.t.id);
+          pl.push(x);
+        }
+        const nm = (x) => HB[x.id][1];
+        let o = '';
+        if (!don.length || !tar.length)
+          o =
+            '<p class="empty">Mark at least one hero In use and one Unused donor in My roster.</p>';
+        else if (!pl.length)
+          o =
+            '<p class="empty">No swap would improve your heroes. A donor needs higher skill levels than its target.</p>';
+        else
+          o =
+            `<p class="tot"><b>+${sum(pl.map((x) => x.net))}</b> skill levels from ${pl.length} of ${S.ui.ch} swaps</p><ol class="plan">` +
+            pl
+              .map((x, i) => {
+                const a = tp(x.t.l, x.t.r),
+                  b = tp(x.d.l, x.d.r),
+                  w = [];
+                if (x.dr < 0)
+                  w.push(
+                    `Rank drops by ${-x.dr}, so the target loses ${Math.max(0, a - b)} talent points. Fine only if it never leads.`,
+                  );
+                if (x.d.l < x.t.l) w.push(`Level drops from ${x.t.l} to ${x.d.l}.`);
+                return `<li><span class="n">${i + 1}</span><div><b>${nm(x.d)} into ${nm(x.t)}</b><div>${x.t.k.join('-')} becomes ${x.d.k.join('-')}, <span class="good">+${x.net}</span> levels. Rank ${x.t.r} to ${x.d.r}, talent points ${a} to ${b}.</div>${w.map((t) => `<div class="flare">${t}</div>`).join('')}</div></li>`;
+              })
+              .join('') +
+            '</ol>';
+        const sk = R.map((x) => [x, exc(x)]).filter((p) => p[1]);
+        if (sk.length)
+          o += `<h2>Left out</h2><ul>${sk.map((p) => `<li>${nm(p[0])}: ${p[1]}.</li>`).join('')}</ul>`;
+        o +=
+          '<p class="fine">Each swap also resets talents on both heroes. This assumes skill levels move slot by slot, which is unconfirmed. Check how many chances your event gives you.</p>';
+        $('#plan').innerHTML = o;
+      }
+      function trp() {
+        const u = S.ui,
+          A = D.troops[u.from - 1],
+          B = D.troops[u.to - 1],
+          n = u.n,
+          dm = (B[6] - A[6]) * n;
+        const st = [
+          ['Attack', 1],
+          ['Defense', 2],
+          ['Health', 3],
+          ['Speed', 4],
+          ['Capacity', 5],
+          ['Might', 6],
+        ]
+          .map(([l, i]) => {
+            const p = (B[i] / A[i] - 1) * 100;
+            return `<tr><td>${l}</td><td>${A[i]}</td><td>${B[i]}</td><td class="${p < 0 ? 'flare' : 'good'}">${p > 0 ? '+' : ''}${p.toFixed(1)}%</td></tr>`;
+          })
+          .join('');
+        const cr = RES.filter((k) => B[7][k] || A[7][k])
+          .map(
+            (k) =>
+              `<tr><td>${k}</td><td>${nf((B[7][k] || 0) * n)}</td><td>${nf(((B[7][k] || 0) - (A[7][k] || 0)) * n)}</td><td>${nf((B[8][k] || 0) * n)}</td></tr>`,
+          )
+          .join('');
+        $('#tout').innerHTML = `<p class="tot"><b>${dm >= 0 ? '+' : ''}${nf(dm)}</b>troop might</p>
 <div class="wrap"><table><tr><th>Per troop</th><th>T${u.from}</th><th>T${u.to}</th><th>Change</th></tr>${st}</table></div>
 <h2>Cost for ${nf(n)} troops</h2><div class="wrap"><table><tr><th>Resource</th><th>Train from scratch</th><th>Difference only</th><th>Heal at T${u.to}</th></tr>${cr}</table></div>
 <p class="fine">Difference only applies if promoting charges just the gap between tiers. That is unconfirmed.</p>`;
-const sp=1+u.sp/100,ro=D.research.map(([id,name,lv])=>{const cur=Math.min(u.lv[id]||0,lv.length),rem=lv.slice(cur);return {id,name:id==5022?'Ranged T6 unlock':name,max:lv.length,cur,t:sum(rem.map(x=>x[0]))/sp,c:RES.map(k=>sum(rem.map(x=>x[1][k]||0)))}});
-$('#rtab').innerHTML='<tr><th>Research</th><th>Level</th><th>Time left</th>'+RES.map(k=>`<th>${k}</th>`).join('')+'</tr>'+ro.map(r=>`<tr><td>${r.name}</td><td><input type="number" data-id="${r.id}" min="0" max="${r.max}" value="${r.cur}"> / ${r.max}</td><td>${r.t?dur(r.t):'Done'}</td>${r.c.map(v=>`<td>${v?m(v):'-'}</td>`).join('')}</tr>`).join('');
-$('#path').innerHTML=`<b>${dur(sum(ro.filter(r=>[2009,3015,5022].includes(r.id)).map(r=>r.t)))}</b>to unlock T6 ranged, if Camo Finish (15), Battlefield Medicine (10) and the unlock run one after another`}
-const SLOT={r:'Rage',p:'Passive',a:'Awakening'},SQ=['Ranged','Leader','Infantry','Rider','Overall'];
-const sk=id=>(D.sk[id]||[]).map(s=>`<div class="sk"><b>${s[1]}</b> <span>${SLOT[s[0]]}</span><p>${s[2]||'Full text for this squad type comes later.'}</p></div>`).join('');
-function viewHeroes(){const q=$('#hq').value.trim().toLowerCase(),sq=$('#hs').value,so=$('#hso').checked;
-const L=D.heroes.filter(h=>(sq=='All'||h[2]==sq)&&(!so||h[4])&&(!q||h[1].toLowerCase().includes(q))).sort((a,b)=>b[4]-a[4]||a[1].localeCompare(b[1]));
-$('#hl2').innerHTML=L.length?L.map(h=>`<details><summary><b>${h[1]}</b><span>${h[2]}, ${h[3]}, ${h[5]}${h[4]?', Superhero':''}</span></summary>${D.chg[h[0]]?`<p class="flare">Changed in ${D.v}: ${D.chg[h[0]]}</p>`:''}${sk(h[0])}</details>`).join(''):'<p class="empty">No hero matches.</p>'}
-function viewSquad(){const R=S.roster;
-if(R.length<2){$('#ld').innerHTML=$('#as').innerHTML='';$('#sq').innerHTML='<p class="empty">Add at least two heroes in My roster to build a squad.</p>';return}
-let a=S.ui.ld,b=S.ui.as;if(!R.some(x=>x.id==a))a=R[0].id;if(!R.some(x=>x.id==b)||b==a)b=R.find(x=>x.id!=a).id;S.ui.ld=a;S.ui.as=b;
-const opt=v=>R.map(x=>`<option value="${x.id}"${x.id==v?' selected':''}>${HB[x.id][1]}</option>`).join('');
-$('#ld').innerHTML=opt(a);$('#as').innerHTML=opt(b);
-const col=(id,lead)=>{const x=R.find(y=>y.id==id),h=HB[id];return `<div><h2>${lead?'Leader':'Assistant'}: ${h[1]}</h2><p>${h[2]}, ${h[3]}, ${h[5]}. Rank ${x.r}, level ${x.l}, skills ${x.k.join('-')}.</p><p class="${lead?'good':'flare'}">${lead?`Talents and armaments apply: the ${h[2]}, ${h[3]} and ${h[5]} trees.`:'Skills only. Talents and armaments do not apply.'}</p>${!lead&&x.r<3?'<p class="flare">The assistant slot unlocks at rank 3.</p>':''}${sk(id)}</div>`};
-const men=[a,b].flatMap(id=>(D.sk[id]||[]).filter(s=>/Assistant|Leader/.test(s[2])).map(s=>`<li><b>${HB[id][1]}, ${s[1]}:</b> ${s[2]}</li>`));
-$('#sq').innerHTML=`<p class="fine">The assistant’s rage skill fires right after the leader’s, so put debuffs and setup on the leader.</p><div class="cols">${col(a,1)}${col(b,0)}</div>${men.length?`<h2>Skills that mention the pair</h2><ul>${men.join('')}</ul>`:''}`}
-function go(){let v=location.hash.slice(1);if(!V.includes(v))v='roster';
-V.forEach(x=>{$('#'+x).hidden=x!=v;document.querySelector(`[data-v="${x}"]`).setAttribute('aria-current',x==v?'page':'false')});
-if(v=='roster')acct();
-if(v=='legacy'){$('#ch').value=S.ui.ch;legacy()}
-if(v=='heroes')viewHeroes();if(v=='squad')viewSquad();
-if(v=='troops'){$('#from').value=S.ui.from;$('#to').value=S.ui.to;$('#cnt').value=S.ui.n;$('#sp').value=S.ui.sp;trp()}}
-$('#add').innerHTML=['Ranged','Leader','Infantry','Rider','Overall'].map(q=>`<optgroup label="${q}">${D.heroes.filter(h=>h[2]==q).sort((a,b)=>a[1].localeCompare(b[1])).map(h=>`<option value="${h[0]}">${h[1]}</option>`).join('')}</optgroup>`).join('');
-$('#from').innerHTML=$('#to').innerHTML=[1,2,3,4,5,6].map(i=>`<option value="${i}">T${i}</option>`).join('');
-$('#fine').textContent=`Unofficial fan tool. Numbers read from game files, data v${D.v}.`;
-$('#addb').onclick=()=>{const id=+$('#add').value;if(S.roster.some(x=>x.id==id))return;S.roster.push({id,r:6,l:60,k:[1,1,1,1],u:'main',lead:0,w:0});save();acct()};
-$('#list').addEventListener('click',e=>{if(e.target.dataset.rm!==undefined){S.roster.splice(+e.target.closest('.hero').dataset.i,1);save();acct()}});
-$('#list').addEventListener('change',e=>{const el=e.target,k=el.dataset.k,hr=el.closest('.hero');if(!k||!hr)return;const x=S.roster[+hr.dataset.i];
-if(/^k\d$/.test(k)){x.k[+k[1]]=cl(el.value,1,5);el.value=x.k[+k[1]]}
-else if(k=='r'){x.r=cl(el.value,1,6);el.value=x.r}else if(k=='l'){x.l=cl(el.value,1,60);el.value=x.l}
-else if(k=='u')x.u=el.value;else x[k]=el.checked?1:0;save()});
-$('#exp').onclick=()=>{$('#bk').value=JSON.stringify(S.roster);$('#msg').textContent='Copy the text above to keep it.'};
-$('#imp').onclick=()=>{try{const a=JSON.parse($('#bk').value);if(!Array.isArray(a))throw 0;S.roster=a.filter(x=>x&&HB[x.id]).map(x=>({id:+x.id,r:cl(x.r,1,6),l:cl(x.l,1,60),k:[0,1,2,3].map(i=>cl((x.k||[])[i],1,5)),u:x.u=='donor'?'donor':'main',lead:x.lead?1:0,w:x.w?1:0}));save();acct();$('#msg').textContent=`Imported ${S.roster.length} heroes.`}catch(e){$('#msg').textContent='That backup could not be read. Paste the exported text unchanged.'}};
-$('#ch').addEventListener('input',()=>{S.ui.ch=cl($('#ch').value,1,20);save();legacy()});
-$('#troops').addEventListener('input',e=>{if(e.target.dataset.id)return;const u=S.ui;u.from=cl($('#from').value,1,6);u.to=cl($('#to').value,1,6);u.n=Math.max(0,+$('#cnt').value||0);u.sp=Math.max(0,+$('#sp').value||0);save();trp()});
-$('#rtab').addEventListener('change',e=>{const el=e.target;if(!el.dataset.id)return;S.ui.lv[el.dataset.id]=Math.max(0,Math.round(+el.value||0));save();trp()});
-$('#hs').innerHTML=['All',...SQ].map(q=>`<option${q=='Ranged'?' selected':''}>${q}</option>`).join('');
-['hq','hs','hso'].forEach(i=>$('#'+i).addEventListener('input',viewHeroes));
-['ld','as'].forEach(i=>$('#'+i).addEventListener('change',()=>{S.ui.ld=+$('#ld').value;S.ui.as=+$('#as').value;save();viewSquad()}));
-addEventListener('hashchange',go);go();
-</script></body></html>
+        const sp = 1 + u.sp / 100,
+          ro = D.research.map(([id, name, lv]) => {
+            const cur = Math.min(u.lv[id] || 0, lv.length),
+              rem = lv.slice(cur);
+            return {
+              id,
+              name: id == 5022 ? 'Ranged T6 unlock' : name,
+              max: lv.length,
+              cur,
+              t: sum(rem.map((x) => x[0])) / sp,
+              c: RES.map((k) => sum(rem.map((x) => x[1][k] || 0))),
+            };
+          });
+        $('#rtab').innerHTML =
+          '<tr><th>Research</th><th>Level</th><th>Time left</th>' +
+          RES.map((k) => `<th>${k}</th>`).join('') +
+          '</tr>' +
+          ro
+            .map(
+              (r) =>
+                `<tr><td>${r.name}</td><td><input type="number" data-id="${r.id}" min="0" max="${r.max}" value="${r.cur}"> / ${r.max}</td><td>${r.t ? dur(r.t) : 'Done'}</td>${r.c.map((v) => `<td>${v ? m(v) : '-'}</td>`).join('')}</tr>`,
+            )
+            .join('');
+        $('#path').innerHTML =
+          `<b>${dur(sum(ro.filter((r) => [2009, 3015, 5022].includes(r.id)).map((r) => r.t)))}</b>to unlock T6 ranged, if Camo Finish (15), Battlefield Medicine (10) and the unlock run one after another`;
+      }
+      const SLOT = { r: 'Rage', p: 'Passive', a: 'Awakening' },
+        SQ = ['Ranged', 'Leader', 'Infantry', 'Rider', 'Overall'];
+      const sk = (id) =>
+        (D.sk[id] || [])
+          .map(
+            (s) =>
+              `<div class="sk"><b>${s[1]}</b> <span>${SLOT[s[0]]}</span><p>${s[2] || 'Full text for this squad type comes later.'}</p></div>`,
+          )
+          .join('');
+      function viewHeroes() {
+        const q = $('#hq').value.trim().toLowerCase(),
+          sq = $('#hs').value,
+          so = $('#hso').checked;
+        const L = D.heroes
+          .filter(
+            (h) =>
+              (sq == 'All' || h[2] == sq) &&
+              (!so || h[4]) &&
+              (!q || h[1].toLowerCase().includes(q)),
+          )
+          .sort((a, b) => b[4] - a[4] || a[1].localeCompare(b[1]));
+        $('#hl2').innerHTML = L.length
+          ? L.map(
+              (h) =>
+                `<details><summary><b>${h[1]}</b><span>${h[2]}, ${h[3]}, ${h[5]}${h[4] ? ', Superhero' : ''}</span></summary>${D.chg[h[0]] ? `<p class="flare">Changed in ${D.v}: ${D.chg[h[0]]}</p>` : ''}${sk(h[0])}</details>`,
+            ).join('')
+          : '<p class="empty">No hero matches.</p>';
+      }
+      function viewSquad() {
+        const R = S.roster;
+        if (R.length < 2) {
+          $('#ld').innerHTML = $('#as').innerHTML = '';
+          $('#sq').innerHTML =
+            '<p class="empty">Add at least two heroes in My roster to build a squad.</p>';
+          return;
+        }
+        let a = S.ui.ld,
+          b = S.ui.as;
+        if (!R.some((x) => x.id == a)) a = R[0].id;
+        if (!R.some((x) => x.id == b) || b == a) b = R.find((x) => x.id != a).id;
+        S.ui.ld = a;
+        S.ui.as = b;
+        const opt = (v) =>
+          R.map(
+            (x) => `<option value="${x.id}"${x.id == v ? ' selected' : ''}>${HB[x.id][1]}</option>`,
+          ).join('');
+        $('#ld').innerHTML = opt(a);
+        $('#as').innerHTML = opt(b);
+        const col = (id, lead) => {
+          const x = R.find((y) => y.id == id),
+            h = HB[id];
+          return `<div><h2>${lead ? 'Leader' : 'Assistant'}: ${h[1]}</h2><p>${h[2]}, ${h[3]}, ${h[5]}. Rank ${x.r}, level ${x.l}, skills ${x.k.join('-')}.</p><p class="${lead ? 'good' : 'flare'}">${lead ? `Talents and armaments apply: the ${h[2]}, ${h[3]} and ${h[5]} trees.` : 'Skills only. Talents and armaments do not apply.'}</p>${!lead && x.r < 3 ? '<p class="flare">The assistant slot unlocks at rank 3.</p>' : ''}${sk(id)}</div>`;
+        };
+        const men = [a, b].flatMap((id) =>
+          (D.sk[id] || [])
+            .filter((s) => /Assistant|Leader/.test(s[2]))
+            .map((s) => `<li><b>${HB[id][1]}, ${s[1]}:</b> ${s[2]}</li>`),
+        );
+        $('#sq').innerHTML =
+          `<p class="fine">The assistant’s rage skill fires right after the leader’s, so put debuffs and setup on the leader.</p><div class="cols">${col(a, 1)}${col(b, 0)}</div>${men.length ? `<h2>Skills that mention the pair</h2><ul>${men.join('')}</ul>` : ''}`;
+      }
+      function go() {
+        let v = location.hash.slice(1);
+        if (!V.includes(v)) v = 'roster';
+        V.forEach((x) => {
+          $('#' + x).hidden = x != v;
+          document
+            .querySelector(`[data-v="${x}"]`)
+            .setAttribute('aria-current', x == v ? 'page' : 'false');
+        });
+        if (v == 'roster') acct();
+        if (v == 'legacy') {
+          $('#ch').value = S.ui.ch;
+          legacy();
+        }
+        if (v == 'heroes') viewHeroes();
+        if (v == 'squad') viewSquad();
+        if (v == 'troops') {
+          $('#from').value = S.ui.from;
+          $('#to').value = S.ui.to;
+          $('#cnt').value = S.ui.n;
+          $('#sp').value = S.ui.sp;
+          trp();
+        }
+      }
+      $('#add').innerHTML = ['Ranged', 'Leader', 'Infantry', 'Rider', 'Overall']
+        .map(
+          (q) =>
+            `<optgroup label="${q}">${D.heroes
+              .filter((h) => h[2] == q)
+              .sort((a, b) => a[1].localeCompare(b[1]))
+              .map((h) => `<option value="${h[0]}">${h[1]}</option>`)
+              .join('')}</optgroup>`,
+        )
+        .join('');
+      $('#from').innerHTML = $('#to').innerHTML = [1, 2, 3, 4, 5, 6]
+        .map((i) => `<option value="${i}">T${i}</option>`)
+        .join('');
+      $('#fine').textContent = `Unofficial fan tool. Numbers read from game files, data v${D.v}.`;
+      $('#addb').onclick = () => {
+        const id = +$('#add').value;
+        if (S.roster.some((x) => x.id == id)) return;
+        S.roster.push({ id, r: 6, l: 60, k: [1, 1, 1, 1], u: 'main', lead: 0, w: 0 });
+        save();
+        acct();
+      };
+      $('#list').addEventListener('click', (e) => {
+        if (e.target.dataset.rm !== undefined) {
+          S.roster.splice(+e.target.closest('.hero').dataset.i, 1);
+          save();
+          acct();
+        }
+      });
+      $('#list').addEventListener('change', (e) => {
+        const el = e.target,
+          k = el.dataset.k,
+          hr = el.closest('.hero');
+        if (!k || !hr) return;
+        const x = S.roster[+hr.dataset.i];
+        if (/^k\d$/.test(k)) {
+          x.k[+k[1]] = cl(el.value, 1, 5);
+          el.value = x.k[+k[1]];
+        } else if (k == 'r') {
+          x.r = cl(el.value, 1, 6);
+          el.value = x.r;
+        } else if (k == 'l') {
+          x.l = cl(el.value, 1, 60);
+          el.value = x.l;
+        } else if (k == 'u') x.u = el.value;
+        else x[k] = el.checked ? 1 : 0;
+        save();
+      });
+      $('#exp').onclick = () => {
+        $('#bk').value = JSON.stringify(S.roster);
+        $('#msg').textContent = 'Copy the text above to keep it.';
+      };
+      $('#imp').onclick = () => {
+        try {
+          const a = JSON.parse($('#bk').value);
+          if (!Array.isArray(a)) throw 0;
+          S.roster = a
+            .filter((x) => x && HB[x.id])
+            .map((x) => ({
+              id: +x.id,
+              r: cl(x.r, 1, 6),
+              l: cl(x.l, 1, 60),
+              k: [0, 1, 2, 3].map((i) => cl((x.k || [])[i], 1, 5)),
+              u: x.u == 'donor' ? 'donor' : 'main',
+              lead: x.lead ? 1 : 0,
+              w: x.w ? 1 : 0,
+            }));
+          save();
+          acct();
+          $('#msg').textContent = `Imported ${S.roster.length} heroes.`;
+        } catch (e) {
+          $('#msg').textContent =
+            'That backup could not be read. Paste the exported text unchanged.';
+        }
+      };
+      $('#ch').addEventListener('input', () => {
+        S.ui.ch = cl($('#ch').value, 1, 20);
+        save();
+        legacy();
+      });
+      $('#troops').addEventListener('input', (e) => {
+        if (e.target.dataset.id) return;
+        const u = S.ui;
+        u.from = cl($('#from').value, 1, 6);
+        u.to = cl($('#to').value, 1, 6);
+        u.n = Math.max(0, +$('#cnt').value || 0);
+        u.sp = Math.max(0, +$('#sp').value || 0);
+        save();
+        trp();
+      });
+      $('#rtab').addEventListener('change', (e) => {
+        const el = e.target;
+        if (!el.dataset.id) return;
+        S.ui.lv[el.dataset.id] = Math.max(0, Math.round(+el.value || 0));
+        save();
+        trp();
+      });
+      $('#hs').innerHTML = ['All', ...SQ]
+        .map((q) => `<option${q == 'Ranged' ? ' selected' : ''}>${q}</option>`)
+        .join('');
+      ['hq', 'hs', 'hso'].forEach((i) => $('#' + i).addEventListener('input', viewHeroes));
+      ['ld', 'as'].forEach((i) =>
+        $('#' + i).addEventListener('change', () => {
+          S.ui.ld = +$('#ld').value;
+          S.ui.as = +$('#as').value;
+          save();
+          viewSquad();
+        }),
+      );
+      addEventListener('hashchange', go);
+      go();
+    </script>
+  </body>
+</html>
